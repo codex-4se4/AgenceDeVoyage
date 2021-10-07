@@ -1,0 +1,12 @@
+meme base de donné entre une application web( symphony4) et application desktop java( java fx)
+-wamp server
+-mySql
+-integrer des templates avec TWIG
+
+
+
+la semaine prochaine: -idéé
+		      -sujet
+                      - besoin fonctionnel
+                      -diagramme de classe
+                      - use case
