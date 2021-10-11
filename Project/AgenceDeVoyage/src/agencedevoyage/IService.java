@@ -7,6 +7,7 @@ package agencedevoyage;
 
 import agencedevoyage.configuration.database.DBConnection;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -15,22 +16,25 @@ import java.util.List;
  *
  * @author bourg
  */
-    public interface IService<T> {
+public interface IService<T> {
+
     void ajouter(T t);
+
     boolean supprimer(T t);
+
     boolean modifier(T t);
+
     List<T> consulter();
-    
+
     default void executeQuery(String query) {
-        Connection conn =DBConnection.getInstance().getConnection();
+        Connection conn = DBConnection.getInstance().getConnection();
         Statement st;
-        try{
-            st= conn.createStatement();
+        try {
+            st = conn.createStatement();
             st.executeUpdate(query);
-        }catch(SQLException ex){
-            System.out.println("Error: "+ex.getMessage());
+        } catch (SQLException ex) {
+            System.out.println("Error: " + ex.getMessage());
         }
     }
-    
+
 }
-    
