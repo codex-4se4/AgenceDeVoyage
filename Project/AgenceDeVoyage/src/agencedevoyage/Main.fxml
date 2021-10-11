@@ -1,52 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<<<<<<< Updated upstream
-=======
 <?import javafx.scene.image.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
->>>>>>> Stashed changes
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<<<<<<< Updated upstream
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agencedevoyage.MainController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
-=======
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="607.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agencedevoyage.MainController">
    <children>
-      <JFXTextField focusColor="#a0a2ab" layoutX="167.0" layoutY="132.0" prefHeight="25.0" prefWidth="258.0" promptText="Login" unFocusColor="#a0a2ab">
+      <JFXTextField fx:id="username" focusColor="#a0a2ab" layoutX="167.0" layoutY="132.0" prefHeight="25.0" prefWidth="258.0" promptText="Login" unFocusColor="#a0a2ab">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField focusColor="#a0a2ab" layoutX="171.0" layoutY="196.0" prefHeight="25.0" prefWidth="258.0" promptText="Mot de passe" unFocusColor="#a0a2ab">
+      <JFXPasswordField fx:id="password" focusColor="#a0a2ab" layoutX="171.0" layoutY="196.0" prefHeight="25.0" prefWidth="258.0" promptText="Mot de passe" unFocusColor="#a0a2ab">
          <font>
             <Font size="14.0" />
          </font>
       </JFXPasswordField>
-      <JFXButton layoutX="484.0" layoutY="14.0" prefHeight="36.0" prefWidth="102.0" style="-fx-background-color: #151928; -fx-border-color: #a0a2ab;" text="S'inscrire" textFill="#a0a2ab">
+      <JFXButton fx:id="signup" layoutX="484.0" layoutY="14.0" onAction="#inscriptionAction" prefHeight="36.0" prefWidth="102.0" style="-fx-background-color: #151928; -fx-border-color: #a0a2ab;" text="S'inscrire" textFill="#a0a2ab">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="322.0" layoutY="252.0" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #2196f3;" text="Connexion" textFill="WHITE">
+      <JFXButton fx:id="login" layoutX="322.0" layoutY="252.0" onAction="#connexionAction" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #2196f3;" text="Connexion" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXCheckBox layoutX="167.0" layoutY="264.0" prefHeight="18.0" prefWidth="108.0" text="Remember me" textFill="#a0a2ab">
+      <JFXCheckBox fx:id="remember" layoutX="167.0" layoutY="264.0" prefHeight="18.0" prefWidth="108.0" text="Remember me" textFill="#a0a2ab">
          <font>
             <Font size="15.0" />
          </font>
       </JFXCheckBox>
-      <JFXButton layoutX="192.0" layoutY="339.0" prefHeight="25.0" prefWidth="223.0" text="Mot de passe oublié ? " textFill="#a0a2ab" underline="true">
+      <JFXButton fx:id="forgotpassword" layoutX="197.0" layoutY="312.0" prefHeight="25.0" prefWidth="223.0" text="Mot de passe oublié ? " textFill="#a0a2ab" underline="true">
          <font>
             <Font size="14.0" />
          </font>
@@ -76,6 +66,20 @@
             <Font size="21.0" />
          </font>
       </Label>
+      <ImageView fx:id="progress" fitHeight="61.0" fitWidth="93.0" layoutX="268.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/loader.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="succes" layoutX="21.0" layoutY="373.0" prefHeight="17.0" prefWidth="204.0" text="Connexion établie avec succés" textFill="#0fee3c">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="echec" layoutX="21.0" layoutY="373.0" prefHeight="17.0" prefWidth="204.0" text="Login et/ou mot de passe erroné" textFill="#ed1111">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
->>>>>>> Stashed changes
 </AnchorPane>
