@@ -17,7 +17,11 @@ public class DBConnection {
     
     private static DBConnection instance;
     private Connection cnx;
+<<<<<<< Updated upstream
     String url = "jdbc:mysql://localhost:3306/agenceDeVoyage";
+=======
+    private String url = "jdbc:mysql://localhost:3306/agenceDeVoyage";
+>>>>>>> Stashed changes
 
     private DBConnection() {
         try {
