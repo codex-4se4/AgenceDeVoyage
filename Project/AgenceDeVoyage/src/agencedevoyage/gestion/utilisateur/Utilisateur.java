@@ -10,38 +10,28 @@ package agencedevoyage.gestion.utilisateur;
  * @author bourg
  */
 public class Utilisateur {
-    
+
     private int id;
     private String nom;
     private String prenom;
+    private String email;
+    private String cin;
+    private String passeport;
     private String login;
     private String mdp;
-    private String passeport;
 
-<<<<<<< Updated upstream
-    public Utilisateur(int id, String nom, String prenom, String login, String mdp, String passeport) {
-        this.id = id;
+    public Utilisateur(String nom, String prenom, String email, String cin, String passeport, String login, String mdp) {
         this.nom = nom;
         this.prenom = prenom;
+        this.email = email;
+        this.cin = cin;
+        this.passeport = passeport;
         this.login = login;
         this.mdp = mdp;
-        this.passeport = passeport;
     }
 
-=======
->>>>>>> Stashed changes
-    public Utilisateur(String nom, String prenom, String login, String mdp, String passeport) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.login = login;
-        this.mdp = mdp;
-        this.passeport = passeport;
+    public Utilisateur() {
     }
-    
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
 
     public int getId() {
         return id;
@@ -67,6 +57,30 @@ public class Utilisateur {
         this.prenom = prenom;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCin() {
+        return cin;
+    }
+
+    public void setCin(String cin) {
+        this.cin = cin;
+    }
+
+    public String getPasseport() {
+        return passeport;
+    }
+
+    public void setPasseport(String passeport) {
+        this.passeport = passeport;
+    }
+
     public String getLogin() {
         return login;
     }
@@ -82,14 +96,5 @@ public class Utilisateur {
     public void setMdp(String mdp) {
         this.mdp = mdp;
     }
-
-    public String getPasseport() {
-        return passeport;
-    }
-
-    public void setPasseport(String passeport) {
-        this.passeport = passeport;
-    }
      
-    
 }
