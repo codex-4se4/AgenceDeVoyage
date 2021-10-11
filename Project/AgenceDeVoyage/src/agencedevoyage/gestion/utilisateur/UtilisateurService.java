@@ -6,25 +6,23 @@
 package agencedevoyage.gestion.utilisateur;
 
 import agencedevoyage.IService;
-<<<<<<< Updated upstream
-=======
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
->>>>>>> Stashed changes
 import java.util.List;
 
 /**
  *
  * @author bourg
  */
-<<<<<<< Updated upstream
 public class UtilisateurService implements IService<Utilisateur>{
 
     @Override
-    public void ajouter(Utilisateur t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void ajouter(Utilisateur u) {
+        String SQL = "INSERT INTO `utilisateur` (`nom`, `prenom`, `email`,`cin`,`passeport`,`login`, `mdp`) VALUES ("+"'" + u.getNom() + "', '" + u.getPrenom() + "', '" 
+                + u.getEmail() + "','"+ u.getCin()+"','" + u.getPasseport() + "','" + u.getLogin()+ "','"+ u.getMdp() + "')";
+        executeQuery(SQL);
     }
 
     @Override
@@ -41,33 +39,4 @@ public class UtilisateurService implements IService<Utilisateur>{
     public List<Utilisateur> consulter() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-=======
-public class UtilisateurService {
-
-   /* @Override
-    public void ajouter(Utilisateur u){
-
-    String query = "INSERT INTO `utilisateur` (`nom`, `prenom`, `login`, `mdp`, `passeport`) VALUES (NULL, '" + t.getNom() + "', '" + t.getPrenom() + "', '" + t.getAge() + "');";
-    executeQuery(query);
-        }
-
-
-
-    @Override
-    public boolean supprimer(Utilisateur u) {
-    }
-
-    @Override
-    public boolean modifier(Utilisateur u){
-    }
-
-    @Override
-    public List<Utilisateur> consulter(){
-
-    }
-*/
->>>>>>> Stashed changes
-
-    
 }
