@@ -18,6 +18,7 @@ public class Utilisateur {
     private String mdp;
     private String passeport;
 
+<<<<<<< Updated upstream
     public Utilisateur(int id, String nom, String prenom, String login, String mdp, String passeport) {
         this.id = id;
         this.nom = nom;
@@ -27,6 +28,8 @@ public class Utilisateur {
         this.passeport = passeport;
     }
 
+=======
+>>>>>>> Stashed changes
     public Utilisateur(String nom, String prenom, String login, String mdp, String passeport) {
         this.nom = nom;
         this.prenom = prenom;
@@ -35,7 +38,10 @@ public class Utilisateur {
         this.passeport = passeport;
     }
     
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
 
     public int getId() {
         return id;
