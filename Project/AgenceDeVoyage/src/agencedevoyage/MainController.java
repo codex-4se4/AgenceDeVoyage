@@ -48,12 +48,10 @@ public class MainController implements Initializable {
     @FXML
     private ImageView progress;
     @FXML
-    private Label succes;
-    @FXML
     private Label echec;
 
     @FXML
-    private void connexionAction(ActionEvent e) throws SQLException {
+    private void connexionAction(ActionEvent e) throws SQLException, IOException {
         progress.setVisible(true);
         String SQL = "SELECT * FROM `utilisateur` WHERE login= "+"'" + username.getText() + "' AND mdp='" + password.getText() +"'";
         ResultSet rs;
@@ -62,18 +60,21 @@ public class MainController implements Initializable {
             if(rs == null || !rs.next()){
                 
                 echec.setVisible(true);
-                succes.setVisible(false);
 
                 return;
             }       
-            echec.setVisible(false);
-            succes.setVisible(true);  
+        login.getScene().getWindow().hide();
+        Stage dashboard = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/agencedevoyage/gestion/utilisateur/Dashboard.fxml"));
+        Scene scene = new Scene(root);
+        dashboard.setScene(scene);
+        dashboard.show();
+        dashboard.setResizable(false);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        progress.setVisible(false);
-       succes.setVisible(false);
        echec.setVisible(false);
        username.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
        password.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
