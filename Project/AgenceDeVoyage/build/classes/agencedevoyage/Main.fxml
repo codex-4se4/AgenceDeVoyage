@@ -71,11 +71,6 @@
             <Image url="@../images/loader.gif" />
          </image>
       </ImageView>
-      <Label fx:id="succes" layoutX="21.0" layoutY="373.0" prefHeight="17.0" prefWidth="204.0" text="Connexion établie avec succés" textFill="#0fee3c">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
       <Label fx:id="echec" layoutX="21.0" layoutY="373.0" prefHeight="17.0" prefWidth="204.0" text="Login et/ou mot de passe erroné" textFill="#ed1111">
          <font>
             <Font size="14.0" />
