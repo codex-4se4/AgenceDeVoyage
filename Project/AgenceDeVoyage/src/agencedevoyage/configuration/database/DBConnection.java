@@ -14,20 +14,16 @@ import java.sql.SQLException;
  * @author bourg
  */
 public class DBConnection {
-    
+
     private static DBConnection instance;
     private Connection cnx;
-<<<<<<< Updated upstream
-    String url = "jdbc:mysql://localhost:3306/agenceDeVoyage";
-=======
-    private String url = "jdbc:mysql://localhost:3306/agenceDeVoyage";
->>>>>>> Stashed changes
+    private String url = "jdbc:mysql://localhost:3306/agenceDeVoyage?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
     private DBConnection() {
         try {
             cnx = DriverManager.getConnection(url, "root", "");
         } catch (SQLException ex) {
-            System.out.println("Error: "+ex.getMessage());
+            System.out.println("Error: " + ex.getMessage());
         }
     }
 
@@ -37,9 +33,9 @@ public class DBConnection {
         }
         return instance;
     }
-    
-    public Connection getConnection(){
+
+    public Connection getConnection() {
         return cnx;
     }
-    
+
 }
