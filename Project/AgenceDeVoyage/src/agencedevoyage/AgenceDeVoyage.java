@@ -16,25 +16,15 @@ import javafx.stage.Stage;
  * @author bourg
  */
 public class AgenceDeVoyage extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
-<<<<<<< Updated upstream
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-=======
-             Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
->>>>>>> Stashed changes
-        
-        Scene scene = new Scene(root);
-        
+        Scene scene = new Scene(root,607,409);
         stage.setScene(scene);
         stage.show();
-<<<<<<< Updated upstream
-=======
         stage.setResizable(false);
-  
-       
->>>>>>> Stashed changes
+
     }
 
     /**
@@ -43,5 +33,5 @@ public class AgenceDeVoyage extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }
