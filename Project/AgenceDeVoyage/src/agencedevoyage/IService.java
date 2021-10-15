@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -24,7 +25,7 @@ public interface IService<T> {
 
     boolean modifier(T t);
 
-    List<T> consulter();
+    ObservableList<T> consulter();
 
     default void executeQuery(String query) {
         Connection conn = DBConnection.getInstance().getConnection();
