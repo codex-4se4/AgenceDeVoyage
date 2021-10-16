@@ -19,6 +19,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+// remember me consomamtion API
+
 /**
  * FXML Controller class
  *
