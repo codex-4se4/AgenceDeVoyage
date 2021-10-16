@@ -66,7 +66,7 @@ public class LoginController implements Initializable {
         login.getScene().getWindow().hide();
         Stage dashboard = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/gui/Dashboard.fxml"));
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,511,751);
         dashboard.setScene(scene);
         dashboard.show();
         dashboard.setResizable(false);
