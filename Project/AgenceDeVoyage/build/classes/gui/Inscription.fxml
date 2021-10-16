@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="607.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InscriptionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="607.0" style="-fx-background-color: #0c1326;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InscriptionController">
    <children>
       <JFXTextField fx:id="nom" layoutX="189.0" layoutY="132.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre nom" styleClass="-fx-prompt-text-fill : #a0a2ab">
          <font>
@@ -58,7 +58,7 @@
       </JFXButton>
       <ImageView fitHeight="81.0" fitWidth="200.0" layoutX="256.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/van.png" />
+            <Image url="@../images/van.png" />
          </image>
       </ImageView>
       <Label layoutX="241.0" layoutY="76.0" prefHeight="44.0" prefWidth="135.0" text="Tunsia" textAlignment="CENTER" textFill="#2196f3">
@@ -73,7 +73,7 @@
       </Label>
       <ImageView fx:id="progress" fitHeight="54.0" fitWidth="154.0" layoutX="268.0" layoutY="487.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/loader.gif" />
+            <Image url="@../images/loader.gif" />
          </image>
       </ImageView>
    </children>
