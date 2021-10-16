@@ -18,8 +18,8 @@ public class Utilisateur {
     private String cin;
     private String passeport;
     private String login;
-    private String mdp;
-    private String role;        // permet a la BD de différencier user et admin
+    private String mdp;       
+// permet a la BD de différencier user et admin
 
     public Utilisateur(String nom, String prenom, String email, String cin, String passeport, String login, String mdp) {
         this.nom = nom;
@@ -97,5 +97,5 @@ public class Utilisateur {
     public void setMdp(String mdp) {
         this.mdp = mdp;
     }
-     
+
 }
