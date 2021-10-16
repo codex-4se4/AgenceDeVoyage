@@ -11,8 +11,8 @@ public abstract class ReservationVoitureService implements IService<ReservationV
    
     @Override
     public void ajouter(ReservationVoiture rv){
-        String SQL = "INSERT INTO `ReservationVoiture` (`prixv`, `date_debutrv`, `date_finrv`) VALUES ("+"'" + rv.getprixv() + "', '" + rv.getdate_debutrv() + "', '"
-                + rv.getdate_finrv() + "')";
+        String SQL = "INSERT INTO `ReservationVoiture` (`prixv`, `date_debutrv`, `date_finrv`) VALUES ("+"'" + rv.getPrixv()+ "', '" + rv.getDate_debutrv()+ "', '"
+                + rv.getDate_finrv()+ "')";
         executeQuery(SQL);
     }
     @Override
@@ -25,8 +25,8 @@ public abstract class ReservationVoitureService implements IService<ReservationV
    
    
     public boolean modifier(ReservationVoiture rv) {
-        String SQL = "UPDATE `ReservationVoiture` (`prixv`, `date_debutrv`, `date_finrv`) VALUES ("+"'" + rv.getprixv() + "', '" + rv.getdate_debutrv() + "', '"
-                + rv.getdate_finrv() + "')";
+        String SQL = "UPDATE `ReservationVoiture` (`prixv`, `date_debutrv`, `date_finrv`) VALUES ("+"'" + rv.getPrixv()+ "', '" + rv.getDate_debutrv()+ "', '"
+                + rv.getDate_finrv()+ "')";
         
         executeQuery(SQL);
         return true;
@@ -34,8 +34,8 @@ public abstract class ReservationVoitureService implements IService<ReservationV
     }
  
     public boolean consulter(ReservationVoiture rv) {
-    String SQL = "SELECT * FROM `ReservationVoiture` (`prixv`, `date_debutrv`, `date_finrv`) VALUES ("+"'" + rv.getprixv() + "', '" + rv.getdate_debutrv() + "', '"
-                + rv.getdate_finrv() + "')";
+    String SQL = "SELECT * FROM `ReservationVoiture` (`prixv`, `date_debutrv`, `date_finrv`) VALUES ("+"'" + rv.getPrixv()+ "', '" + rv.getDate_debutrv()+ "', '"
+                + rv.getDate_finrv()+ "')";
     
         executeQuery(SQL);
         return true;
