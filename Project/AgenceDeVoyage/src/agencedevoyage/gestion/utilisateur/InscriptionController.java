@@ -19,7 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-// remember me consomamtion API
+// remember me consomamtion API &&&&&  mot de passe haché sur la BD
 
 /**
  * FXML Controller class
