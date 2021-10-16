@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="760.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+   <children>
+      <JFXToolbar prefHeight="760.0" prefWidth="247.0" style="-fx-background-color: #0c1326;" />
+      <VBox prefHeight="574.0" prefWidth="247.0">
+         <children>
+            <JFXButton text="Accueil" />
+            <JFXButton text="Profil" />
+            <JFXButton text="Réservation" />
+            <JFXButton text="Hébergemnts" />
+            <JFXButton text="Voitures" />
+            <JFXButton text="Rôles" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
