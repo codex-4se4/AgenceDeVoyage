@@ -8,6 +8,7 @@ package services;
 import entities.Utilisateur;
 import services.IService;
 import database.DBConnection;
+import entities.Role;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
