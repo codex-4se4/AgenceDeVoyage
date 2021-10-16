@@ -9,6 +9,7 @@ import entities.Utilisateur;
 import services.UtilisateurService;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import entities.Role;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -90,7 +91,7 @@ public class InscriptionController implements Initializable {
     private void authentifierAction(ActionEvent event) throws IOException {
         login.getScene().getWindow().hide();
         Stage signIn = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/Main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/Login.fxml"));
         Scene scene = new Scene(root);
         signIn.setScene(scene);
         signIn.show();
