@@ -1,59 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.geometry.*?>
 <?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="760.0" prefWidth="1360.0" stylesheets="@custom.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
    <children>
-      <VBox prefHeight="497.0" prefWidth="201.0" style="-fx-background-color: #2D3447;">
+      <JFXToolbar layoutX="184.0" layoutY="14.0" prefHeight="40.0" prefWidth="1360.0" style="-fx-min-height: 42; -fx-background-color: #222D32;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Label prefHeight="23.0" prefWidth="228.0" style="-fx-font-size: 20; -fx-text-fill: #7387A8; -fx-font-weight: bold;" text="FX DASHBOARD" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+         </left>
+      </JFXToolbar>
+      <VBox layoutY="40.0" prefHeight="720.0" prefWidth="140.0" style="-fx-background-color: #2A3F54;">
          <children>
-            <Pane prefHeight="197.0" prefWidth="201.0">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="195.0" layoutX="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/van.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="41.0" layoutY="141.0" prefHeight="44.0" prefWidth="135.0" text="Trip" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="82.0" layoutY="141.0" prefHeight="44.0" prefWidth="135.0" text="Tunsia" textAlignment="CENTER" textFill="#2196f3">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <JFXButton alignment="BASELINE_LEFT" prefHeight="64.0" prefWidth="201.0" text="Reservations" textFill="WHITE">
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
+            <Label prefHeight="60.0" prefWidth="140.0" style="-fx-alignment: center; -fx-font-size: 16; -fx-text-fill: #7387A8; -fx-border-color: #7387A8; -fx-border-width: 0 0 2 0;" text="NAVIGATION" />
+            <JFXButton fx:id="btnHome" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="Home" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#a1aec4" glyphName="DASHBOARD" size="17.0" wrappingWidth="43.0" />
+               </graphic>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" prefHeight="64.0" prefWidth="201.0" text="Utilisateurs" textFill="WHITE">
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
+            <JFXButton fx:id="btnPricing" layoutX="10.0" layoutY="67.0" onAction="#switchPricing" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="Pricing" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="#a1aec4" glyphName="SHOPPING" size="17.0" wrappingWidth="42.99997329711914" />
+               </graphic>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" prefHeight="64.0" prefWidth="201.0" text="Hotels" textFill="WHITE">
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
+            <JFXButton fx:id="btnContacts" layoutX="10.0" layoutY="109.0" onAction="#switchContacts" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="Contacts" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#a1aec4" glyphName="GROUP" size="17.0" wrappingWidth="43.0" />
+               </graphic>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" prefHeight="64.0" prefWidth="201.0" text="Voitures" textFill="WHITE">
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
+            <JFXButton fx:id="btnWidgets" layoutX="10.0" layoutY="151.0" onAction="#switchWidget" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="Widgets" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="#a1aec4" glyphName="VIEW_GRID" size="17.0" wrappingWidth="42.99997329711914" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnProfile" layoutX="10.0" layoutY="193.0" onAction="#switchProfile" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="Profile" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#a1aec4" glyphName="USER" size="17.0" wrappingWidth="43.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnAlerts" layoutX="10.0" layoutY="235.0" onAction="#switchAlert" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="Alerts" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#a1aec4" glyphName="EXCLAMATION_TRIANGLE" size="17.0" wrappingWidth="43.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnControls" onAction="#switchControls" prefHeight="42.0" prefWidth="139.0" style="-fx-alignment: left;" styleClass="nav-button" text="Controls" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#a1aec4" glyphName="ASTERISK" size="17.0" wrappingWidth="43.0" />
+               </graphic>
             </JFXButton>
          </children>
       </VBox>
+      <AnchorPane fx:id="holderPane" layoutX="140.0" layoutY="42.0" prefHeight="713.0" prefWidth="1219.0" />
    </children>
 </AnchorPane>
