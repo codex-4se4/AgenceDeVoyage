@@ -66,7 +66,14 @@ public class LoginController implements Initializable {
         }
         login.getScene().getWindow().hide();
         Stage dashboard = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/Dashboard.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/gui/Dashboard.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Dashboard.fxml"));
+        Parent root = (Parent) loader.load();
+        DashboardController dashboardController = loader.getController();
+        Utilisateur user = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
+                rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"));
+        dashboardController.setCurrentUser(user);
+
         Scene scene = new Scene(root, 1365, 700);
         dashboard.setScene(scene);
         dashboard.show();
