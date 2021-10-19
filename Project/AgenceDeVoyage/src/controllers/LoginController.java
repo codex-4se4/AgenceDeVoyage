@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import entities.Utilisateur;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -53,20 +54,20 @@ public class LoginController implements Initializable {
     @FXML
     private void connexionAction(ActionEvent e) throws SQLException, IOException {
         progress.setVisible(true);
-        String SQL = "SELECT * FROM `utilisateur` WHERE login= "+"'" + username.getText() + "' AND mdp='" + password.getText() +"'";
+        String SQL = "SELECT * FROM `utilisateur` WHERE login= " + "'" + username.getText() + "' AND mdp='" + password.getText() + "'";
         ResultSet rs;
-        
-            rs = loginQuery(SQL);
-            if(rs == null || !rs.next()){
-                
-                echec.setVisible(true);
 
-                return;
-            }       
+        rs = loginQuery(SQL);
+        if (rs == null || !rs.next()) {
+
+            echec.setVisible(true);
+
+            return;
+        }
         login.getScene().getWindow().hide();
         Stage dashboard = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/gui/Dashboard.fxml"));
-        Scene scene = new Scene(root,1366,700);
+        Scene scene = new Scene(root, 1365, 700);
         dashboard.setScene(scene);
         dashboard.show();
         dashboard.setResizable(false);
@@ -74,10 +75,10 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       progress.setVisible(false);
-       echec.setVisible(false);
-       username.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
-       password.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
+        progress.setVisible(false);
+        echec.setVisible(false);
+        username.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        password.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
     }
 
     @FXML
@@ -90,8 +91,8 @@ public class LoginController implements Initializable {
         signup.show();
         signup.setResizable(false);
     }
-    
-     private ResultSet loginQuery(String query) {
+
+    private ResultSet loginQuery(String query) {
         Connection conn = DBConnection.getInstance().getConnection();
         Statement st;
         ResultSet rs;
