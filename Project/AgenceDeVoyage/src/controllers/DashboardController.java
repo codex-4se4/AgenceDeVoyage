@@ -18,7 +18,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
@@ -47,7 +46,7 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXButton btnControls;
 
-    Utilisateur u;
+    private FXMLLoader loader;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -56,7 +55,9 @@ public class DashboardController implements Initializable {
             contacts = FXMLLoader.load(getClass().getResource("/gui/Contacts.fxml"));
             alerts = FXMLLoader.load(getClass().getResource("/gui/Alerts.fxml"));
             pricing = FXMLLoader.load(getClass().getResource("/gui/Pricing.fxml"));
-            profiles = FXMLLoader.load(getClass().getResource("/gui/Profiles.fxml"));
+            //profiles = FXMLLoader.load(getClass().getResource("/gui/Profiles.fxml"));
+            loader = new FXMLLoader(getClass().getResource("/gui/Profiles.fxml"));
+            profiles = loader.load();
             widgets = FXMLLoader.load(getClass().getResource("/gui/Widgets.fxml"));
             controls = FXMLLoader.load(getClass().getResource("/gui/Controls.fxml"));
             setNode(profiles);
@@ -110,4 +111,8 @@ public class DashboardController implements Initializable {
         setNode(controls);
     }
 
+    public void setCurrentUser(Utilisateur u) {
+        ProfilesController profilesController = loader.getController();
+        profilesController.setUserInformation(u);
+    }
 }
