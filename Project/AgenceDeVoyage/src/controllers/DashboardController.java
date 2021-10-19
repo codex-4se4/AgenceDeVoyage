@@ -6,6 +6,7 @@
 package controllers;
 
 import com.jfoenix.controls.JFXButton;
+import entities.Utilisateur;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
@@ -40,22 +42,24 @@ public class DashboardController implements Initializable {
     private JFXButton btnProfile;
     @FXML
     private JFXButton btnAlerts;
-    
-    AnchorPane contacts,alerts,pricing,profiles,widgets,controls;
+
+    AnchorPane contacts, alerts, pricing, profiles, widgets, controls;
     @FXML
     private JFXButton btnControls;
+
+    Utilisateur u;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //Load all fxmls in a cache
         try {
-             contacts = FXMLLoader.load(getClass().getResource("/gui/Contacts.fxml"));
-             alerts = FXMLLoader.load(getClass().getResource("/gui/Alerts.fxml"));
-             pricing = FXMLLoader.load(getClass().getResource("/gui/Pricing.fxml"));
-             profiles = FXMLLoader.load(getClass().getResource("/gui/Profiles.fxml"));
-             widgets = FXMLLoader.load(getClass().getResource("/gui/Widgets.fxml"));
-             controls = FXMLLoader.load(getClass().getResource("/gui/Controls.fxml"));
-            setNode(pricing);
+            contacts = FXMLLoader.load(getClass().getResource("/gui/Contacts.fxml"));
+            alerts = FXMLLoader.load(getClass().getResource("/gui/Alerts.fxml"));
+            pricing = FXMLLoader.load(getClass().getResource("/gui/Pricing.fxml"));
+            profiles = FXMLLoader.load(getClass().getResource("/gui/Profiles.fxml"));
+            widgets = FXMLLoader.load(getClass().getResource("/gui/Widgets.fxml"));
+            controls = FXMLLoader.load(getClass().getResource("/gui/Controls.fxml"));
+            setNode(profiles);
         } catch (IOException ex) {
             Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
