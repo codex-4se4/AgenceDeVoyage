@@ -18,9 +18,20 @@ public class Utilisateur {
     private String cin;
     private String passeport;
     private String login;
-    private String mdp;       
+    private String mdp;
 // permet a la BD de différencier user et admin
-      
+
+    public Utilisateur(int id, String nom, String prenom, String email, String cin, String passeport, String login, String mdp) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.cin = cin;
+        this.passeport = passeport;
+        this.login = login;
+        this.mdp = mdp;
+    }
+
     public Utilisateur(String nom, String prenom, String email, String cin, String passeport, String login, String mdp) {
         this.nom = nom;
         this.prenom = prenom;
