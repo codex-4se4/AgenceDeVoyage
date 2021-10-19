@@ -9,7 +9,6 @@ import entities.Utilisateur;
 import services.UtilisateurService;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import entities.Role;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,7 +22,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 // remember me consomamtion API &&&&&  mot de passe haché sur la BD
-
 /**
  * FXML Controller class
  *
@@ -45,7 +43,7 @@ public class InscriptionController implements Initializable {
     private JFXTextField cin;
     @FXML
     private JFXTextField passeport;
-    
+
     UtilisateurService utilisateurService;
     @FXML
     private ImageView progress;
@@ -55,26 +53,26 @@ public class InscriptionController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       progress.setVisible(false);
-       nom.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
-       prenom.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
-       email.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
-       login.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
-       mdp.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
-       cin.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
-       passeport.setStyle("-fx-text-inner-color : #a0a2ab;"+"-fx-prompt-text-fill : #a0a2ab;");
-       utilisateurService = new UtilisateurService();
+        progress.setVisible(false);
+        nom.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        prenom.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        email.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        login.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        mdp.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        cin.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        passeport.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        utilisateurService = new UtilisateurService();
     }
 
     @FXML
     private void creerCompteAction(ActionEvent event) {
         try {
-           Utilisateur user = new Utilisateur(nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText());
-           utilisateurService.ajouter(user); 
+            Utilisateur user = new Utilisateur(nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText());
+            utilisateurService.ajouter(user);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         progress.setVisible(true);
         nom.clear();
         prenom.clear();
@@ -83,8 +81,7 @@ public class InscriptionController implements Initializable {
         passeport.clear();
         login.clear();
         mdp.clear();
-        
-        
+
     }
 
     @FXML
@@ -97,5 +94,5 @@ public class InscriptionController implements Initializable {
         signIn.show();
         signIn.setResizable(false);
     }
-    
+
 }
