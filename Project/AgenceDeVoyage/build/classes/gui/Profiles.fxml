@@ -57,26 +57,26 @@
                   </JFXButton>
                </children>
             </AnchorPane>
-            <Label layoutX="150.0" layoutY="227.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Prénom" textFill="#918dbc" />
-            <Label layoutX="150.0" layoutY="274.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Nom" textFill="#918dbc" />
-            <Label layoutX="150.0" layoutY="322.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Email" textFill="#918dbc" />
-            <Label layoutX="150.0" layoutY="419.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Passeport" textFill="#918dbc" />
-            <Label layoutX="150.0" layoutY="473.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Login" textFill="#918dbc" />
-            <Label fx:id="mdpLabel" layoutX="150.0" layoutY="534.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe" textFill="#918dbc" visible="false" />
-            <TextField fx:id="prenom" editable="false" layoutX="265.0" layoutY="227.0" prefHeight="25.0" prefWidth="197.0" />
-            <TextField fx:id="nom" editable="false" layoutX="265.0" layoutY="274.0" prefHeight="25.0" prefWidth="197.0" />
-            <TextField fx:id="email" editable="false" layoutX="265.0" layoutY="322.0" prefHeight="25.0" prefWidth="197.0" />
-            <TextField fx:id="passeport" editable="false" layoutX="265.0" layoutY="419.0" prefHeight="25.0" prefWidth="197.0" />
-            <TextField fx:id="login" editable="false" layoutX="265.0" layoutY="473.0" prefHeight="25.0" prefWidth="197.0" />
-            <TextField fx:id="mdp" editable="false" layoutX="265.0" layoutY="534.0" prefHeight="25.0" prefWidth="197.0" visible="false" />
             <Label layoutX="14.0" layoutY="171.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Détails profil" />
+            <Label layoutX="150.0" layoutY="227.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Prénom" textFill="#918dbc" />
+            <TextField fx:id="prenom" editable="false" layoutX="265.0" layoutY="227.0" prefHeight="25.0" prefWidth="197.0" />
+            <Label layoutX="150.0" layoutY="274.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Nom" textFill="#918dbc" />
+            <TextField fx:id="nom" editable="false" layoutX="265.0" layoutY="274.0" prefHeight="25.0" prefWidth="197.0" />
+            <Label layoutX="150.0" layoutY="322.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Email" textFill="#918dbc" />
+            <TextField fx:id="email" editable="false" layoutX="265.0" layoutY="322.0" prefHeight="25.0" prefWidth="197.0" />
+            <Label layoutX="150.0" layoutY="369.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="CIN" textFill="#918dbc" />
+            <TextField fx:id="cin" editable="false" layoutX="265.0" layoutY="369.0" prefHeight="25.0" prefWidth="197.0" />
+            <Label layoutX="150.0" layoutY="419.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Passeport" textFill="#918dbc" />
+            <TextField fx:id="passeport" editable="false" layoutX="265.0" layoutY="419.0" prefHeight="25.0" prefWidth="197.0" />
+            <Label layoutX="150.0" layoutY="473.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Login" textFill="#918dbc" />
+            <TextField fx:id="login" editable="false" layoutX="265.0" layoutY="473.0" prefHeight="25.0" prefWidth="197.0" />
+            <Label fx:id="mdpLabel" layoutX="150.0" layoutY="534.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe" textFill="#918dbc" visible="false" />
+            <TextField fx:id="mdp" editable="false" layoutX="265.0" layoutY="534.0" prefHeight="25.0" prefWidth="197.0" visible="false" />
             <JFXButton fx:id="sauvegarder" layoutX="177.0" layoutY="590.0" onAction="#sauvegarderAction" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #3C8DBC;" text="Sauvegarder" textFill="WHITE" visible="false">
                <font>
                   <Font name="Roboto Medium" size="15.0" />
                </font>
             </JFXButton>
-            <TextField fx:id="cin" editable="false" layoutX="265.0" layoutY="369.0" prefHeight="25.0" prefWidth="197.0" />
-            <Label layoutX="150.0" layoutY="369.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="CIN" textFill="#918dbc" />
          </children>
       </AnchorPane>
       <Separator layoutX="13.0" layoutY="268.0" prefHeight="4.0" prefWidth="1213.0" />
