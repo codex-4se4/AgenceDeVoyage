@@ -30,33 +30,34 @@ public class DashboardController implements Initializable {
     @FXML
     private AnchorPane holderPane;
     @FXML
-    private JFXButton btnHome;
-    @FXML
     private JFXButton btnPricing;
     @FXML
     private JFXButton btnContacts;
     @FXML
     private JFXButton btnWidgets;
     @FXML
-    private JFXButton btnProfile;
-    @FXML
     private JFXButton btnAlerts;
 
-    AnchorPane contacts, alerts, pricing, profiles, widgets, controls;
+    AnchorPane utilisateurs, alerts, pricing, profiles, widgets, controls;
     @FXML
     private JFXButton btnControls;
 
     private FXMLLoader loader;
+    @FXML
+    private JFXButton btnContacts21;
+    @FXML
+    private JFXButton btnUtilisateurs;
+    @FXML
+    private JFXButton btnContacts2;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //Load all fxmls in a cache
         try {
-            contacts = FXMLLoader.load(getClass().getResource("/gui/Contacts.fxml"));
+            utilisateurs = FXMLLoader.load(getClass().getResource("/gui/Utilisateurs.fxml"));
             alerts = FXMLLoader.load(getClass().getResource("/gui/Alerts.fxml"));
             pricing = FXMLLoader.load(getClass().getResource("/gui/Pricing.fxml"));
-            //profiles = FXMLLoader.load(getClass().getResource("/gui/Profiles.fxml"));
-            loader = new FXMLLoader(getClass().getResource("/gui/Profiles.fxml"));
+            loader = new FXMLLoader(getClass().getResource("/gui/Profil.fxml"));
             profiles = loader.load();
             widgets = FXMLLoader.load(getClass().getResource("/gui/Widgets.fxml"));
             controls = FXMLLoader.load(getClass().getResource("/gui/Controls.fxml"));
@@ -87,8 +88,8 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    private void switchContacts(ActionEvent event) {
-        setNode(contacts);
+    private void switchUtilisateurs(ActionEvent event) {
+        setNode(utilisateurs);
     }
 
     @FXML
@@ -112,7 +113,11 @@ public class DashboardController implements Initializable {
     }
 
     public void setCurrentUser(Utilisateur u) {
-        ProfilesController profilesController = loader.getController();
-        profilesController.setUserInformation(u);
+        ProfilController profilController = loader.getController();
+        profilController.setUserInformation(u);
+    }
+
+    @FXML
+    private void switchContacts(ActionEvent event) {
     }
 }
