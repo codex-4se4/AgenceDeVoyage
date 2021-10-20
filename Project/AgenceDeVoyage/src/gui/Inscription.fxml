@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
@@ -9,72 +10,91 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="607.0" style="-fx-background-color: #0c1326;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InscriptionController">
-   <children>
-      <JFXTextField fx:id="nom" layoutX="189.0" layoutY="132.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre nom" styleClass="-fx-prompt-text-fill : #a0a2ab">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="prenom" layoutX="189.0" layoutY="172.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre prénom">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="email" layoutX="189.0" layoutY="210.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre Email">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="login" layoutX="189.0" layoutY="328.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre login">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
-      <JFXPasswordField fx:id="mdp" layoutX="189.0" layoutY="367.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre mot de passe">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXPasswordField>
-      <JFXTextField fx:id="cin" layoutX="189.0" layoutY="249.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre CIN">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField fx:id="passeport" layoutX="189.0" layoutY="289.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre passeport">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXTextField>
-      <JFXButton layoutX="206.0" layoutY="435.0" onAction="#creerCompteAction" prefHeight="37.0" prefWidth="195.0" style="-fx-background-color: #2196f3;" text="Créer un compte" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="484.0" layoutY="14.0" onAction="#authentifierAction" prefHeight="30.0" prefWidth="112.0" style="-fx-background-color: #2D3447; -fx-border-color: #a0a2ab;" text="S'authentifier" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </JFXButton>
-      <ImageView fitHeight="81.0" fitWidth="200.0" layoutX="256.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/van.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="241.0" layoutY="76.0" prefHeight="44.0" prefWidth="135.0" text="Tunsia" textAlignment="CENTER" textFill="#2196f3">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <Label layoutX="308.0" layoutY="76.0" prefHeight="44.0" prefWidth="135.0" text="Trip" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="progress" fitHeight="54.0" fitWidth="154.0" layoutX="268.0" layoutY="487.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/loader.gif" />
-         </image>
-      </ImageView>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InscriptionController">
+    <children>
+        <AnchorPane layoutY="-3.0" prefHeight="556.0" prefWidth="175.0" style="-fx-background-color: #0c1326;">
+            <children>
+                <ImageView fitHeight="81.0" fitWidth="200.0" layoutX="63.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/van.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="48.0" layoutY="73.0" prefHeight="44.0" prefWidth="135.0" text="Tunsia" textAlignment="CENTER" textFill="#2196f3">
+                    <font>
+                        <Font size="21.0" />
+                    </font>
+                </Label>
+                <Label layoutX="115.0" layoutY="73.0" prefHeight="44.0" prefWidth="135.0" text="Trip" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="21.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="247.0" prefHeight="549.0" prefWidth="823.0">
+            <children>
+                <JFXTextField fx:id="prenom" layoutX="53.0" layoutY="137.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre prénom">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="nom" layoutX="53.0" layoutY="209.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre nom" styleClass="-fx-prompt-text-fill : #a0a2ab">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="login" layoutX="53.0" layoutY="291.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre login">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="email" layoutX="53.0" layoutY="368.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre Email">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="cin" layoutX="430.0" layoutY="137.0" prefHeight="30.0" prefWidth="251.0" promptText="Entrez votre CIN">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="passeport" layoutX="430.0" layoutY="209.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre passeport">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXTextField>
+                <JFXPasswordField fx:id="mdp" layoutX="430.0" layoutY="291.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre mot de passe">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXPasswordField>
+                <JFXTextField fx:id="pathPhoto" editable="false" layoutX="430.0" layoutY="371.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre prénom" text="Uploader votre photo">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXTextField>
+                <JFXButton fx:id="browse" buttonType="RAISED" layoutX="702.0" layoutY="386.0" onAction="#browseAction" style="-fx-background-color: #2196f3;" text="Browse" />
+                <JFXButton buttonType="RAISED" layoutX="104.0" layoutY="446.0" onAction="#creerCompteAction" prefHeight="37.0" prefWidth="195.0" style="-fx-background-color: #2196f3;" text="Créer un compte" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" layoutX="369.0" layoutY="446.0" onAction="#authentifierAction" prefHeight="37.0" prefWidth="195.0" style="-fx-background-color: #2196f3;" text="S'authentifier" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXButton>
+                <ImageView fx:id="progress" fitHeight="54.0" fitWidth="154.0" layoutX="333.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/loader.gif" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="photo" fitHeight="118.0" fitWidth="200.0" layoutX="45.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/defaultUser.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
