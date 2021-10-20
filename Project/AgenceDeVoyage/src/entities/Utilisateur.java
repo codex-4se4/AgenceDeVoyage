@@ -6,6 +6,7 @@
 package entities;
 
 import java.sql.Blob;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -23,7 +24,7 @@ public class Utilisateur {
     private String mdp;
     private Blob photo;
 // permet a la BD de différencier user et admin
-    
+
     public Utilisateur(int id, String nom, String prenom, String email, String cin, String passeport, String login, String mdp) {
         this.id = id;
         this.nom = nom;
@@ -32,7 +33,7 @@ public class Utilisateur {
         this.cin = cin;
         this.passeport = passeport;
         this.login = login;
-        this.mdp = mdp;
+        this.mdp = DigestUtils.shaHex(mdp);
     }
 
     public Utilisateur(String nom, String prenom, String email, String cin, String passeport, String login, String mdp) {
@@ -42,7 +43,7 @@ public class Utilisateur {
         this.cin = cin;
         this.passeport = passeport;
         this.login = login;
-        this.mdp = mdp;
+        this.mdp = DigestUtils.shaHex(mdp);
     }
 
     public Utilisateur() {
