@@ -26,59 +26,59 @@
 <AnchorPane id="AnchorPane" fx:id="paneHolder" prefHeight="713.0" prefWidth="1219.0" stylesheets="@custom.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProfilController">
     <children>
         <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Profil" />
-      <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
-      <AnchorPane layoutX="6.0" layoutY="63.0" prefHeight="644.0" prefWidth="1187.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-color: #3C8DBC; -fx-border-radius: 3; -fx-border-width: 4 0 0 0; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-padding: 4;">
-         <children>
-            <AnchorPane layoutY="4.0" prefHeight="153.0" prefWidth="1180.0" style="-fx-background-color: #0c1326;">
-               <children>
-                  <Circle fill="#d7dadd" layoutX="83.0" layoutY="77.0" radius="57.0" stroke="#a49f9f" strokeType="INSIDE" />
-                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="59.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../icons/profile1.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="nomComplet" layoutX="140.0" layoutY="65.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #ffffff; -fx-font-size: 16; -fx-font-weight: bold; -fx-alignment: center;" text="Dan Mlayah" />
-                  <Separator layoutX="173.0" layoutY="96.0" prefHeight="4.0" prefWidth="244.0" />
-                  <Separator layoutX="173.0" layoutY="137.0" prefHeight="4.0" prefWidth="244.0" />
-                  <Label layoutX="174.0" layoutY="108.0" prefHeight="17.0" prefWidth="94.0" text="Réservations" textFill="WHITE">
-                     <font>
-                        <Font name="Roboto Medium" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="356.0" layoutY="108.0" prefHeight="17.0" prefWidth="60.0" text="1,344" textFill="#918dbc">
-                     <font>
-                        <Font name="Roboto Medium" size="14.0" />
-                     </font>
-                  </Label>
-                  <JFXButton fx:id="editer" layoutX="992.0" layoutY="61.0" onAction="#editerAction" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #3C8DBC;" text="Editer profil" textFill="WHITE">
-                     <font>
+        <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
+        <AnchorPane layoutX="6.0" layoutY="63.0" prefHeight="644.0" prefWidth="1187.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-color: #3C8DBC; -fx-border-radius: 3; -fx-border-width: 4 0 0 0; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-padding: 4;">
+            <children>
+                <AnchorPane layoutY="4.0" prefHeight="153.0" prefWidth="1180.0" style="-fx-background-color: #0c1326;">
+                    <children>
+                        <Circle fill="#d7dadd" layoutX="83.0" layoutY="77.0" radius="57.0" stroke="#a49f9f" strokeType="INSIDE" />
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="59.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icons/profile1.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="nomComplet" layoutX="140.0" layoutY="65.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #ffffff; -fx-font-size: 16; -fx-font-weight: bold; -fx-alignment: center;" text="Dan Mlayah" />
+                        <Separator layoutX="173.0" layoutY="96.0" prefHeight="4.0" prefWidth="244.0" />
+                        <Separator layoutX="173.0" layoutY="137.0" prefHeight="4.0" prefWidth="244.0" />
+                        <Label layoutX="174.0" layoutY="108.0" prefHeight="17.0" prefWidth="94.0" text="Réservations" textFill="WHITE">
+                            <font>
+                                <Font name="Roboto Medium" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="356.0" layoutY="108.0" prefHeight="17.0" prefWidth="60.0" text="1,344" textFill="#918dbc">
+                            <font>
+                                <Font name="Roboto Medium" size="14.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="editer" layoutX="992.0" layoutY="61.0" onAction="#editerAction" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #3C8DBC;" text="Editer profil" textFill="WHITE">
+                            <font>
+                                <Font name="Roboto Medium" size="15.0" />
+                            </font>
+                        </JFXButton>
+                    </children>
+                </AnchorPane>
+                <Label layoutX="14.0" layoutY="171.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Détails profil" />
+                <Label layoutX="150.0" layoutY="227.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Prénom" textFill="#918dbc" />
+                <TextField fx:id="prenom" editable="false" layoutX="265.0" layoutY="227.0" prefHeight="25.0" prefWidth="197.0" />
+                <Label layoutX="150.0" layoutY="274.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Nom" textFill="#918dbc" />
+                <TextField fx:id="nom" editable="false" layoutX="265.0" layoutY="274.0" prefHeight="25.0" prefWidth="197.0" />
+                <Label layoutX="150.0" layoutY="322.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Email" textFill="#918dbc" />
+                <TextField fx:id="email" editable="false" layoutX="265.0" layoutY="322.0" prefHeight="25.0" prefWidth="197.0" />
+                <Label layoutX="150.0" layoutY="369.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="CIN" textFill="#918dbc" />
+                <TextField fx:id="cin" editable="false" layoutX="265.0" layoutY="369.0" prefHeight="25.0" prefWidth="197.0" />
+                <Label layoutX="150.0" layoutY="419.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Passeport" textFill="#918dbc" />
+                <TextField fx:id="passeport" editable="false" layoutX="265.0" layoutY="419.0" prefHeight="25.0" prefWidth="197.0" />
+                <Label layoutX="150.0" layoutY="473.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Login" textFill="#918dbc" />
+                <TextField fx:id="login" editable="false" layoutX="265.0" layoutY="473.0" prefHeight="25.0" prefWidth="197.0" />
+                <Label fx:id="mdpLabel" layoutX="150.0" layoutY="534.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe" textFill="#918dbc" visible="false" />
+                <TextField fx:id="mdp" editable="false" layoutX="265.0" layoutY="534.0" prefHeight="25.0" prefWidth="197.0" visible="false" />
+                <JFXButton fx:id="sauvegarder" layoutX="177.0" layoutY="590.0" onAction="#sauvegarderAction" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #3C8DBC;" text="Sauvegarder" textFill="WHITE" visible="false">
+                    <font>
                         <Font name="Roboto Medium" size="15.0" />
-                     </font>
-                  </JFXButton>
-               </children>
-            </AnchorPane>
-            <Label layoutX="14.0" layoutY="171.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Détails profil" />
-            <Label layoutX="150.0" layoutY="227.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Prénom" textFill="#918dbc" />
-            <TextField fx:id="prenom" editable="false" layoutX="265.0" layoutY="227.0" prefHeight="25.0" prefWidth="197.0" />
-            <Label layoutX="150.0" layoutY="274.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Nom" textFill="#918dbc" />
-            <TextField fx:id="nom" editable="false" layoutX="265.0" layoutY="274.0" prefHeight="25.0" prefWidth="197.0" />
-            <Label layoutX="150.0" layoutY="322.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Email" textFill="#918dbc" />
-            <TextField fx:id="email" editable="false" layoutX="265.0" layoutY="322.0" prefHeight="25.0" prefWidth="197.0" />
-            <Label layoutX="150.0" layoutY="369.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="CIN" textFill="#918dbc" />
-            <TextField fx:id="cin" editable="false" layoutX="265.0" layoutY="369.0" prefHeight="25.0" prefWidth="197.0" />
-            <Label layoutX="150.0" layoutY="419.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Passeport" textFill="#918dbc" />
-            <TextField fx:id="passeport" editable="false" layoutX="265.0" layoutY="419.0" prefHeight="25.0" prefWidth="197.0" />
-            <Label layoutX="150.0" layoutY="473.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Login" textFill="#918dbc" />
-            <TextField fx:id="login" editable="false" layoutX="265.0" layoutY="473.0" prefHeight="25.0" prefWidth="197.0" />
-            <Label fx:id="mdpLabel" layoutX="150.0" layoutY="534.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe" textFill="#918dbc" visible="false" />
-            <TextField fx:id="mdp" editable="false" layoutX="265.0" layoutY="534.0" prefHeight="25.0" prefWidth="197.0" visible="false" />
-            <JFXButton fx:id="sauvegarder" layoutX="177.0" layoutY="590.0" onAction="#sauvegarderAction" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #3C8DBC;" text="Sauvegarder" textFill="WHITE" visible="false">
-               <font>
-                  <Font name="Roboto Medium" size="15.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </AnchorPane>
-      <Separator layoutX="13.0" layoutY="268.0" prefHeight="4.0" prefWidth="1213.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+        <Separator layoutX="13.0" layoutY="268.0" prefHeight="4.0" prefWidth="1213.0" />
     </children>
 </AnchorPane>
