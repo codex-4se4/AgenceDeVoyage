@@ -27,6 +27,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -54,7 +55,7 @@ public class LoginController implements Initializable {
     @FXML
     private void connexionAction(ActionEvent e) throws SQLException, IOException {
         progress.setVisible(true);
-        String SQL = "SELECT * FROM `utilisateur` WHERE login= " + "'" + username.getText() + "' AND mdp='" + password.getText() + "'";
+        String SQL = "SELECT * FROM `utilisateur` WHERE login= " + "'" + username.getText() + "' AND mdp='" + DigestUtils.shaHex(password.getText()) + "'";
         ResultSet rs;
 
         rs = loginQuery(SQL);
