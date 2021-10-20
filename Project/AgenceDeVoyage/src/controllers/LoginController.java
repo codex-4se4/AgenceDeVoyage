@@ -66,7 +66,6 @@ public class LoginController implements Initializable {
         }
         login.getScene().getWindow().hide();
         Stage dashboard = new Stage();
-        //Parent root = FXMLLoader.load(getClass().getResource("/gui/Dashboard.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Dashboard.fxml"));
         Parent root = (Parent) loader.load();
         DashboardController dashboardController = loader.getController();
@@ -91,12 +90,12 @@ public class LoginController implements Initializable {
     @FXML
     private void inscriptionAction(ActionEvent event) throws IOException {
         login.getScene().getWindow().hide();
-        Stage signup = new Stage();
+        Stage signUp = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/gui/Inscription.fxml"));
         Scene scene = new Scene(root);
-        signup.setScene(scene);
-        signup.show();
-        signup.setResizable(false);
+        signUp.setScene(scene);
+        signUp.show();
+        signUp.setResizable(false);
     }
 
     private ResultSet loginQuery(String query) {
