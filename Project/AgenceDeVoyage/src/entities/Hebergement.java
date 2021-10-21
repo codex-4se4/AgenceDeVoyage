@@ -28,7 +28,10 @@ public class Hebergement {
         this.avecPlage = avecPlage;
         this.adresse = adresse;
       }
-    public Hebergement(){}
+    public Hebergement(){
+    }
+
+    
 
     public int getId() {
         return id;
@@ -84,6 +87,10 @@ public class Hebergement {
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+
+    void add(Hebergement hebergement) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    
