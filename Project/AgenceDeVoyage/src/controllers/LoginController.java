@@ -18,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,6 +53,8 @@ public class LoginController implements Initializable {
     @FXML
     private Label echec;
 
+    private Preferences preferences;
+
     @FXML
     private void connexionAction(ActionEvent e) throws SQLException, IOException {
         progress.setVisible(true);
@@ -64,6 +67,14 @@ public class LoginController implements Initializable {
             echec.setVisible(true);
 
             return;
+        }
+        if (remember.isSelected()) {
+            preferences.put("username", username.getText());
+            preferences.put("password", password.getText());
+
+        } else {
+            preferences.put("username", "");
+            preferences.put("password", "");
         }
         login.getScene().getWindow().hide();
         Stage dashboard = new Stage();
@@ -78,6 +89,7 @@ public class LoginController implements Initializable {
         dashboard.setScene(scene);
         dashboard.show();
         dashboard.setResizable(false);
+
     }
 
     @Override
@@ -86,6 +98,9 @@ public class LoginController implements Initializable {
         echec.setVisible(false);
         username.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         password.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        preferences = Preferences.userNodeForPackage(LoginController.class);
+        username.setText(preferences.get("username", ""));
+        password.setText(preferences.get("password", ""));
     }
 
     @FXML
