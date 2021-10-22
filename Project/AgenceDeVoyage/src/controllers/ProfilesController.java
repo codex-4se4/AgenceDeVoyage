@@ -38,8 +38,51 @@ public class ProfilesController implements Initializable {
     private Label mdpLabel;
     @FXML
     private TextField prenom;
-    @FXML
-    private TextField nom;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @
     @FXML
     private TextField email;
     @FXML
