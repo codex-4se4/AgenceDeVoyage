@@ -5,21 +5,30 @@
  */
 package controllers;
 
+import com.jfoenix.controls.JFXButton;
 import entities.Utilisateur;
 import services.UtilisateurService;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import javax.imageio.ImageIO;
 
 // remember me consomamtion API &&&&&  mot de passe haché sur la BD
 /**
@@ -47,6 +56,12 @@ public class InscriptionController implements Initializable {
     UtilisateurService utilisateurService;
     @FXML
     private ImageView progress;
+    @FXML
+    private JFXTextField pathPhoto;
+    @FXML
+    private ImageView photo;
+    @FXML
+    private JFXButton browse;
 
     /**
      * Initializes the controller class.
@@ -61,6 +76,7 @@ public class InscriptionController implements Initializable {
         mdp.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         cin.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         passeport.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        pathPhoto.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         utilisateurService = new UtilisateurService();
     }
 
@@ -93,6 +109,21 @@ public class InscriptionController implements Initializable {
         signIn.setScene(scene);
         signIn.show();
         signIn.setResizable(false);
+    }
+
+    @FXML
+    private void browseAction(ActionEvent event) throws IOException {
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().addAll(new ExtensionFilter("PNG", "*.png"), new ExtensionFilter("JPG", "*.jpg"),
+                new ExtensionFilter("JPEG", "*.jpeg"));
+        File file = fc.showOpenDialog(null);
+        if (file != null) {
+            pathPhoto.setText(file.getAbsolutePath());
+            Image image = SwingFXUtils.toFXImage(ImageIO.read(file), null);
+
+            photo.setImage(image);
+
+        }
     }
 
 }

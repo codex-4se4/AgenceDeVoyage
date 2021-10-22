@@ -16,13 +16,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import services.UtilisateurService;
 
 /**
  * FXML Controller class
  *
  * @author bourg
  */
-public class ProfilesController implements Initializable {
+public class ProfilController implements Initializable {
 
     @FXML
     private AnchorPane paneHolder;
@@ -98,15 +99,21 @@ public class ProfilesController implements Initializable {
     @FXML
     private JFXButton sauvegarder;
 
+    UtilisateurService utilisateurService;
+
+    private int currentUserId;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        utilisateurService = new UtilisateurService();
 
     }
 
     public void setUserInformation(Utilisateur u) {
+        currentUserId = u.getId();
         nomComplet.setText(u.getPrenom() + " " + u.getNom());
         prenom.setText(u.getPrenom());
         nom.setText(u.getNom());
@@ -127,7 +134,9 @@ public class ProfilesController implements Initializable {
         editer.setVisible(false);
         sauvegarder.setVisible(true);
         mdp.setVisible(true);
+        mdp.setEditable(true);
         mdpLabel.setVisible(true);
+
     }
 
     @FXML
@@ -141,6 +150,10 @@ public class ProfilesController implements Initializable {
         editer.setVisible(true);
         sauvegarder.setVisible(false);
         mdp.setVisible(false);
+        mdp.setEditable(false);
         mdpLabel.setVisible(false);
+        Utilisateur user = new Utilisateur(currentUserId, nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(),
+                login.getText(), mdp.getText());
+        utilisateurService.modifier(user);
     }
 }

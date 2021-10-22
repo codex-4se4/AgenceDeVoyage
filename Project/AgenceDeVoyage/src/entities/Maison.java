@@ -10,5 +10,6 @@ package entities;
  * @author Jawher-Louisa
  */
 public class Maison extends Hebergement {
+    private boolean avecPetitDej;
     
 }

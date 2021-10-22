@@ -18,6 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +28,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -51,10 +53,12 @@ public class LoginController implements Initializable {
     @FXML
     private Label echec;
 
+    private Preferences preferences;
+
     @FXML
     private void connexionAction(ActionEvent e) throws SQLException, IOException {
         progress.setVisible(true);
-        String SQL = "SELECT * FROM `utilisateur` WHERE login= " + "'" + username.getText() + "' AND mdp='" + password.getText() + "'";
+        String SQL = "SELECT * FROM `utilisateur` WHERE login= " + "'" + username.getText() + "' AND mdp='" + DigestUtils.shaHex(password.getText()) + "'";
         ResultSet rs;
 
         rs = loginQuery(SQL);
@@ -64,9 +68,16 @@ public class LoginController implements Initializable {
 
             return;
         }
+        if (remember.isSelected()) {
+            preferences.put("username", username.getText());
+            preferences.put("password", password.getText());
+
+        } else {
+            preferences.put("username", "");
+            preferences.put("password", "");
+        }
         login.getScene().getWindow().hide();
         Stage dashboard = new Stage();
-        //Parent root = FXMLLoader.load(getClass().getResource("/gui/Dashboard.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Dashboard.fxml"));
         Parent root = (Parent) loader.load();
         DashboardController dashboardController = loader.getController();
@@ -78,6 +89,7 @@ public class LoginController implements Initializable {
         dashboard.setScene(scene);
         dashboard.show();
         dashboard.setResizable(false);
+
     }
 
     @Override
@@ -86,17 +98,20 @@ public class LoginController implements Initializable {
         echec.setVisible(false);
         username.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         password.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
+        preferences = Preferences.userNodeForPackage(LoginController.class);
+        username.setText(preferences.get("username", ""));
+        password.setText(preferences.get("password", ""));
     }
 
     @FXML
     private void inscriptionAction(ActionEvent event) throws IOException {
         login.getScene().getWindow().hide();
-        Stage signup = new Stage();
+        Stage signUp = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/gui/Inscription.fxml"));
         Scene scene = new Scene(root);
-        signup.setScene(scene);
-        signup.show();
-        signup.setResizable(false);
+        signUp.setScene(scene);
+        signUp.show();
+        signUp.setResizable(false);
     }
 
     private ResultSet loginQuery(String query) {
