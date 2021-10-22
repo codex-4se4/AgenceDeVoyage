@@ -11,4 +11,7 @@ package entities;
  */
 public class Hotel extends Hebergement {
     
+    private int nbEtoiles;
+    
+    
 }
