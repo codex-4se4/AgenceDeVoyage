@@ -11,14 +11,14 @@ import java.sql.Date;
  *
  * @author HP
  */
-public class partenariat {
+public class Partenariat {
     private int id;
     private String nom;
     private String adresse;
     private Date ContratDebut;
     private Date ContratFin;
     
-    public partenariat(int id,String nom,String adresse,Date ContratDebut,Date ContratFin){
+    public Partenariat(int id,String nom,String adresse,Date ContratDebut,Date ContratFin){
       this.id=id;
       this.nom=nom;
       this.adresse=adresse;
@@ -64,6 +64,10 @@ public class partenariat {
 
     public void setContratFin(Date ContratFin) {
         this.ContratFin = ContratFin;
+    }
+
+    public void add(Partenariat partenariat) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
