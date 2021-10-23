@@ -50,8 +50,6 @@ public class UtilisateursController implements Initializable {
     @FXML
     private TextField mdp;
     @FXML
-    private TableColumn<Utilisateur, Integer> colId;
-    @FXML
     private TableColumn<Utilisateur, String> colNom;
     @FXML
     private TableColumn<Utilisateur, String> colPrenom;
@@ -87,7 +85,6 @@ public class UtilisateursController implements Initializable {
 
     public void showUtilisateurs() {
         ObservableList<Utilisateur> utilisateurs = utilisateurService.consulter();
-        colId.setCellValueFactory(new PropertyValueFactory<Utilisateur, Integer>("id"));
         colNom.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("nom"));
         colPrenom.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("prenom"));
         colEmail.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("email"));
@@ -102,7 +99,8 @@ public class UtilisateursController implements Initializable {
     private void ajouterAction(ActionEvent event) {
         try {
             if (nom.getText().isEmpty() || prenom.getText().isEmpty() || email.getText().isEmpty()
-                    || cin.getText().isEmpty() || passeport.getText().isEmpty() || login.getText().isEmpty()) {
+                    || cin.getText().isEmpty() || passeport.getText().isEmpty() 
+                    || login.getText().isEmpty() || mdp.getText().isEmpty()) {
                 throw new Exception("Les champs à insérer ne peuvent pas être vides");
             }
             Utilisateur user = new Utilisateur(nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText());

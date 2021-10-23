@@ -18,22 +18,22 @@ import javafx.collections.ObservableList;
  * @author bourg
  */
 public class UtilisateurService implements IService<Utilisateur> {
-    
+
     @Override
     public void ajouter(Utilisateur u) {
         String SQL = "INSERT INTO `utilisateur` (`nom`, `prenom`, `email`,`cin`,`passeport`,`login`, `mdp`) VALUES (" + "'" + u.getNom() + "', '" + u.getPrenom() + "', '"
                 + u.getEmail() + "','" + u.getCin() + "','" + u.getPasseport() + "','" + u.getLogin() + "','" + u.getMdp() + "')";
         executeQuery(SQL);
     }
-    
+
     @Override
     public boolean supprimer(Utilisateur u) {
         String SQL = "DELETE FROM `utilisateur` WHERE id=" + u.getId();
         executeQuery(SQL);
         return true;
-        
+
     }
-    
+
     @Override
     public boolean modifier(Utilisateur u) {
         String SQL = "UPDATE `utilisateur` SET nom ='" + u.getNom() + "', prenom ='" + u.getPrenom()
@@ -42,7 +42,7 @@ public class UtilisateurService implements IService<Utilisateur> {
         executeQuery(SQL);
         return true;
     }
-    
+
     @Override
     public ObservableList<Utilisateur> consulter() {
         ObservableList<Utilisateur> utilisateurs = FXCollections.observableArrayList();
@@ -58,14 +58,37 @@ public class UtilisateurService implements IService<Utilisateur> {
                 utilisateur = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
                         rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"));
                 utilisateurs.add(utilisateur);
-                
+
             }
-            
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return utilisateurs;
-        
+
     }
-    
+
+    public Utilisateur consulterParEmail(String email) {
+        Connection conn = DBConnection.getInstance().getConnection();
+        String query = "SELECT * FROM `utilisateur` where email = '" + email + "'";
+        Statement st;
+        ResultSet rs;
+        Utilisateur utilisateur = null;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            if (!rs.next()) {
+                return null;
+            }
+            utilisateur = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
+                    rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"));
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return utilisateur;
+
+    }
+
 }
