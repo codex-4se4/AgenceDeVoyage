@@ -41,51 +41,8 @@ public class ProfilController implements Initializable {
     private Label mdpLabel;
     @FXML
     private TextField prenom;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    @
+    @FXML
+    private TextField nom;
     @FXML
     private TextField email;
     @FXML
@@ -145,8 +102,8 @@ public class ProfilController implements Initializable {
 
     @FXML
     private void editerAction(MouseEvent event) {
-        
-         prenom.setEditable(true);
+
+        prenom.setEditable(true);
         nom.setEditable(true);
         email.setEditable(true);
         cin.setEditable(true);
