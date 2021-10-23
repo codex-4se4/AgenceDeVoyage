@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import entities.Hebergement;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -59,12 +60,8 @@ public class HebergementController implements Initializable {
             public void handle(ActionEvent event) {
             
             HebergementService hs;
-            try {
-                hs = new HebergementService() {};
-                hs.ajouter(new Hebergement(Integer.parseInt(nbChambre.getText()),Integer.parseInt(nbPersonne.getText()),Piscine.isSelected(),Parking.isSelected(),Plage.isSelected(),adresse.getText()));
-            } catch (SQLException ex) {
-                Logger.getLogger(HebergementController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            hs = new HebergementService() {};
+            hs.ajouter(new Hebergement(Integer.parseInt(nbChambre.getText()),Integer.parseInt(nbPersonne.getText()),Piscine.isSelected(),Parking.isSelected(),Plage.isSelected(),adresse.getText()));
             
             try {
                 btn.getScene().setRoot(FXMLLoader.load(getClass().getResource("FXMLaffiche.fxml")));
@@ -73,7 +70,7 @@ public class HebergementController implements Initializable {
             }
         }
         });
-        
+       
     
     }
 }
