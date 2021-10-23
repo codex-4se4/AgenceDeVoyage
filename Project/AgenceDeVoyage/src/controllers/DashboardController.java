@@ -128,7 +128,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     private void deconnectAction(ActionEvent event) throws IOException {
-        profiles.getScene().getWindow().hide();
+        holderPane.getScene().getWindow().hide();
         Stage login = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/gui/Login.fxml"));
         Scene scene = new Scene(root, 607, 409);
