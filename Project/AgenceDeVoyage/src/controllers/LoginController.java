@@ -47,13 +47,13 @@ public class LoginController implements Initializable {
     @FXML
     private JFXCheckBox remember;
     @FXML
-    private JFXButton forgotpassword;
-    @FXML
     private ImageView progress;
     @FXML
     private Label echec;
 
     private Preferences preferences;
+    @FXML
+    private JFXButton motDePasseOublie;
 
     @FXML
     private void connexionAction(ActionEvent e) throws SQLException, IOException {
@@ -126,6 +126,17 @@ public class LoginController implements Initializable {
             return null;
         }
         return rs;
+    }
+
+    @FXML
+    private void motDePasseOublieAction(ActionEvent event) throws IOException {
+        login.getScene().getWindow().hide();
+        Stage motDePasseOublie = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/MotDePasseOublie.fxml"));
+        Scene scene = new Scene(root);
+        motDePasseOublie.setScene(scene);
+        motDePasseOublie.show();
+        motDePasseOublie.setResizable(false);
     }
 
 }
