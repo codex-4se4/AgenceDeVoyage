@@ -15,6 +15,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import services.UtilisateurService;
 
@@ -52,7 +54,7 @@ public class ProfilController implements Initializable {
     @FXML
     private TextField cin;
     @FXML
-    private JFXButton editer;
+    private ImageView editer;
     @FXML
     private JFXButton sauvegarder;
 
@@ -81,22 +83,6 @@ public class ProfilController implements Initializable {
     }
 
     @FXML
-    private void editerAction(ActionEvent event) {
-        prenom.setEditable(true);
-        nom.setEditable(true);
-        email.setEditable(true);
-        cin.setEditable(true);
-        passeport.setEditable(true);
-        login.setEditable(true);
-        editer.setVisible(false);
-        sauvegarder.setVisible(true);
-        mdp.setVisible(true);
-        mdp.setEditable(true);
-        mdpLabel.setVisible(true);
-
-    }
-
-    @FXML
     private void sauvegarderAction(ActionEvent event) {
         prenom.setEditable(false);
         nom.setEditable(false);
@@ -112,5 +98,21 @@ public class ProfilController implements Initializable {
         Utilisateur user = new Utilisateur(currentUserId, nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(),
                 login.getText(), mdp.getText());
         utilisateurService.modifier(user);
+    }
+
+    @FXML
+    private void editerAction(MouseEvent event) {
+        
+         prenom.setEditable(true);
+        nom.setEditable(true);
+        email.setEditable(true);
+        cin.setEditable(true);
+        passeport.setEditable(true);
+        login.setEditable(true);
+        editer.setVisible(false);
+        sauvegarder.setVisible(true);
+        mdp.setVisible(true);
+        mdp.setEditable(true);
+        mdpLabel.setVisible(true);
     }
 }
