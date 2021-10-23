@@ -37,7 +37,7 @@
             <Font size="15.0" />
          </font>
       </JFXCheckBox>
-      <JFXButton fx:id="forgotpassword" layoutX="197.0" layoutY="312.0" prefHeight="25.0" prefWidth="223.0" text="Mot de passe oublié ? " textFill="#a0a2ab" underline="true">
+      <JFXButton fx:id="motDePasseOublie" layoutX="197.0" layoutY="312.0" onAction="#motDePasseOublieAction" prefHeight="25.0" prefWidth="223.0" text="Mot de passe oublié ? " textFill="#a0a2ab" underline="true">
          <font>
             <Font size="14.0" />
          </font>
