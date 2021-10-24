@@ -10,28 +10,27 @@ package entities;
  * @author Jawher-Louisa
  */
 public class Hebergement {
-    
-      private int id;
-      private  int nbChambres;
-      private  int nbPersonnes;
-      private  boolean avecPiscine;
-      private  boolean avecParking;
-      private  boolean avecPlage;
-      private  String adresse;
-      
-      
-      public Hebergement(int nbChambres, int nbPersonnes, boolean avecPiscine, boolean avecParking, boolean avecPlage, String adresse ) {
+
+    private int id;
+    private int nbChambres;
+    private int nbPersonnes;
+    private boolean avecPiscine;
+    private boolean avecParking;
+    private boolean avecPlage;
+    private String adresse;
+
+    public Hebergement(int id, int nbChambres, int nbPersonnes, boolean avecPiscine, boolean avecParking, boolean avecPlage, String adresse) {
+        this.id = id;
         this.nbChambres = nbChambres;
         this.nbPersonnes = nbPersonnes;
         this.avecPiscine = avecPiscine;
         this.avecParking = avecParking;
         this.avecPlage = avecPlage;
         this.adresse = adresse;
-      }
-    public Hebergement(){
     }
 
-    
+    public Hebergement() {
+    }
 
     public int getId() {
         return id;
@@ -89,13 +88,4 @@ public class Hebergement {
         this.adresse = adresse;
     }
 
-    void add(Hebergement hebergement) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
-
-   
-    
 }
-
