@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package controllers;
 
 /**
  *
- * @author Jawher-Louisa
+ * @author HP
  */
-public class Maison extends Hebergement {
-    private boolean avecPetitDej;
+public class RéservationController {
     
 }

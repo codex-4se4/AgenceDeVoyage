@@ -23,7 +23,7 @@ public class Utilisateur {
     private String login;
     private String mdp;
     private Blob photo;
-// permet a la BD de différencier user et admin
+                                                         // permet a la BD de différencier user et admin
 
     public Utilisateur(int id, String nom, String prenom, String email, String cin, String passeport, String login, String mdp) {
         this.id = id;
@@ -110,6 +110,6 @@ public class Utilisateur {
     }
 
     public void setMdp(String mdp) {
-        this.mdp = mdp;
+        this.mdp = DigestUtils.shaHex(mdp);
     }
 }

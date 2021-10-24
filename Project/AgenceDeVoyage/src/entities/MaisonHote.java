@@ -10,5 +10,6 @@ package entities;
  * @author Jawher-Louisa
  */
 public class MaisonHote extends Hebergement {
+    private float SurfaceJardin;
     
 }

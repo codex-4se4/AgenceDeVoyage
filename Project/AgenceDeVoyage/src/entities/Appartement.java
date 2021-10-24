@@ -11,4 +11,6 @@ package entities;
  */
 public class Appartement extends Hebergement{
     
+    private int numeroEtage;
+    private boolean avecAscenceur;
 }
