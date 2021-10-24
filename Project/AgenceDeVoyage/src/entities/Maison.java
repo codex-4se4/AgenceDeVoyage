@@ -10,6 +10,23 @@ package entities;
  * @author Jawher-Louisa
  */
 public class Maison extends Hebergement {
-    private boolean avecPetitDej;
-    
+
+    private float surfaceJardin;
+
+    public Maison() {
+    }
+
+    public Maison(float surfaceJardin, int id, int nbChambres, int nbPersonnes, boolean avecPiscine, boolean avecParking, boolean avecPlage, String adresse) {
+        super(id, nbChambres, nbPersonnes, avecPiscine, avecParking, avecPlage, adresse);
+        this.surfaceJardin = surfaceJardin;
+    }
+
+    public float getSurfaceJardin() {
+        return surfaceJardin;
+    }
+
+    public void setSurfaceJardin(float surfaceJardin) {
+        this.surfaceJardin = surfaceJardin;
+    }
+
 }
