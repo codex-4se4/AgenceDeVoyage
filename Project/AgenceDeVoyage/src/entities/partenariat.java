@@ -9,7 +9,7 @@ import java.sql.Date;
 
 /**
  *
- * @author HP
+ * @author Jawher-Louisa
  */
 public class Partenariat {
     private int id;
