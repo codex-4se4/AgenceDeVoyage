@@ -41,7 +41,7 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXButton btnAlerts;
 
-    AnchorPane utilisateurs, alerts, pricing, profiles, widgets, controls;
+    AnchorPane utilisateurs, alerts, pricing, profiles, widgets, controls,partenariats;
     @FXML
     private JFXButton btnControls;
 
@@ -66,6 +66,7 @@ public class DashboardController implements Initializable {
             profiles = loader.load();
             widgets = FXMLLoader.load(getClass().getResource("/gui/Widgets.fxml"));
             controls = FXMLLoader.load(getClass().getResource("/gui/Controls.fxml"));
+            partenariats=  FXMLLoader.load(getClass().getResource("/gui/partenariat.fxml")); 
             setNode(profiles);
         } catch (IOException ex) {
             Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
