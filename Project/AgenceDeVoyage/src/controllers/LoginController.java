@@ -85,7 +85,7 @@ public class LoginController implements Initializable {
                 rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"));
         dashboardController.setCurrentUser(user);
 
-        Scene scene = new Scene(root, 1365, 700);
+        Scene scene = new Scene(root, 1500, 900);
         dashboard.setScene(scene);
         dashboard.show();
         dashboard.setResizable(false);
