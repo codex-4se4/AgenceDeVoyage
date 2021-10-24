@@ -9,13 +9,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2D3447;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="gui.PartenariatController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PartenariatController">
    <children>
-      <TextField layoutX="208.0" layoutY="90.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer le nom" />
-      <TextField layoutX="208.0" layoutY="160.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer l'adresse" />
-      <TextField layoutX="208.0" layoutY="240.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer id" />
-      <Text layoutX="95.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom:">
+      <TextField fx:id="name" layoutX="208.0" layoutY="90.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer le nom" />
+      <TextField fx:id="adress" layoutX="208.0" layoutY="160.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer l'adresse" />
+      <TextField fx:id="idd" layoutX="208.0" layoutY="240.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer id" />
+      <Text fx:id="nom" layoutX="95.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom:">
          <fill>
             <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
                <stops>
@@ -25,7 +24,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Text layoutX="95.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adresse:">
+      <Text fx:id="adresse" layoutX="95.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adresse:">
          <fill>
             <LinearGradient endX="1.0" endY="0.9802955665024631" startX="1.0" startY="1.0">
                <stops>
@@ -36,7 +35,7 @@
          </fill>
       </Text>
       <Text layoutX="98.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text layoutX="89.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:">
+      <Text fx:id="id" layoutX="89.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:">
          <fill>
             <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
                <stops>
@@ -46,7 +45,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Text layoutX="79.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContratDebut:">
+      <Text fx:id="ContratDebut" layoutX="79.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContratDebut:">
          <fill>
             <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
                <stops>
@@ -56,7 +55,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Text layoutX="84.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContratFin:">
+      <Text fx:id="ContratFin" layoutX="84.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContratFin:">
          <fill>
             <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
                <stops>
@@ -66,14 +65,14 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button layoutX="135.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="ajouter" />
-      <Button layoutX="322.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="modifier" />
-      <Button layoutX="504.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="supprimer" />
-      <DatePicker layoutX="208.0" layoutY="314.0">
+      <Button fx:id="ajouter" layoutX="135.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="ajouter" />
+      <Button fx:id="modifier" layoutX="322.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="modifier" />
+      <Button fx:id="supprimer" layoutX="504.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="supprimer" />
+      <DatePicker fx:id="Debut" layoutX="208.0" layoutY="314.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </DatePicker>
-      <DatePicker layoutX="208.0" layoutY="382.0" />
+      <DatePicker fx:id="Fin" layoutX="208.0" layoutY="382.0" />
    </children>
 </AnchorPane>
