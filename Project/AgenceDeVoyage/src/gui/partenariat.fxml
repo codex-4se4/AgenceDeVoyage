@@ -13,7 +13,6 @@
    <children>
       <TextField fx:id="name" layoutX="208.0" layoutY="90.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer le nom" />
       <TextField fx:id="adress" layoutX="208.0" layoutY="160.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer l'adresse" />
-      <TextField fx:id="idd" layoutX="208.0" layoutY="240.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer id" />
       <Text fx:id="nom" layoutX="95.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom:">
          <fill>
             <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
@@ -35,7 +34,7 @@
          </fill>
       </Text>
       <Text layoutX="98.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text fx:id="id" layoutX="89.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id:">
+      <Text fx:id="ContratDebut" layoutX="71.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContratDebut:">
          <fill>
             <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
                <stops>
@@ -45,17 +44,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Text fx:id="ContratDebut" layoutX="79.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContratDebut:">
-         <fill>
-            <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
-               <stops>
-                  <Stop color="BLACK" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Text>
-      <Text fx:id="ContratFin" layoutX="84.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContratFin:">
+      <Text fx:id="ContratFin" layoutX="84.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContratFin:">
          <fill>
             <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
                <stops>
@@ -68,11 +57,11 @@
       <Button fx:id="ajouter" layoutX="135.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="ajouter" />
       <Button fx:id="modifier" layoutX="322.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="modifier" />
       <Button fx:id="supprimer" layoutX="504.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="supprimer" />
-      <DatePicker fx:id="Debut" layoutX="208.0" layoutY="314.0">
+      <DatePicker fx:id="Debut" layoutX="216.0" layoutY="265.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </DatePicker>
-      <DatePicker fx:id="Fin" layoutX="208.0" layoutY="382.0" />
+      <DatePicker fx:id="Fin" layoutX="208.0" layoutY="349.0" />
    </children>
 </AnchorPane>
