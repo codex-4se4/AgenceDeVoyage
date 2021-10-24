@@ -37,11 +37,9 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXButton btnContacts;
     @FXML
-    private JFXButton btnWidgets;
-    @FXML
     private JFXButton btnAlerts;
 
-    AnchorPane utilisateurs, alerts, pricing, profiles, widgets, controls;
+    AnchorPane utilisateurs, alerts, pricing, profiles, appartements, controls;
     @FXML
     private JFXButton btnControls;
 
@@ -54,6 +52,8 @@ public class DashboardController implements Initializable {
     private JFXButton btnContacts2;
     @FXML
     private JFXButton btnDeconnect;
+    @FXML
+    private JFXButton btnAppartement;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -64,7 +64,7 @@ public class DashboardController implements Initializable {
             pricing = FXMLLoader.load(getClass().getResource("/gui/Pricing.fxml"));
             loader = new FXMLLoader(getClass().getResource("/gui/Profil.fxml"));
             profiles = loader.load();
-            widgets = FXMLLoader.load(getClass().getResource("/gui/Widgets.fxml"));
+            appartements = FXMLLoader.load(getClass().getResource("/gui/Appartement.fxml"));
             controls = FXMLLoader.load(getClass().getResource("/gui/Controls.fxml"));
             setNode(profiles);
         } catch (IOException ex) {
@@ -98,11 +98,6 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    private void switchWidget(ActionEvent event) {
-        setNode(widgets);
-    }
-
-    @FXML
     private void switchProfile(ActionEvent event) {
         setNode(profiles);
     }
@@ -115,6 +110,11 @@ public class DashboardController implements Initializable {
     @FXML
     private void switchControls(ActionEvent event) {
         setNode(controls);
+    }
+
+    @FXML
+    private void switchAppartement(ActionEvent event) {
+        setNode(appartements);
     }
 
     public void setCurrentUser(Utilisateur u) {
@@ -137,4 +137,5 @@ public class DashboardController implements Initializable {
         login.setResizable(false);
 
     }
+
 }
