@@ -10,6 +10,23 @@ package entities;
  * @author Jawher-Louisa
  */
 public class MaisonHote extends Hebergement {
-    private float SurfaceJardin;
-    
+
+    private boolean avecPetitDejInclus;
+
+    public MaisonHote() {
+    }
+
+    public MaisonHote(boolean avecPetitDejInclus, int id, int nbChambres, int nbPersonnes, boolean avecPiscine, boolean avecParking, boolean avecPlage, String adresse) {
+        super(id, nbChambres, nbPersonnes, avecPiscine, avecParking, avecPlage, adresse);
+        this.avecPetitDejInclus = avecPetitDejInclus;
+    }
+
+    public boolean isAvecPetitDejInclus() {
+        return avecPetitDejInclus;
+    }
+
+    public void setAvecPetitDejInclus(boolean avecPetitDejInclus) {
+        this.avecPetitDejInclus = avecPetitDejInclus;
+    }
+
 }
