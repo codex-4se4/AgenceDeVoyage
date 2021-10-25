@@ -53,6 +53,21 @@
                         <Font name="Roboto Bold" size="14.0" />
                     </font>
                 </JFXButton>
+            <JFXButton fx:id="btnMaison" onAction="#switchMaison" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Maisons" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnMaisonHote" onAction="#switchMaisonHote" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Maisons hôte" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnHôtel" onAction="#switchHotel" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Hôtels" textFill="#a1aec4">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+            </JFXButton>
                 <JFXButton fx:id="btnContacts" onAction="#switchContacts" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Voitures" textFill="#a1aec4">
                     <font>
                         <Font name="Roboto Bold" size="14.0" />
