@@ -39,7 +39,7 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXButton btnAlerts;
 
-    AnchorPane utilisateurs, alerts, pricing, profiles, appartements, controls;
+    AnchorPane utilisateurs, alerts, pricing, profiles, appartements, controls, maisons, maisonsHote, hotels;
     @FXML
     private JFXButton btnControls;
 
@@ -54,6 +54,12 @@ public class DashboardController implements Initializable {
     private JFXButton btnDeconnect;
     @FXML
     private JFXButton btnAppartement;
+    @FXML
+    private JFXButton btnMaison;
+    @FXML
+    private JFXButton btnMaisonHote;
+    @FXML
+    private JFXButton btnHôtel;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -65,7 +71,11 @@ public class DashboardController implements Initializable {
             loader = new FXMLLoader(getClass().getResource("/gui/Profil.fxml"));
             profiles = loader.load();
             appartements = FXMLLoader.load(getClass().getResource("/gui/Appartement.fxml"));
+            maisons = FXMLLoader.load(getClass().getResource("/gui/Maison.fxml"));
+            maisonsHote = FXMLLoader.load(getClass().getResource("/gui/MaisonHote.fxml"));
             controls = FXMLLoader.load(getClass().getResource("/gui/Controls.fxml"));
+            hotels = FXMLLoader.load(getClass().getResource("/gui/Hotel.fxml"));
+
             setNode(profiles);
         } catch (IOException ex) {
             Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
@@ -135,6 +145,24 @@ public class DashboardController implements Initializable {
         login.setScene(scene);
         login.show();
         login.setResizable(false);
+
+    }
+
+    @FXML
+    private void switchMaison(ActionEvent event) {
+        setNode(maisons);
+
+    }
+
+    @FXML
+    private void switchMaisonHote(ActionEvent event) {
+        setNode(maisonsHote);
+
+    }
+
+    @FXML
+    private void switchHotel(ActionEvent event) {
+        setNode(hotels);
 
     }
 
