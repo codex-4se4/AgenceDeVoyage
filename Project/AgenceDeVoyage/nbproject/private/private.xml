@@ -3,12 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/HP/OneDrive/Documents/AgenceDeVoyage/Project/AgenceDeVoyage/src/controllers/PartenariatController.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/AgenceDeVoyage/Project/AgenceDeVoyage/src/entities/MaisonHote.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/AgenceDeVoyage/Project/AgenceDeVoyage/src/entities/Offre.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/AgenceDeVoyage/Project/AgenceDeVoyage/src/services/Partenariatservice.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/AgenceDeVoyage/Project/AgenceDeVoyage/src/entities/Partenariat.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/AgenceDeVoyage/Project/AgenceDeVoyage/src/entities/Utilisateur.java</file>
+=======
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/controllers/DashboardController.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/services/UtilisateurService.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/hebergement/Hebergement1Controller.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/entities/Hebergement.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/services/HebergementService.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/controllers/LoginController.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/controllers/ChoiceBox.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/controllers/UtilisateursController.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/controllers/ProfilController.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/controllers/MotDePasseOublieController.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/entities/Partenariat.java</file>
+            <file>file:/C:/Users/bourg/Documents/GitHub/AgenceDeVoyage/Project/AgenceDeVoyage/src/entities/Utilisateur.java</file>
+>>>>>>> Dev
         </group>
     </open-files>
 </project-private>
