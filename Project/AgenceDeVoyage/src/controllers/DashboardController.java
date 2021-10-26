@@ -47,7 +47,7 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXButton btnAlerts;
 
-    AnchorPane utilisateurs, alerts, pricing, profiles, widgets, controls, meteoAPI;
+    AnchorPane utilisateurs, alerts, pricing, profiles, widgets, controls;
     @FXML
     private JFXButton btnControls;
 
@@ -96,7 +96,6 @@ public class DashboardController implements Initializable {
             profiles = loader.load();
             widgets = FXMLLoader.load(getClass().getResource("/gui/Widgets.fxml"));
             controls = FXMLLoader.load(getClass().getResource("/gui/Controls.fxml"));
-            meteoAPI = FXMLLoader.load(getClass().getResource("/gui/MeteoAPI.fxml"));
             setNode(profiles);
         } catch (IOException ex) {
             Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
@@ -167,11 +166,6 @@ public class DashboardController implements Initializable {
         login.show();
         login.setResizable(false);
 
-    }
-
-    @FXML
-    private void switchMeteo(ActionEvent event) {
-        setNode(meteoAPI);
     }
 
     public JSONObject getLocation() throws MalformedURLException {
