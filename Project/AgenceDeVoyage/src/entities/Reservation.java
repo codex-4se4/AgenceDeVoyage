@@ -9,70 +9,29 @@ import java.util.Date;
 
 
 public class Reservation {
-    private int id;
-    private  int idr;
-    private double prix;
-    private Date date_debut;
-    private Date date_fin;
+    private  Hebergement heber;
+    private  Voiture voi ;
+   private Utilisateur use;
+    private Date  date;
     private String type;
+  
      public Reservation() {
     }
-    public  Reservation(int id, int idr ,double prix,Date date_debutr,Date datefinrh,String type){
-    this.prix= prix;
-    this.date_debut = date_debut;
-    this.date_fin=date_fin;
+    public  Reservation( String type,Hebergement heber, Voiture voi,Utilisateur use,Date  date ){
     this.type=type;
-    this.idr=idr;
+    this.voi = voi;
+    this.use=use;
+    this.date=date;
+   
     
 }
-     public  Reservation(double prix,Date date_debutr,Date datefinrh,int idr,String type){
-    this.prix= prix;
-    this.date_debut = date_debut;
-    this.date_fin=date_fin;
-    this.type=type;
-    this.idr=idr;
+     public  Reservation(Hebergement heber, Voiture voi,Utilisateur use,Date  date){
     
-}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getIdr() {
-        return idr;
-    }
-
-    public void setIdr(int idr) {
-        this.idr = idr;
-    }
-
-    public double getPrix() {
-        return prix;
-    }
-
-    public void setPrix(double prix) {
-        this.prix = prix;
-    }
-
-    public Date getDate_debut() {
-        return date_debut;
-    }
-
-    public void setDate_debut(Date date_debut) {
-        this.date_debut = date_debut;
-    }
-
-    public Date getDate_fin() {
-        return date_fin;
-    }
-
-    public void setDate_fin(Date date_fin) {
-        this.date_fin = date_fin;
-    }
+    this.heber= heber;
+    this.voi = voi;
+    this.use=use;
+    this.date=date;
+     }
 
     public String getType() {
         return type;
@@ -82,5 +41,39 @@ public class Reservation {
         this.type = type;
     }
 
+    public Hebergement getHeber() {
+        return heber;
+    }
+
+    public void setHeber(Hebergement heber) {
+        this.heber = heber;
+    }
+
+    public Voiture getVoi() {
+        return voi;
+    }
+
+    public void setVoi(Voiture voi) {
+        this.voi = voi;
+    }
+
+    public Utilisateur getUse() {
+        return use;
+    }
+
+    public void setUse(Utilisateur use) {
+        this.use = use;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+   
+
+   
    
 }
