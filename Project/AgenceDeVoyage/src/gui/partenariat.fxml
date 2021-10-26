@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
@@ -9,11 +10,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PartenariatController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PartenariatController">
    <children>
       <TextField fx:id="name" layoutX="208.0" layoutY="90.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer le nom" />
-      <TextField fx:id="adress" layoutX="208.0" layoutY="160.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer l'adresse" />
-      <Text fx:id="nom" layoutX="95.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom:">
+      <TextField fx:id="adress" layoutX="208.0" layoutY="170.0" prefHeight="39.0" prefWidth="262.0" promptText="entrer l'adresse" />
+      <Text fx:id="nom" layoutX="18.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de partenariat:">
          <fill>
             <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
                <stops>
@@ -23,7 +24,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Text fx:id="adresse" layoutX="95.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adresse:">
+      <Text fx:id="adresse" layoutX="16.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse de partenariat:">
          <fill>
             <LinearGradient endX="1.0" endY="0.9802955665024631" startX="1.0" startY="1.0">
                <stops>
@@ -34,7 +35,7 @@
          </fill>
       </Text>
       <Text layoutX="98.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text fx:id="ContratDebut" layoutX="71.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContratDebut:">
+      <Text fx:id="ContratDebut" layoutX="18.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La debut du contrat:">
          <fill>
             <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
                <stops>
@@ -44,7 +45,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Text fx:id="ContratFin" layoutX="84.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ContratFin:">
+      <Text fx:id="ContratFin" layoutX="18.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La fin du contrat:">
          <fill>
             <LinearGradient endX="1.0" endY="0.019704433497536866" startX="1.0">
                <stops>
@@ -54,14 +55,19 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button fx:id="ajouter" layoutX="135.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="ajouter" />
-      <Button fx:id="modifier" layoutX="322.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="modifier" />
-      <Button fx:id="supprimer" layoutX="504.0" layoutY="472.0" mnemonicParsing="false" style="-fx-background-color: #2196F3;" text="supprimer" />
-      <DatePicker fx:id="Debut" layoutX="216.0" layoutY="265.0">
+      <Button fx:id="ajouter" layoutX="146.0" layoutY="478.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="91.0" style="-fx-background-color: #2196F3;" text="ajouter" />
+      <Button fx:id="modifier" layoutX="321.0" layoutY="478.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="91.0" style="-fx-background-color: #2196F3;" text="modifier" />
+      <Button fx:id="supprimer" layoutX="504.0" layoutY="472.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="105.0" style="-fx-background-color: #2196F3;" text="supprimer" />
+      <DatePicker fx:id="Debut" layoutX="208.0" layoutY="251.0" onAction="#getDate" promptText="entrer la date">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </DatePicker>
-      <DatePicker fx:id="Fin" layoutX="208.0" layoutY="349.0" />
+      <DatePicker fx:id="myDatePicker" layoutX="208.0" layoutY="337.0" onAction="#getDate" promptText="entrer la date" />
+      <ImageView fitHeight="256.0" fitWidth="283.0" layoutX="666.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/—Pngtree—happy%20client%20vector%20customer%20person_5189759.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
