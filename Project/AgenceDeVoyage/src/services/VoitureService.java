@@ -5,30 +5,30 @@
  */
 package services;
 
-import entities.voiture;
+import entities.Voiture;
 
 /**
  *
  * @author Ines Nfougui
  */
 
-public abstract class VoitureService  implements IService<voiture>{ 
+public abstract class VoitureService  implements IService<Voiture>{ 
 
     @Override
-    public void ajouter(voiture v) {
+    public void ajouter(Voiture v) {
          String SQL = "INSERT INTO `voiture` (`marque`, `nbChevaux`, `type`) VALUES ("+"'" + v.getMarque() + "', '" + v.getNbChevaux() + "', '" + v.getTypevoiture() + "')";
          executeQuery(SQL);
     }
 
     @Override
-    public boolean supprimer(voiture v ) {
+    public boolean supprimer(Voiture v ) {
     String SQL = "DELETE FROM 'voiture' Where ID=" +v.getMatricule();
     executeQuery(SQL);
         return true;
     }
 
     @Override
-    public boolean modifier(voiture v) {
+    public boolean modifier(Voiture v) {
     String SQL = "UPDATE `voiture` (`marque`, `nbChevaux`, `type`) VALUES ("+"'" + v.getMarque() + "', '" + v.getNbChevaux() + "', '" + v.getTypevoiture() + "')";
          executeQuery(SQL);
            return true;
@@ -36,7 +36,7 @@ public abstract class VoitureService  implements IService<voiture>{
 
     
     
-    public boolean consulter(voiture v) {
+    public boolean consulter(Voiture v) {
        String SQL = "SELECT * FROM `voiture` (`marque`, `nbChevaux`, `type`) VALUES ("+"'" + v.getMarque() + "', '" + v.getNbChevaux() + "', '" + v.getTypevoiture() + "')";
          executeQuery(SQL);
            return true;
