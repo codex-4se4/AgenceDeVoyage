@@ -12,6 +12,10 @@ import java.sql.Date;
  * @author HP
  */
 public class Offre {  
+
+    public static void add(Offre offre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private String type_Offre;
     private Date  debut_Offre;
     private Date fin_Offre;
@@ -29,14 +33,6 @@ public class Offre {
     
     public Offre(){
         
-    }
-
-    public float getPrix() {
-        return prix;
-    }
-
-    public void setPrix(float prix) {
-        this.prix = prix;
     }
 
     public String getType_Offre() {
@@ -64,6 +60,13 @@ public class Offre {
     }
 
 
+    public float getPrix() {
+        return prix;
+    }
+
+    public void setPrix(float prix) {
+        this.prix = prix;
+    }
 
 
 
