@@ -23,13 +23,13 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="paneHolder" prefHeight="713.0" prefWidth="1219.0" stylesheets="@custom.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UtilisateursController">
+<AnchorPane id="AnchorPane" fx:id="paneHolder" prefHeight="900.0" prefWidth="1800.0" stylesheets="@custom.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UtilisateursController">
     <children>
         <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Utilisateurs" />
-        <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
-        <AnchorPane layoutX="6.0" layoutY="63.0" prefHeight="644.0" prefWidth="1187.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-color: #3C8DBC; -fx-border-radius: 3; -fx-border-width: 4 0 0 0; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-padding: 4;">
+        <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1788.0" />
+        <AnchorPane layoutX="12.0" layoutY="63.0" maxHeight="823.0" maxWidth="1777.0" minHeight="823.0" minWidth="1777.0" prefHeight="823.0" prefWidth="1777.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-color: #3C8DBC; -fx-border-radius: 3; -fx-border-width: 4 0 0 0; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-padding: 4;">
             <children>
-                <AnchorPane layoutY="4.0" prefHeight="153.0" prefWidth="1180.0" style="-fx-background-color: #0c1326;">
+                <AnchorPane layoutY="4.0" prefHeight="153.0" prefWidth="1769.0" style="-fx-background-color: #0c1326;">
                     <children>
                         <Circle fill="#d7dadd" layoutX="83.0" layoutY="77.0" radius="57.0" stroke="#a49f9f" strokeType="INSIDE" />
                         <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="59.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
@@ -72,14 +72,14 @@
                         <Font name="Roboto Medium" size="15.0" />
                     </font>
                 </JFXButton>
-                <TableView fx:id="tvUtilisateurs" layoutX="364.0" layoutY="227.0" onMouseClicked="#selectRowAction" prefHeight="409.0" prefWidth="813.0">
+                <TableView fx:id="tvUtilisateurs" layoutX="364.0" layoutY="227.0" onMouseClicked="#selectRowAction" prefHeight="553.0" prefWidth="1139.0">
                     <columns>
-                        <TableColumn fx:id="colNom" prefWidth="124.0" text="Nom" />
-                        <TableColumn fx:id="colPrenom" prefWidth="153.0" text="Prenom" />
-                        <TableColumn fx:id="colEmail" prefWidth="188.0" text="Email" />
-                        <TableColumn fx:id="colCin" minWidth="0.0" prefWidth="101.0" text="CIN" />
-                        <TableColumn fx:id="colPasseport" minWidth="0.0" prefWidth="88.0" text="Passeport" />
-                        <TableColumn fx:id="colLogin" minWidth="0.0" prefWidth="158.0" text="Login" />
+                        <TableColumn fx:id="colNom" prefWidth="188.0" text="Nom" />
+                        <TableColumn fx:id="colPrenom" prefWidth="183.0" text="Prenom" />
+                        <TableColumn fx:id="colEmail" prefWidth="281.0" text="Email" />
+                        <TableColumn fx:id="colCin" minWidth="0.0" prefWidth="145.0" text="CIN" />
+                        <TableColumn fx:id="colPasseport" minWidth="0.0" prefWidth="180.0" text="Passeport" />
+                        <TableColumn fx:id="colLogin" minWidth="0.0" prefWidth="161.0" text="Login" />
                     </columns>
                 </TableView>
                 <JFXButton fx:id="modifierButton" layoutX="199.0" layoutY="569.0" onAction="#modifierAction" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #3C8DBC;" text="Modifier" textFill="WHITE">
@@ -94,6 +94,6 @@
                 </JFXButton>
             </children>
         </AnchorPane>
-        <Separator layoutX="13.0" layoutY="268.0" prefHeight="4.0" prefWidth="1213.0" />
+        <Separator layoutX="13.0" layoutY="268.0" prefHeight="4.0" prefWidth="1769.0" />
     </children>
 </AnchorPane>

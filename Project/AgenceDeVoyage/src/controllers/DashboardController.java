@@ -5,9 +5,11 @@
  */
 package controllers;
 
+import api.WeatherAPI;
 import com.jfoenix.controls.JFXButton;
 import entities.Utilisateur;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -20,9 +22,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -41,7 +47,7 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXButton btnAlerts;
 
-    AnchorPane utilisateurs, alerts, pricing, profiles, widgets, controls;
+    AnchorPane utilisateurs, alerts, pricing, profiles, widgets, controls, meteoAPI;
     @FXML
     private JFXButton btnControls;
 
@@ -54,9 +60,33 @@ public class DashboardController implements Initializable {
     private JFXButton btnContacts2;
     @FXML
     private JFXButton btnDeconnect;
+    @FXML
+    private JFXButton btnMeteo;
+
+    private String apiWeather = "http://api.weatherapi.com/v1/current.json?key=553947b7b72f4193b9b134507212610%20&q=Tunisia&aqi=no";
+    @FXML
+    private ImageView image;
+    @FXML
+    private Text weatherText;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        try {
+            weatherText.setText(
+                    getLocation().get("name").toString() + " "
+                            + getWeatherInformation().get("temp_c")+ "°C"
+            );
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String path = null;
+        try {
+            path = "https:" + getImage().get("icon").toString();
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Image img = new Image(path);
+        image.setImage(img);
         //Load all fxmls in a cache
         try {
             utilisateurs = FXMLLoader.load(getClass().getResource("/gui/Utilisateurs.fxml"));
@@ -66,6 +96,7 @@ public class DashboardController implements Initializable {
             profiles = loader.load();
             widgets = FXMLLoader.load(getClass().getResource("/gui/Widgets.fxml"));
             controls = FXMLLoader.load(getClass().getResource("/gui/Controls.fxml"));
+            meteoAPI = FXMLLoader.load(getClass().getResource("/gui/MeteoAPI.fxml"));
             setNode(profiles);
         } catch (IOException ex) {
             Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
@@ -136,5 +167,29 @@ public class DashboardController implements Initializable {
         login.show();
         login.setResizable(false);
 
+    }
+
+    @FXML
+    private void switchMeteo(ActionEvent event) {
+        setNode(meteoAPI);
+    }
+
+    public JSONObject getLocation() throws MalformedURLException {
+        WeatherAPI apiConnectorWeather = new WeatherAPI(apiWeather);
+
+        return (JSONObject) apiConnectorWeather.getJSONObject().get("location");
+
+    }
+
+    public JSONObject getWeatherInformation() throws MalformedURLException {
+        WeatherAPI apiConnectorWeather = new WeatherAPI(apiWeather);
+
+        return (JSONObject) apiConnectorWeather.getJSONObject().get("current");
+
+    }
+
+    public JSONObject getImage() throws MalformedURLException {
+        JSONObject weatherInfo = getWeatherInformation();
+        return (JSONObject) weatherInfo.get("condition");
     }
 }
