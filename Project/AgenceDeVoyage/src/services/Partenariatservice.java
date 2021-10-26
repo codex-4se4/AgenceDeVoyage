@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 
 
 
+
 /**
  *
  * @author HP
@@ -22,19 +23,19 @@ import javafx.collections.ObservableList;
 public abstract class Partenariatservice implements IService <Partenariat>{
     @Override
     public void ajouter(Partenariat p){
-        String SQL = "INSERT INTO `partenariat` (`id`, `nom`, `adresse`,`ContratDebut`,`ContratFin`) VALUES ("+"'" + p.getId() + "', '" + p.getNom() + "', '"
+        String SQL = "INSERT INTO `partenariat` ( `nom`, `adresse`,`ContratDebut`,`ContratFin`) VALUES ("+"'"  + p.getNom() + "', '"
                 + p.getAdresse() + "','"+ p.getContratDebut()+"','" + p.getContratFin() + "')";
         executeQuery(SQL);
     }
        
     @Override
     public boolean supprimer(Partenariat p) {
-    String SQL = "DELETE FROM 'partenariat' Where ID=" +p.getId() ;
+    String SQL = "DELETE FROM 'partenariat' Where nom=" +p.getNom() ;
     executeQuery(SQL);
         return true;
     }
     public boolean modifier(Partenariat p) {
-        String SQL = "UPDATE `partenariat`  (`id`, `nom`, `adresse`,`ContratDebut`,`ContratFin`) VALUES ("+"'" + p.getId() + "', '" + p.getNom() + "', '"
+        String SQL = "UPDATE `partenariat`  (`id`, `nom`, `adresse`,`ContratDebut`,`ContratFin`) VALUES ("+"'" + p.getNom() + "', '"
                 + p.getAdresse() + "','"+ p.getContratDebut()+"','" + p.getContratFin() + "')";
         executeQuery(SQL);
         return false;
@@ -42,9 +43,9 @@ public abstract class Partenariatservice implements IService <Partenariat>{
  
    @Override
     public ObservableList<Partenariat> consulter() {
-        ObservableList<Partenariat> utilisateurs = FXCollections.observableArrayList();
+        ObservableList<Partenariat> partenariats = FXCollections.observableArrayList();
         Connection conn = DBConnection.getInstance().getConnection();
-        String query = "SELECT * FROM `utilisateur`";
+        String query = "SELECT * FROM `partenariat`";
         Statement st;
         ResultSet rs;
         try {
@@ -52,7 +53,7 @@ public abstract class Partenariatservice implements IService <Partenariat>{
             rs = st.executeQuery(query);
            Partenariat partenariat;
             while (rs.next()) {
-                Partenariat Partenariat = new Partenariat(rs.getInt("id"), rs.getString("nom"), rs.getString("adresse"), rs.getDate("ContratDebut"),
+                Partenariat Partenariat = new Partenariat( rs.getString("nom"), rs.getString("adresse"), rs.getDate("ContratDebut"),
                         rs.getDate("ContratFin"));
                 Partenariat.add(Partenariat);
                 
