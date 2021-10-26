@@ -68,27 +68,5 @@ public class ReservationService implements IService<Reservation> {
 
     }
 
-    public Reservation consulterParEmail(String email) {
-        Connection conn = DBConnection.getInstance().getConnection();
-        String query = "SELECT * FROM `utilisateur` where email = '" + email + "'";
-        Statement st;
-        ResultSet rs;
-        Reservation reservation = null;
-        try {
-            st = conn.createStatement();
-            rs = st.executeQuery(query);
-            if (!rs.next()) {
-                return null;
-            }
-            reservation = new Reservation(rs.getInt("id"), rs.getInt("idr"), rs.getDouble("prix"), rs.getDate("date_debut"),
-                    rs.getDate("date_fin"), rs.getString("type"));
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        return reservation;
-
-    }
-
+    
 }
