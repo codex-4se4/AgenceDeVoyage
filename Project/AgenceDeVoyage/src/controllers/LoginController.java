@@ -19,12 +19,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -85,10 +88,11 @@ public class LoginController implements Initializable {
                 rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"));
         dashboardController.setCurrentUser(user);
 
-        Scene scene = new Scene(root, 1365, 700);
+        Scene scene = new Scene(root);
         dashboard.setScene(scene);
         dashboard.show();
         dashboard.setResizable(false);
+        dashboard.setMaximized(true);
 
     }
 
@@ -139,4 +143,4 @@ public class LoginController implements Initializable {
         motDePasseOublie.setResizable(false);
     }
 
-}
+        }
