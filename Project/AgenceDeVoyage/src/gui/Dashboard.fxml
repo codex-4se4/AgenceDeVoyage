@@ -68,11 +68,6 @@
                         <Font name="Roboto Bold" size="14.0" />
                     </font>
                 </JFXButton>
-            <JFXButton fx:id="btnMeteo" onAction="#switchMeteo" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Météo API" textFill="#a1aec4">
-               <font>
-                  <Font name="Roboto Bold" size="14.0" />
-               </font>
-            </JFXButton>
                 <JFXButton fx:id="btnAlerts" onAction="#switchAlert" prefHeight="42.0" prefWidth="165.0" style="-fx-alignment: left;" styleClass="nav-button" text="Contact" textFill="#a1aec4">
                     <font>
                         <Font name="Roboto Bold" size="14.0" />
