@@ -9,7 +9,7 @@ package entities;
  *
  * @author Ines Nfougui
  */
-public class voiture {
+public class Voiture {
         private int matricule;
     private String marque;
     private int nbChevaux;
@@ -17,7 +17,7 @@ public class voiture {
 
    
 
-    public voiture(int matricule, String marque, int nbChevaux, typevoiture typevoiture) {
+    public Voiture(int matricule, String marque, int nbChevaux, typevoiture typevoiture) {
         this.matricule = matricule;
         this.marque = marque;
         this.nbChevaux = nbChevaux;
