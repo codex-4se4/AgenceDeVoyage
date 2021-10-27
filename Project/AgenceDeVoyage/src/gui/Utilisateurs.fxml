@@ -87,7 +87,7 @@
                         <Font name="Roboto Medium" size="15.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="supprimerButton" layoutX="14.0" layoutY="611.0" onAction="#suprrimerAction" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #3C8DBC;" text="Supprimer" textFill="WHITE">
+                <JFXButton fx:id="supprimerButton" layoutX="14.0" layoutY="611.0" onAction="#supprimerAction" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #3C8DBC;" text="Supprimer" textFill="WHITE">
                     <font>
                         <Font name="Roboto Medium" size="15.0" />
                     </font>
