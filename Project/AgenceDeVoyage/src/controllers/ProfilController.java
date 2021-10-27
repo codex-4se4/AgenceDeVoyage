@@ -5,11 +5,8 @@
  */
 package controllers;
 
-import agencedevoyage.AgenceDeVoyage;
 import com.jfoenix.controls.JFXButton;
 import entities.Utilisateur;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -82,7 +79,7 @@ public class ProfilController implements Initializable {
         cin.setText(u.getCin());
         passeport.setText(u.getPasseport());
         login.setText(u.getLogin());
-        String imageUrl = "file:///"+ u.getPhoto().replace(" ", "/");
+        String imageUrl = "file:///" + u.getPhoto().replace(" ", "/");
         Image img = new Image(imageUrl);
         circle.setFill(new ImagePattern(img));
     }
