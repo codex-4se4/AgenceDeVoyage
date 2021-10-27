@@ -104,7 +104,6 @@ public class ProfilController implements Initializable {
 
     @FXML
     private void editerAction(MouseEvent event) {
-
         prenom.setEditable(true);
         nom.setEditable(true);
         email.setEditable(true);
