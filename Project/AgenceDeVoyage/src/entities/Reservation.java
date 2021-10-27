@@ -12,34 +12,33 @@ public class Reservation {
     private  Hebergement heber;
     private  Voiture voi ;
    private Utilisateur use;
-    private Date  date;
+    private Date  datedeb;
+    private Date datefin;
+    private String prix;
     private String type;
+    
   
      public Reservation() {
     }
-    public  Reservation( String type,Hebergement heber, Voiture voi,Utilisateur use,Date  date ){
-    this.type=type;
+    public  Reservation(Hebergement heber, Voiture voi,Utilisateur use,Date datedeb,Date datefin ){
+    this.heber=heber;
     this.voi = voi;
     this.use=use;
-    this.date=date;
-   
+    this.datedeb=datedeb;
+    this.datefin=datefin;
+    this.prix=prix;
+   this.type=type;
     
 }
-     public  Reservation(Hebergement heber, Voiture voi,Utilisateur use,Date  date){
+
+    public String getPrix() {
+        return prix;
+    }
+
+    public void setPrix(String prix) {
+        this.prix = prix;
+    }
     
-    this.heber= heber;
-    this.voi = voi;
-    this.use=use;
-    this.date=date;
-     }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public Hebergement getHeber() {
         return heber;
@@ -65,15 +64,28 @@ public class Reservation {
         this.use = use;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getDatedeb() {
+        return datedeb;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDatedeb(Date datedeb) {
+        this.datedeb = datedeb;
     }
-   
 
-   
-   
+    public Date getDatefin() {
+        return datefin;
+    }
+
+    public void setDatefin(Date datefin) {
+        this.datefin = datefin;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 }
