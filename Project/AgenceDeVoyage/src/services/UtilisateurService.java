@@ -7,16 +7,9 @@ package services;
 
 import entities.Utilisateur;
 import database.DBConnection;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -64,7 +57,7 @@ public class UtilisateurService implements IService<Utilisateur> {
             Utilisateur utilisateur;
             while (rs.next()) {
                 utilisateur = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
-                        rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"),rs.getString("photo"));
+                        rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"), rs.getString("photo"));
                 utilisateurs.add(utilisateur);
 
             }
@@ -89,7 +82,7 @@ public class UtilisateurService implements IService<Utilisateur> {
                 return null;
             }
             utilisateur = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
-                    rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"),rs.getString("photo"));
+                    rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"), rs.getString("photo"));
 
         } catch (Exception ex) {
             ex.printStackTrace();
