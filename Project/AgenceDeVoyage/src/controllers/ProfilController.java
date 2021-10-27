@@ -8,6 +8,9 @@ package controllers;
 import agencedevoyage.AgenceDeVoyage;
 import com.jfoenix.controls.JFXButton;
 import entities.Utilisateur;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -15,9 +18,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import services.UtilisateurService;
 
 /**
@@ -31,12 +37,6 @@ public class ProfilController implements Initializable {
     private AnchorPane paneHolder;
     @FXML
     private Label nomComplet;
-    private TextField prenomLabel;
-    private TextField nomLabel;
-    private TextField emailLabel;
-    private TextField passeportLabel;
-    private TextField loginLabel;
-    private TextField cinLabel;
     @FXML
     private Label mdpLabel;
     @FXML
@@ -61,6 +61,8 @@ public class ProfilController implements Initializable {
     UtilisateurService utilisateurService;
 
     private int currentUserId;
+    @FXML
+    private Circle circle;
 
     /**
      * Initializes the controller class.
@@ -71,7 +73,7 @@ public class ProfilController implements Initializable {
 
     }
 
-    public void setUserInformation(Utilisateur u) {
+    public void setUserInformation(Utilisateur u) throws FileNotFoundException {
         currentUserId = u.getId();
         nomComplet.setText(u.getPrenom() + " " + u.getNom());
         prenom.setText(u.getPrenom());
@@ -80,6 +82,9 @@ public class ProfilController implements Initializable {
         cin.setText(u.getCin());
         passeport.setText(u.getPasseport());
         login.setText(u.getLogin());
+        String imageUrl = "file:///"+ u.getPhoto().replace(" ", "/");
+        Image img = new Image(imageUrl);
+        circle.setFill(new ImagePattern(img));
     }
 
     @FXML
@@ -96,7 +101,7 @@ public class ProfilController implements Initializable {
         mdp.setEditable(false);
         mdpLabel.setVisible(false);
         Utilisateur user = new Utilisateur(currentUserId, nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(),
-                login.getText(), mdp.getText());
+                login.getText(), mdp.getText(), null);
         utilisateurService.modifier(user);
     }
 
