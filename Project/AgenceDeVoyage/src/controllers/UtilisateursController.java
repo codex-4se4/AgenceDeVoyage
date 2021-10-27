@@ -103,7 +103,7 @@ public class UtilisateursController implements Initializable {
                     || login.getText().isEmpty() || mdp.getText().isEmpty()) {
                 throw new Exception("Les champs à insérer ne peuvent pas être vides");
             }
-            Utilisateur user = new Utilisateur(nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText());
+            Utilisateur user = new Utilisateur(nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText(),null);
             utilisateurService.ajouter(user);
         } catch (Exception e) {
             e.printStackTrace();
@@ -133,7 +133,7 @@ public class UtilisateursController implements Initializable {
 
     @FXML
     private void modifierAction(ActionEvent event) {
-        Utilisateur user = new Utilisateur(selectedUtilisateur.getId(), nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText());
+        Utilisateur user = new Utilisateur(selectedUtilisateur.getId(), nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText(),null);
 
         utilisateurService.modifier(user);
         showUtilisateurs();
