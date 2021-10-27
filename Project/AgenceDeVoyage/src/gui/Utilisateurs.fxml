@@ -66,7 +66,7 @@
                 <Label layoutX="27.0" layoutY="478.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Login" textFill="#918dbc" />
                 <TextField fx:id="login" layoutX="142.0" layoutY="478.0" prefHeight="25.0" prefWidth="197.0" />
                 <Label fx:id="mdpLabel" layoutX="23.0" layoutY="522.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe" textFill="#918dbc" />
-            <PasswordField fx:id="mdp" layoutX="142.0" layoutY="522.0" prefHeight="25.0" prefWidth="197.0" />
+                <PasswordField fx:id="mdp" layoutX="142.0" layoutY="522.0" prefHeight="25.0" prefWidth="197.0" />
                 <JFXButton fx:id="ajouterButton" layoutX="14.0" layoutY="569.0" onAction="#ajouterAction" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #3C8DBC;" text="Ajouter" textFill="WHITE">
                     <font>
                         <Font name="Roboto Medium" size="15.0" />
