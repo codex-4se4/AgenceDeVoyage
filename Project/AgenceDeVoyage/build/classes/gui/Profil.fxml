@@ -27,16 +27,11 @@
     <children>
         <Label layoutX="19.0" layoutY="17.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Profil" />
         <Separator layoutX="3.0" layoutY="55.0" prefHeight="4.0" prefWidth="1213.0" />
-        <AnchorPane layoutX="6.0" layoutY="63.0" prefHeight="644.0" prefWidth="1187.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-color: #3C8DBC; -fx-border-radius: 3; -fx-border-width: 4 0 0 0; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-padding: 4;">
+        <AnchorPane layoutX="6.0" layoutY="63.0" prefHeight="644.0" prefWidth="1213.0" style="-fx-background-color: white; -fx-background-radius: 3; -fx-border-color: #3C8DBC; -fx-border-radius: 3; -fx-border-width: 4 0 0 0; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-padding: 4;">
             <children>
-                <AnchorPane layoutY="4.0" prefHeight="153.0" prefWidth="1180.0" style="-fx-background-color: #0c1326;">
+                <AnchorPane layoutY="4.0" prefHeight="153.0" prefWidth="1205.0" style="-fx-background-color: #0c1326;">
                     <children>
-                        <Circle fill="#d7dadd" layoutX="83.0" layoutY="77.0" radius="57.0" stroke="#a49f9f" strokeType="INSIDE" />
-                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="59.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../icons/profile1.png" />
-                            </image>
-                        </ImageView>
+                        <Circle fx:id="circle" fill="#d7dadd" layoutX="83.0" layoutY="77.0" radius="57.0" stroke="#a49f9f" strokeType="INSIDE" />
                         <Label fx:id="nomComplet" layoutX="140.0" layoutY="65.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #ffffff; -fx-font-size: 16; -fx-font-weight: bold; -fx-alignment: center;" text="Dan Mlayah" />
                         <Separator layoutX="173.0" layoutY="96.0" prefHeight="4.0" prefWidth="244.0" />
                         <Separator layoutX="173.0" layoutY="137.0" prefHeight="4.0" prefWidth="244.0" />
