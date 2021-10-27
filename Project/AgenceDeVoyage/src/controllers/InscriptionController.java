@@ -25,6 +25,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
@@ -56,12 +59,9 @@ public class InscriptionController implements Initializable {
     UtilisateurService utilisateurService;
     @FXML
     private ImageView progress;
+    private String pathPhoto;
     @FXML
-    private JFXTextField pathPhoto;
-    @FXML
-    private ImageView photo;
-    @FXML
-    private JFXButton browse;
+    private Circle circle;
 
     /**
      * Initializes the controller class.
@@ -76,14 +76,16 @@ public class InscriptionController implements Initializable {
         mdp.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         cin.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         passeport.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
-        pathPhoto.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         utilisateurService = new UtilisateurService();
+        Image image = new Image("/images/defaultUser.png");
+        circle.setFill(new ImagePattern(image));
+
     }
 
     @FXML
     private void creerCompteAction(ActionEvent event) {
         try {
-            Utilisateur user = new Utilisateur(nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText());
+            Utilisateur user = new Utilisateur(nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText(), pathPhoto);
             utilisateurService.ajouter(user);
         } catch (Exception e) {
             e.printStackTrace();
@@ -112,16 +114,15 @@ public class InscriptionController implements Initializable {
     }
 
     @FXML
-    private void browseAction(ActionEvent event) throws IOException {
+    private void browseAction(MouseEvent event) throws IOException {
         FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().addAll(new ExtensionFilter("PNG", "*.png"), new ExtensionFilter("JPG", "*.jpg"),
+        fc.getExtensionFilters().addAll(new ExtensionFilter("JPG", "*.jpg"), new ExtensionFilter("PNG", "*.png"),
                 new ExtensionFilter("JPEG", "*.jpeg"));
         File file = fc.showOpenDialog(null);
         if (file != null) {
-            pathPhoto.setText(file.getAbsolutePath());
+            pathPhoto = file.getAbsolutePath();
             Image image = SwingFXUtils.toFXImage(ImageIO.read(file), null);
-
-            photo.setImage(image);
+            circle.setFill(new ImagePattern(image));
 
         }
     }
