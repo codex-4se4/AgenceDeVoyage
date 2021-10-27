@@ -13,6 +13,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,6 +22,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -81,12 +84,9 @@ public class InscriptionController implements Initializable {
 
     @FXML
     private void creerCompteAction(ActionEvent event) {
-        try {
-            Utilisateur user = new Utilisateur(nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText(), pathPhoto);
-            utilisateurService.ajouter(user);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        validateData();
+        Utilisateur user = new Utilisateur(nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText(), pathPhoto);
+        utilisateurService.ajouter(user);
 
         progress.setVisible(true);
         nom.clear();
@@ -96,6 +96,8 @@ public class InscriptionController implements Initializable {
         passeport.clear();
         login.clear();
         mdp.clear();
+        pathPhoto = null;
+        circle.setFill(null);
 
     }
 
@@ -124,4 +126,85 @@ public class InscriptionController implements Initializable {
         }
     }
 
+    private boolean isValidEmail(String s) {
+        Pattern p = Pattern.compile("[a-zA-Z0-9][a-zA-Z0-9._]*@[a-zA-Z0-9]");
+        Matcher m = p.matcher(s);
+        return m.find() && m.group().equals(s);
+    }
+
+    private boolean isValidTextField(String s) {
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(s);
+        return m.find() && m.group().equals(s);
+    }
+
+    private boolean isValidNumber(String s) {
+        Pattern p = Pattern.compile("\\\\d+");
+        Matcher m = p.matcher(s);
+        return m.find() && m.group().equals(s);
+    }
+
+    private boolean isValidAlphaNumeric(String s) {
+        Pattern p = Pattern.compile("[A-Za-z0-9]");
+        Matcher m = p.matcher(s);
+        return m.find() && m.group().equals(s);
+    }
+
+    private void validateData() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur de saisie");
+        alert.setHeaderText(null);
+        StringBuilder sb = new StringBuilder();
+        if (nom.getText().isEmpty()) {
+            sb.append("Votre nom est vide " + "\n");
+        } else if (isValidTextField(nom.getText())) {
+            sb.append("Votre nom n'est pas valide " + "\n");
+        }
+
+        if (prenom.getText().isEmpty()) {
+            sb.append("Votre prenom est vide " + "\n");
+        } else if (!isValidTextField(prenom.getText())) {
+            sb.append("Votre prenom n'est pas valide " + "\n");
+        }
+
+        if (email.getText().isEmpty()) {
+            sb.append("Votre email est vide " + "\n");
+        } else if (!isValidEmail(email.getText())) {
+            sb.append("Votre email n'est pas valide " + "\n");
+        }
+
+        if (cin.getText().isEmpty()) {
+            sb.append("Votre cin est vide " + "\n");
+        } else if (!isValidNumber(cin.getText()) || cin.getText().length() != 8) {
+            sb.append("Votre cin n'est pas valide " + "\n");
+        }
+
+        if (passeport.getText().isEmpty()) {
+            sb.append("Votre passeport est vide " + "\n");
+        } else if (!isValidAlphaNumeric(passeport.getText()) || cin.getText().length() != 6) {
+            sb.append("Votre passeport n'est pas valide " + "\n");
+        }
+
+        if (login.getText().isEmpty()) {
+            sb.append("Votre login est vide " + "\n");
+        } else if (!isValidAlphaNumeric(login.getText()) || login.getText().length() < 8) {
+            sb.append("Votre login doit contenir des chiffres et des lettres et doit être supérieur à 8 " + "\n");
+        }
+
+        if (mdp.getText().isEmpty()) {
+            sb.append("Votre mot de passe est vide " + "\n");
+        } else if (!isValidAlphaNumeric(mdp.getText()) || mdp.getText().length() < 8) {
+            sb.append("Votre mot de passe doit contenir des chiffres et des lettres et doit être supérieur à 8 " + "\n");
+        }
+
+        if (pathPhoto == null) {
+            sb.append("Vous photo de profil est vide " + "\n");
+        }
+
+        if (sb.length() != 0) {
+            alert.setContentText(sb.toString());
+            alert.showAndWait();
+        }
+
+    }
 }
