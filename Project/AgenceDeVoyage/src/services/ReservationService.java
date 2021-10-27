@@ -11,6 +11,10 @@ import entities.Reservation;
 import entities.Hebergement;
 import entities.Voiture;
 import services.UtilisateurService;
+import services.VoitureService;
+import services.HebergementService;
+import java.util.Date;
+import java.sql.DataTruncation;
 
 /**
  *
@@ -21,54 +25,53 @@ public class ReservationService implements IService<Reservation> {
     
     @Override
     public void ajouter(Reservation r) {
-        String SQL = "INSERT INTO `reservation` (`type`, `date`, ``,`nom`, `prenom`,) VALUES (" + "'" + r.getType()+ "', '" + r.getDate()+ r.get()+ "', '" + r.getDate()+ "')";
+        String SQL = "INSERT INTO `reservation` (`datedeb`,'datefin', `cin`,'marque','adresse','type' ,'prix') VALUES(" + "'" + r.getDatedeb() + "', '" + r.getDatefin() + "', '"
+                + r.getUse().getCin()+ "','" + r.getVoi().getMarque() + "','" + r.getHeber().getAdresse() + "','" + r.getType() + "','" + r.getPrix() + "')";
+        executeQuery(SQL);
+        executeQuery(SQL);
         executeQuery(SQL);
     }
-    @Override
-    public void ajouter(Utilisateur u) {
-        String SQL = "INSERT INTO `utilisateur` (`nom`, `prenom`) VALUES (" + "'" + u.getNom() + "', '" + u.getPrenom()  + "')";
-        executeQuery(SQL);
-    }
+    
 
     @Override
-    public boolean supprimer(Utilisateur u) {
-        String SQL = "DELETE FROM `utilisateur` WHERE id=" + u.getId();
-        executeQuery(SQL);
-        return true;
-
-    }
-
-    @Override
-    public boolean modifier(Utilisateur u) {
-        String SQL = "UPDATE `utilisateur` SET nom ='" + u.getNom() + "', prenom ='" + u.getPrenom()
-                + "',email ='" + u.getEmail() + "',cin ='" + u.getCin() + "',passeport='" + u.getPasseport()
-                + "',login='" + u.getLogin() + "',mdp='" + u.getMdp() + "' WHERE id =" + u.getId();
+    public boolean supprimer( Reservation r) {
+        String SQL = "DELETE FROM `resevation` WHERE type=" + r.getType();
         executeQuery(SQL);
         return true;
+
     }
 
     @Override
-    public ObservableList<Utilisateur> consulter() {
-        ObservableList<Utilisateur> utilisateurs = FXCollections.observableArrayList();
+    public boolean modifier(Reservation r) {
+        String SQL = "UPDATE `utilisateur` SET datedeb ='" + r.getDatedeb()+ "', datefin ='" + r.getDatefin()
+                + "',cin ='" + r.getUse().getCin()+ "',marque ='" + r.getVoi().getMarque()+ "',adresse='" + r.getHeber().getAdresse()
+                + "',type='" + r.getType()+ "',prix='" + r.getPrix()+ "' WHERE type =" + r.getType();
+        executeQuery(SQL);
+        return true;
+    }
+
+    @Override
+    public ObservableList<Reservation> consulter() {
+        ObservableList<Reservation> reservations = FXCollections.observableArrayList();
         Connection conn = DBConnection.getInstance().getConnection();
-        String query = "SELECT * FROM `utilisateur`";
+        String query = "SELECT * FROM `rerservation`";
         Statement st;
         ResultSet rs;
         try {
             st = conn.createStatement();
             rs = st.executeQuery(query);
-            Utilisateur utilisateur;
+            Reservation reservation;
             while (rs.next()) {
-                utilisateur = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
-                        rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"));
-                utilisateurs.add(utilisateur);
+               reservation = new Reservation( rs.getDate("datedeb"), rs.getDate("datrfin"), rs.getString("cin"),
+                        rs.getString("marque"), rs.getString("adresse"), rs.getString("type"), rs.getString("prix"));
+                reservations.add(reservation);
 
             }
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return utilisateurs;
+        return reservations;
 
     }
 
@@ -95,4 +98,5 @@ public class ReservationService implements IService<Reservation> {
 
     }
 
-}
+   }
+
