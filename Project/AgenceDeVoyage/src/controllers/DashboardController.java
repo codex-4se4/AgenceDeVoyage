@@ -52,7 +52,7 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXButton btnControls;
 
-    private FXMLLoader loader;
+    private FXMLLoader profilLoader;
     @FXML
     private JFXButton btnContacts21;
     @FXML
@@ -75,7 +75,7 @@ public class DashboardController implements Initializable {
         try {
             weatherText.setText(
                     getLocation().get("name").toString() + " "
-                            + getWeatherInformation().get("temp_c")+ "°C"
+                    + getWeatherInformation().get("temp_c") + "°C"
             );
         } catch (MalformedURLException ex) {
             Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
@@ -93,8 +93,8 @@ public class DashboardController implements Initializable {
             utilisateurs = FXMLLoader.load(getClass().getResource("/gui/Utilisateurs.fxml"));
             alerts = FXMLLoader.load(getClass().getResource("/gui/Alerts.fxml"));
             pricing = FXMLLoader.load(getClass().getResource("/gui/Pricing.fxml"));
-            loader = new FXMLLoader(getClass().getResource("/gui/Profil.fxml"));
-            profiles = loader.load();
+            profilLoader = new FXMLLoader(getClass().getResource("/gui/Profil.fxml"));
+            profiles = profilLoader.load();
             widgets = FXMLLoader.load(getClass().getResource("/gui/Widgets.fxml"));
             controls = FXMLLoader.load(getClass().getResource("/gui/Controls.fxml"));
             setNode(profiles);
@@ -149,7 +149,7 @@ public class DashboardController implements Initializable {
     }
 
     public void setCurrentUser(Utilisateur u) throws FileNotFoundException {
-        ProfilController profilController = loader.getController();
+        ProfilController profilController = profilLoader.getController();
         profilController.setUserInformation(u);
     }
 
