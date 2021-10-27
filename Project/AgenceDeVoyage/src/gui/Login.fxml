@@ -32,7 +32,7 @@
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXCheckBox fx:id="remember" layoutX="167.0" layoutY="264.0" prefHeight="18.0" prefWidth="108.0" text="Remember me" textFill="#a0a2ab">
+      <JFXCheckBox fx:id="remember" layoutX="167.0" layoutY="264.0" prefHeight="18.0" prefWidth="108.0" selected="true" text="Remember me" textFill="#a0a2ab">
          <font>
             <Font size="15.0" />
          </font>
