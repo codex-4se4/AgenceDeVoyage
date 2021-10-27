@@ -22,10 +22,9 @@ public class Utilisateur {
     private String passeport;
     private String login;
     private String mdp;
-    private Blob photo;
-                                                         // permet a la BD de différencier user et admin
+    private String photo;
 
-    public Utilisateur(int id, String nom, String prenom, String email, String cin, String passeport, String login, String mdp) {
+    public Utilisateur(int id, String nom, String prenom, String email, String cin, String passeport, String login, String mdp, String photo) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -34,9 +33,10 @@ public class Utilisateur {
         this.passeport = passeport;
         this.login = login;
         this.mdp = DigestUtils.shaHex(mdp);
+        this.photo = photo;
     }
 
-    public Utilisateur(String nom, String prenom, String email, String cin, String passeport, String login, String mdp) {
+    public Utilisateur(String nom, String prenom, String email, String cin, String passeport, String login, String mdp, String photo) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
@@ -44,6 +44,7 @@ public class Utilisateur {
         this.passeport = passeport;
         this.login = login;
         this.mdp = DigestUtils.shaHex(mdp);
+        this.photo = photo;
     }
 
     public Utilisateur() {
@@ -112,4 +113,13 @@ public class Utilisateur {
     public void setMdp(String mdp) {
         this.mdp = DigestUtils.shaHex(mdp);
     }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
 }
