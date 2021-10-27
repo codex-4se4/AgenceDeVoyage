@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="618.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionReservationController">
    <children>
-      <AnchorPane layoutX="10.0" layoutY="35.0" prefHeight="117.0" prefWidth="1180.0" style="-fx-background-color: #0c1326;">
+      <AnchorPane layoutX="29.0" layoutY="38.0" prefHeight="117.0" prefWidth="1180.0" style="-fx-background-color: #0c1326;">
          <children>
             <Circle fill="#d7dadd" layoutX="83.0" layoutY="77.0" radius="57.0" stroke="#a49f9f" strokeType="INSIDE" />
             <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="59.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
@@ -34,41 +34,41 @@
             </Label>
          </children>
       </AnchorPane>
-      <Label layoutX="7.0" layoutY="176.0" prefHeight="38.0" prefWidth="189.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Détails Réservation" />
-      <Label layoutX="18.0" layoutY="9.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text=" Gestion Réservations" />
-      <Label layoutX="12.0" layoutY="221.0" prefHeight="25.0" prefWidth="83.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Prénom" textFill="#918dbc" />
-      <Label layoutX="8.0" layoutY="245.0" prefHeight="25.0" prefWidth="83.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="nom" textFill="#918dbc" />
-      <Label layoutX="12.0" layoutY="284.0" prefHeight="25.0" prefWidth="140.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="idHebergement" textFill="#918dbc" />
-      <Label layoutX="11.0" layoutY="317.0" prefHeight="25.0" prefWidth="114.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="marquevoiture" textFill="#918dbc" />
-      <TextField fx:id="prenom" layoutX="119.0" layoutY="221.0" prefHeight="25.0" prefWidth="133.0" />
-      <TextField fx:id="nom" layoutX="122.0" layoutY="251.0" prefHeight="25.0" prefWidth="126.0" />
-      <TextField fx:id="idH" layoutX="129.0" layoutY="282.0" prefHeight="25.0" prefWidth="120.0" />
-      <TextField fx:id="marqueV" layoutX="128.0" layoutY="319.0" prefHeight="25.0" prefWidth="120.0" />
-      <TableView fx:id="tvreservation" layoutX="255.0" layoutY="204.0" onMouseClicked="#selectRowAction" prefHeight="399.0" prefWidth="510.0">
+      <Label layoutX="26.0" layoutY="179.0" prefHeight="38.0" prefWidth="189.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text="Détails Réservation" />
+      <Label layoutX="37.0" layoutY="12.0" prefHeight="29.0" prefWidth="207.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #7387A8;" text=" Gestion Réservations" />
+      <Label layoutX="31.0" layoutY="224.0" prefHeight="25.0" prefWidth="83.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="cin" textFill="#918dbc" />
+      <Label layoutX="27.0" layoutY="256.0" prefHeight="25.0" prefWidth="83.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="datedeb" textFill="#918dbc" />
+      <Label layoutX="31.0" layoutY="287.0" prefHeight="25.0" prefWidth="140.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="datefin" textFill="#918dbc" />
+      <Label layoutX="30.0" layoutY="320.0" prefHeight="25.0" prefWidth="114.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="marque" textFill="#918dbc" />
+      <TextField fx:id="cin" layoutX="138.0" layoutY="224.0" prefHeight="25.0" prefWidth="126.0" />
+      <TextField fx:id="datedeb" layoutX="140.0" layoutY="254.0" prefHeight="25.0" prefWidth="126.0" />
+      <TextField fx:id="datefin" layoutX="142.0" layoutY="285.0" prefHeight="25.0" prefWidth="126.0" />
+      <TextField fx:id="marque" layoutX="147.0" layoutY="322.0" prefHeight="25.0" prefWidth="120.0" />
+      <TableView fx:id="tvreservation" layoutX="274.0" layoutY="207.0" onMouseClicked="#selectRowAction" prefHeight="399.0" prefWidth="510.0">
          <columns>
-            <TableColumn fx:id="colprenom" maxWidth="100.0" minWidth="5.0" prefWidth="124.0" text="prenom" />
-            <TableColumn fx:id="colnom" minWidth="5.0" prefWidth="100.0" text="nom" />
-            <TableColumn fx:id="colidhebergement" prefWidth="120.0" text="idHebergement" />
-            <TableColumn fx:id="colmarquevoiture" maxWidth="180.0" minWidth="0.0" prefWidth="101.0" text="marquevoiture" />
-            <TableColumn fx:id="coldate" maxWidth="100.0" prefWidth="124.0" text="date" />
+            <TableColumn fx:id="colcin" maxWidth="100.0" minWidth="5.0" prefWidth="124.0" text="cin" />
+            <TableColumn fx:id="coldatedeb" minWidth="5.0" prefWidth="100.0" text="datedeb" />
+            <TableColumn fx:id="coldatefin" prefWidth="120.0" text="datefin" />
+            <TableColumn fx:id="colmarque" maxWidth="180.0" minWidth="0.0" prefWidth="101.0" text="marque" />
+            <TableColumn fx:id="coladresse" maxWidth="100.0" prefWidth="124.0" text="Adresse" />
          </columns>
       </TableView>
-      <Button fx:id="ajouterR" layoutX="6.0" layoutY="427.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" text="AjouterR" textFill="#721669">
+      <Button fx:id="ajouterR" layoutX="25.0" layoutY="430.0" mnemonicParsing="false" onAction="#ajouterReservation" prefHeight="38.0" prefWidth="94.0" text="AjouterR" textFill="#721669">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="supprimeR" layoutX="116.0" layoutY="428.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="114.0" text="SupprimeR" textFill="#721669">
+      <Button fx:id="supprimeR" layoutX="135.0" layoutY="431.0" mnemonicParsing="false" onAction="#supprimereservation" prefHeight="38.0" prefWidth="114.0" text="SupprimeR" textFill="#721669">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="modifierR" layoutX="57.0" layoutY="517.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="106.0" text="ModifierR" textFill="#721669">
+      <Button fx:id="modifierR" layoutX="76.0" layoutY="520.0" mnemonicParsing="false" onAction="#moudifierReservation" prefHeight="30.0" prefWidth="106.0" text="ModifierR" textFill="#721669">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Label layoutX="11.0" layoutY="360.0" prefHeight="25.0" prefWidth="83.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="date" textFill="#918dbc" />
-      <TextField fx:id="dateR" layoutX="128.0" layoutY="361.0" prefHeight="25.0" prefWidth="126.0" />
+      <Label layoutX="30.0" layoutY="363.0" prefHeight="25.0" prefWidth="83.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Adresse" textFill="#918dbc" />
+      <TextField fx:id="adresse" layoutX="147.0" layoutY="364.0" prefHeight="25.0" prefWidth="120.0" />
    </children>
 </AnchorPane>
