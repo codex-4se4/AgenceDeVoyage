@@ -83,7 +83,7 @@ public class UtilisateursController implements Initializable {
         showUtilisateurs();
     }
 
-    public void showUtilisateurs() {
+    private void showUtilisateurs() {
         ObservableList<Utilisateur> utilisateurs = utilisateurService.consulter();
         colNom.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("nom"));
         colPrenom.setCellValueFactory(new PropertyValueFactory<Utilisateur, String>("prenom"));
@@ -141,7 +141,7 @@ public class UtilisateursController implements Initializable {
     }
 
     @FXML
-    private void suprrimerAction(ActionEvent event) {
+    private void supprimerAction(ActionEvent event) {
         if (selectedUtilisateur != null) {
             utilisateurService.supprimer(selectedUtilisateur);
             showUtilisateurs();
