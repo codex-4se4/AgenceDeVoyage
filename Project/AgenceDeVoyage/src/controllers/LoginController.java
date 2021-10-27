@@ -13,6 +13,7 @@ import com.jfoenix.controls.JFXTextField;
 import entities.Utilisateur;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -85,7 +86,7 @@ public class LoginController implements Initializable {
         Parent root = (Parent) loader.load();
         DashboardController dashboardController = loader.getController();
         Utilisateur user = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
-                rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"));
+                rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"), rs.getString("photo"));
         dashboardController.setCurrentUser(user);
 
         Scene scene = new Scene(root);
@@ -143,4 +144,4 @@ public class LoginController implements Initializable {
         motDePasseOublie.setResizable(false);
     }
 
-        }
+}
