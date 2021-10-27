@@ -33,11 +33,6 @@
         </JFXToolbar>
         <VBox layoutY="121.0" prefHeight="1245.0" prefWidth="165.0">
             <children>
-                <JFXButton fx:id="btnControls" onAction="#switchControls" prefHeight="42.0" prefWidth="171.0" style="-fx-alignment: left;" styleClass="nav-button" text="Tableau de bord" textFill="#a1aec4">
-                    <font>
-                        <Font name="Roboto Bold" size="14.0" />
-                    </font>
-                </JFXButton>
                 <JFXButton fx:id="btnContacts21" onAction="#switchProfile" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Profil" textFill="#a1aec4">
                     <font>
                         <Font name="Roboto Bold" size="14.0" />
