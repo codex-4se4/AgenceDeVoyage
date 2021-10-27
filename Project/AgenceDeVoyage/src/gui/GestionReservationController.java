@@ -17,7 +17,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import entities.Hebergement;
+import entities.Reservation;
 import entities.Voiture;
+import java.date;
+import javafx.event.ActionEvent;
 
 /**
  * FXML Controller class
@@ -26,25 +29,17 @@ import entities.Voiture;
  */
 public class GestionReservationController implements Initializable {
     @FXML
-    private TextField prenom;
+    private TextField cin;
     @FXML
-    private TextField nom;
+    private TextField datedeb;
     @FXML
-    private TextField idH;
-    @FXML
-    private TextField marqueV;
+    private TextField datefin;
+     @FXML
+    private TextField marque;
+      @FXML
+    private TextField adresse;
     @FXML
     private TableView<?> tvreservation;
-    @FXML
-    private TableColumn<Utilisateur, String> colprenom;
-    @FXML
-    private TableColumn<Utilisateur, String> colnom;
-    @FXML
-    private TableColumn<Hebergement,Int> colidhebergement;
-    @FXML
-    private TableColumn<?, ?> colmarquevoiture;
-    @FXML
-    private TableColumn<?, ?> coldate;
     @FXML
     private Button ajouterR;
     @FXML
@@ -52,7 +47,17 @@ public class GestionReservationController implements Initializable {
     @FXML
     private Button modifierR;
     @FXML
-    private TextField dateR;
+    private Label nomComplet;
+    @FXML
+    private TableColumn<?, ?> colcin;
+    @FXML
+    private TableColumn<?, ?> coldatedeb;
+    @FXML
+    private TableColumn<?, ?> coldatefin;
+    @FXML
+    private TableColumn<?, ?> colmarque;
+    @FXML
+    private TableColumn<?, ?> coladresse;
 
     /**
      * Initializes the controller class.
@@ -64,6 +69,18 @@ public class GestionReservationController implements Initializable {
 
     @FXML
     private void selectRowAction(MouseEvent event) {
+    }
+
+    @FXML
+    private void ajouterReservation(ActionEvent event) {
+    }
+
+    @FXML
+    private void supprimereservation(ActionEvent event) {
+    }
+
+    @FXML
+    private void moudifierReservation(ActionEvent event) {
     }
     
 }
