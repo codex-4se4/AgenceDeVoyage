@@ -63,9 +63,7 @@ public class LoginController implements Initializable {
 
         rs = loginQuery(SQL);
         if (rs == null || !rs.next()) {
-
             echec.setVisible(true);
-
             return;
         }
         if (remember.isSelected()) {
@@ -78,12 +76,18 @@ public class LoginController implements Initializable {
         }
         login.getScene().getWindow().hide();
         Stage dashboard = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Dashboard.fxml"));
+        FXMLLoader loader = new FXMLLoader(rs.getInt("id_role") == 1
+                ? getClass().getResource("/gui/Dashboard.fxml")
+                : getClass().getResource("/gui/UserDashboard.fxml"));
         Parent root = (Parent) loader.load();
-        DashboardController dashboardController = loader.getController();
         Utilisateur user = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
                 rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"), rs.getString("photo"));
-        dashboardController.setCurrentUser(user);
+
+        if (rs.getInt("id_role") == 1) {
+            ((DashboardController) loader.getController()).setCurrentUser(user);
+        } else {
+            ((UserDashboardController) loader.getController()).setCurrentUser(user);
+        }
 
         Scene scene = new Scene(root);
         dashboard.setScene(scene);
