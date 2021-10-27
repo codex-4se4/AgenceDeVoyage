@@ -12,78 +12,78 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InscriptionController">
     <children>
-      <AnchorPane prefHeight="655.0" prefWidth="195.0" style="-fx-background-color: #0c1326;">
-         <children>
-            <ImageView fitHeight="81.0" fitWidth="200.0" layoutX="57.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/van.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="37.0" layoutY="72.0" prefHeight="44.0" prefWidth="135.0" text="Tunsia" textAlignment="CENTER" textFill="#2196f3">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Label>
-            <Label layoutX="104.0" layoutY="72.0" prefHeight="44.0" prefWidth="68.0" text="Trip" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="198.0" layoutY="-1.0" prefHeight="144.0" prefWidth="907.0" style="-fx-background-color: #0c1326;" />
-          <JFXTextField fx:id="prenom" layoutX="364.0" layoutY="223.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre prénom">
-              <font>
-                  <Font size="14.0" />
-              </font>
-          </JFXTextField>
-          <JFXTextField fx:id="nom" layoutX="364.0" layoutY="295.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre nom" styleClass="-fx-prompt-text-fill : #a0a2ab">
-              <font>
-                  <Font size="14.0" />
-              </font>
-          </JFXTextField>
-          <JFXTextField fx:id="login" layoutX="364.0" layoutY="377.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre login">
-              <font>
-                  <Font size="14.0" />
-              </font>
-          </JFXTextField>
-          <JFXTextField fx:id="email" layoutX="364.0" layoutY="454.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre Email">
-              <font>
-                  <Font size="14.0" />
-              </font>
-          </JFXTextField>
-          <JFXTextField fx:id="cin" layoutX="741.0" layoutY="223.0" prefHeight="30.0" prefWidth="251.0" promptText="Entrez votre CIN">
-              <font>
-                  <Font size="14.0" />
-              </font>
-          </JFXTextField>
-          <JFXTextField fx:id="passeport" layoutX="741.0" layoutY="295.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre passeport">
-              <font>
-                  <Font size="14.0" />
-              </font>
-          </JFXTextField>
-          <JFXPasswordField fx:id="mdp" layoutX="741.0" layoutY="377.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre mot de passe">
-              <font>
-                  <Font size="14.0" />
-              </font>
-          </JFXPasswordField>
-          <JFXButton buttonType="RAISED" layoutX="448.0" layoutY="534.0" onAction="#creerCompteAction" prefHeight="37.0" prefWidth="195.0" style="-fx-background-color: #2196f3;" text="Créer un compte" textFill="WHITE">
-              <font>
-                  <Font size="14.0" />
-              </font>
-          </JFXButton>
-          <JFXButton buttonType="RAISED" layoutX="713.0" layoutY="534.0" onAction="#authentifierAction" prefHeight="37.0" prefWidth="195.0" style="-fx-background-color: #2196f3;" text="S'authentifier" textFill="WHITE">
-              <font>
-                  <Font size="14.0" />
-              </font>
-          </JFXButton>
-          <ImageView fx:id="progress" fitHeight="54.0" fitWidth="154.0" layoutX="642.0" layoutY="584.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                  <Image url="@../images/loader.gif" />
-              </image>
-          </ImageView>
-      <Circle fx:id="circle" fill="#d7dadd" layoutX="306.0" layoutY="145.0" onMouseClicked="#browseAction" radius="72.0" stroke="#a49f9f" strokeType="INSIDE" />
-      <Separator layoutX="198.0" layoutY="144.0" prefHeight="7.0" prefWidth="36.0" style="-fx-background-color: #2196f3;" />
-      <Separator layoutX="378.0" layoutY="144.0" prefHeight="7.0" prefWidth="728.0" style="-fx-background-color: #2196f3;" />
+        <AnchorPane prefHeight="655.0" prefWidth="195.0" style="-fx-background-color: #0c1326;">
+            <children>
+                <ImageView fitHeight="81.0" fitWidth="200.0" layoutX="57.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/van.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="37.0" layoutY="72.0" prefHeight="44.0" prefWidth="135.0" text="Tunsia" textAlignment="CENTER" textFill="#2196f3">
+                    <font>
+                        <Font size="21.0" />
+                    </font>
+                </Label>
+                <Label layoutX="104.0" layoutY="72.0" prefHeight="44.0" prefWidth="68.0" text="Trip" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="21.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="198.0" layoutY="-1.0" prefHeight="144.0" prefWidth="907.0" style="-fx-background-color: #0c1326;" />
+        <JFXTextField fx:id="prenom" layoutX="364.0" layoutY="223.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre prénom">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="nom" layoutX="364.0" layoutY="295.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre nom" styleClass="-fx-prompt-text-fill : #a0a2ab">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="login" layoutX="364.0" layoutY="377.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre login">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="email" layoutX="364.0" layoutY="454.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre Email">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="cin" layoutX="741.0" layoutY="223.0" prefHeight="30.0" prefWidth="251.0" promptText="Entrez votre CIN">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="passeport" layoutX="741.0" layoutY="295.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre passeport">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXTextField>
+        <JFXPasswordField fx:id="mdp" layoutX="741.0" layoutY="377.0" prefHeight="25.0" prefWidth="251.0" promptText="Entrez votre mot de passe">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXPasswordField>
+        <JFXButton buttonType="RAISED" layoutX="448.0" layoutY="534.0" onAction="#creerCompteAction" prefHeight="37.0" prefWidth="195.0" style="-fx-background-color: #2196f3;" text="Créer un compte" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="713.0" layoutY="534.0" onAction="#authentifierAction" prefHeight="37.0" prefWidth="195.0" style="-fx-background-color: #2196f3;" text="S'authentifier" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </JFXButton>
+        <ImageView fx:id="progress" fitHeight="54.0" fitWidth="154.0" layoutX="642.0" layoutY="584.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/loader.gif" />
+            </image>
+        </ImageView>
+        <Circle fx:id="circle" fill="#d7dadd" layoutX="306.0" layoutY="145.0" onMouseClicked="#browseAction" radius="72.0" stroke="#a49f9f" strokeType="INSIDE" />
+        <Separator layoutX="198.0" layoutY="144.0" prefHeight="7.0" prefWidth="36.0" style="-fx-background-color: #2196f3;" />
+        <Separator layoutX="378.0" layoutY="144.0" prefHeight="7.0" prefWidth="728.0" style="-fx-background-color: #2196f3;" />
     </children>
 </AnchorPane>
