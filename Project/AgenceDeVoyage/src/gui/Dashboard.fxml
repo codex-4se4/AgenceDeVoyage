@@ -33,22 +33,22 @@
         </JFXToolbar>
         <VBox layoutY="121.0" prefHeight="1245.0" prefWidth="165.0">
             <children>
-                <JFXButton fx:id="btnContacts21" onAction="#switchProfile" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Profil" textFill="#a1aec4">
+                <JFXButton onAction="#switchProfile" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Profil" textFill="#a1aec4">
                     <font>
                         <Font name="Roboto Bold" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="btnPricing" onAction="#switchPricing" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Réservations" textFill="#a1aec4">
+                <JFXButton prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Réservations" textFill="#a1aec4">
                     <font>
                         <Font name="Roboto Bold" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="btnWidgets" onAction="#switchWidget" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Hebergements" textFill="#a1aec4">
+                <JFXButton prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Hebergements" textFill="#a1aec4">
                     <font>
                         <Font name="Roboto Bold" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="btnContacts" onAction="#switchContacts" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Voitures" textFill="#a1aec4">
+                <JFXButton prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Voitures" textFill="#a1aec4">
                     <font>
                         <Font name="Roboto Bold" size="14.0" />
                     </font>
@@ -58,12 +58,12 @@
                         <Font name="Roboto Bold" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="btnContacts2" onAction="#switchContacts" prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Partenariats" textFill="#a1aec4">
+                <JFXButton prefHeight="42.0" prefWidth="166.0" style="-fx-alignment: left;" styleClass="nav-button" text="Partenariats" textFill="#a1aec4">
                     <font>
                         <Font name="Roboto Bold" size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="btnAlerts" onAction="#switchAlert" prefHeight="42.0" prefWidth="165.0" style="-fx-alignment: left;" styleClass="nav-button" text="Contact" textFill="#a1aec4">
+                <JFXButton prefHeight="42.0" prefWidth="165.0" style="-fx-alignment: left;" styleClass="nav-button" text="Contact" textFill="#a1aec4">
                     <font>
                         <Font name="Roboto Bold" size="14.0" />
                     </font>
