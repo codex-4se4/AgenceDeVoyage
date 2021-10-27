@@ -73,11 +73,12 @@
                         <Font name="Roboto Bold" size="14.0" />
                     </font>
                 </JFXButton>
-            <ImageView fx:id="image" fitHeight="93.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true" />
-            <Text fx:id="weatherText" fill="#a1aec4" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="171.6708984375">
-               <font>
-                  <Font size="26.0" />
-               </font></Text>
+                <ImageView fx:id="image" fitHeight="93.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true" />
+                <Text fx:id="weatherText" fill="#a1aec4" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="171.6708984375">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Text>
             </children>
         </VBox>
         <AnchorPane fx:id="holderPane" layoutX="166.0" prefHeight="900.0" prefWidth="1800.0" />
