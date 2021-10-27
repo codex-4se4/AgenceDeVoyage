@@ -8,6 +8,7 @@ package controllers;
 import api.WeatherAPI;
 import com.jfoenix.controls.JFXButton;
 import entities.Utilisateur;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -147,7 +148,7 @@ public class DashboardController implements Initializable {
         setNode(controls);
     }
 
-    public void setCurrentUser(Utilisateur u) {
+    public void setCurrentUser(Utilisateur u) throws FileNotFoundException {
         ProfilController profilController = loader.getController();
         profilController.setUserInformation(u);
     }
