@@ -50,52 +50,53 @@
         <Circle fx:id="circle" fill="#d7dadd" layoutX="306.0" layoutY="145.0" onMouseClicked="#browseAction" radius="72.0" stroke="#a49f9f" strokeType="INSIDE" />
         <Separator layoutX="198.0" layoutY="144.0" prefHeight="7.0" prefWidth="36.0" style="-fx-background-color: #2196f3;" />
         <Separator layoutX="378.0" layoutY="144.0" prefHeight="7.0" prefWidth="786.0" style="-fx-background-color: #2196f3;" />
-      <Label layoutX="259.0" layoutY="239.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Prénom" textFill="#918dbc">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
-      <Label layoutX="259.0" layoutY="311.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Nom" textFill="#918dbc">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="259.0" layoutY="382.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Login" textFill="#918dbc">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="259.0" layoutY="455.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Email" textFill="#918dbc">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="691.0" layoutY="240.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="CIN" textFill="#918dbc">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="687.0" layoutY="312.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Passeport" textFill="#918dbc">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="678.0" layoutY="394.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Mot de passe" textFill="#918dbc">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <TextField fx:id="prenom" layoutX="368.0" layoutY="234.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre prénom" />
-      <TextField fx:id="nom" layoutX="368.0" layoutY="306.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre nom" />
-      <TextField fx:id="login" layoutX="368.0" layoutY="377.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre login" />
-      <TextField fx:id="email" layoutX="368.0" layoutY="450.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre Email" />
-      <TextField fx:id="cin" layoutX="837.0" layoutY="235.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre CIN" />
-      <TextField fx:id="passeport" layoutX="837.0" layoutY="313.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre passeport" />
-      <PasswordField fx:id="mdp" layoutX="837.0" layoutY="389.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre mot de passe" />
-      <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="1061.0" layoutY="391.0" onMousePressed="#showPassword" onMouseReleased="#hidePassword" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/showPassword.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="passwordText" layoutX="837.0" layoutY="389.0" prefHeight="31.0" prefWidth="195.0" visible="false" />
+        <Label layoutX="259.0" layoutY="239.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Prénom" textFill="#918dbc">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="259.0" layoutY="311.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Nom" textFill="#918dbc">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="259.0" layoutY="382.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Login" textFill="#918dbc">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="259.0" layoutY="455.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Email" textFill="#918dbc">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="691.0" layoutY="240.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="CIN" textFill="#918dbc">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="687.0" layoutY="312.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Passeport" textFill="#918dbc">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="678.0" layoutY="394.0" prefHeight="21.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Mot de passe" textFill="#918dbc">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="prenom" layoutX="368.0" layoutY="234.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre prénom" />
+        <TextField fx:id="nom" layoutX="368.0" layoutY="306.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre nom" />
+        <TextField fx:id="login" layoutX="368.0" layoutY="377.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre login" />
+        <TextField fx:id="email" layoutX="368.0" layoutY="450.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre Email" />
+        <TextField fx:id="cin" layoutX="837.0" layoutY="235.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre CIN" />
+        <TextField fx:id="passeport" layoutX="837.0" layoutY="313.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre passeport" />
+        <PasswordField fx:id="mdp" layoutX="837.0" layoutY="389.0" prefHeight="31.0" prefWidth="195.0" promptText="Entrez votre mot de passe" />
+        <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="1061.0" layoutY="391.0" onMousePressed="#showPassword" onMouseReleased="#hidePassword" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/showPassword.png" />
+            </image>
+        </ImageView>
+        <TextField fx:id="passwordText" layoutX="837.0" layoutY="389.0" prefHeight="31.0" prefWidth="195.0" visible="false" />
     </children>
 </AnchorPane>
