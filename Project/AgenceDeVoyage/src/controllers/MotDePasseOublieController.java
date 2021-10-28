@@ -12,12 +12,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javax.mail.Message;
@@ -60,9 +63,7 @@ public class MotDePasseOublieController implements Initializable {
 
     @FXML
     private void envoyerAction(ActionEvent event) throws Exception {
-        if (email.getText().isEmpty()) {
-            emailControl.setVisible(true);
-            emailControl.setText("Veuillez saisir votre email de récupération");
+        if (!validateData()) {
             return;
         }
 
@@ -130,6 +131,37 @@ public class MotDePasseOublieController implements Initializable {
             ex.getStackTrace();
         }
         return null;
+    }
+
+    private boolean isValidEmail(String s) {
+        Pattern p = Pattern.compile("^[a-zA-Z-]+@[a-zA-Z-]+\\.[a-zA-Z]{2,6}$");
+        Matcher m = p.matcher(s);
+        return m.find() && m.group().equals(s);
+    }
+
+    private boolean isUniqueEmail(String s) {
+        return utilisateurService.consulterParEmail(email.getText()) == null;
+
+    }
+
+    private boolean validateData() {
+        StringBuilder sb = new StringBuilder();
+
+        if (email.getText().isEmpty()) {
+            sb.append("Votre email est vide " + "\n");
+        } else if (!isValidEmail(email.getText())) {
+            sb.append("Votre email n'est pas valide " + "\n");
+        }
+
+        if (sb.length() != 0) {
+            emailControl.setText(sb.toString());
+            emailControl.setVisible(true);
+            return false;
+        }
+
+        emailControl.setVisible(false);
+        return true;
+
     }
 
 }
