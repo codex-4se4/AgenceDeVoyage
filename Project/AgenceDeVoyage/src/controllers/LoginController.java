@@ -5,7 +5,6 @@
  */
 package controllers;
 
-import database.DBConnection;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
@@ -13,10 +12,7 @@ import com.jfoenix.controls.JFXTextField;
 import entities.Utilisateur;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 import javafx.event.ActionEvent;
@@ -25,11 +21,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import org.apache.commons.codec.digest.DigestUtils;
 import services.UtilisateurService;
 
 /**
