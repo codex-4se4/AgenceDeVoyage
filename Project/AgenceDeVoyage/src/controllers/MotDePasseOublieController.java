@@ -42,7 +42,7 @@ public class MotDePasseOublieController implements Initializable {
     @FXML
     private JFXTextField email;
 
-    UtilisateurService utilisateurService;
+    private UtilisateurService utilisateurService;
     @FXML
     private Label emailControl;
 
@@ -71,7 +71,6 @@ public class MotDePasseOublieController implements Initializable {
             emailControl.setVisible(true);
             emailControl.setText("Aucun utilisateur n'existe avec l'email saisi");
             return;
-
         }
         final String username = "TunisiaTrip2021@gmail.com";
         final String password = "123456789aA&";
