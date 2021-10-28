@@ -23,6 +23,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -41,33 +43,35 @@ import javax.imageio.ImageIO;
  */
 public class InscriptionController implements Initializable {
 
-    @FXML
-    private JFXTextField nom;
-    @FXML
-    private JFXTextField prenom;
-    @FXML
-    private JFXTextField email;
-    @FXML
-    private JFXTextField login;
-    @FXML
-    private JFXPasswordField mdp;
-    @FXML
-    private JFXTextField cin;
-    @FXML
-    private JFXTextField passeport;
-
     UtilisateurService utilisateurService;
     @FXML
     private ImageView progress;
     private String pathPhoto;
     @FXML
     private Circle circle;
+    @FXML
+    private TextField prenom;
+    @FXML
+    private TextField nom;
+    @FXML
+    private TextField login;
+    @FXML
+    private TextField email;
+    @FXML
+    private TextField cin;
+    @FXML
+    private TextField passeport;
+    @FXML
+    private PasswordField mdp;
+    @FXML
+    private TextField passwordText;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        utilisateurService = new UtilisateurService();
         progress.setVisible(false);
         nom.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         prenom.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
@@ -76,7 +80,6 @@ public class InscriptionController implements Initializable {
         mdp.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         cin.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
         passeport.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
-        utilisateurService = new UtilisateurService();
         Image image = new Image("/images/defaultUser.png");
         circle.setFill(new ImagePattern(image));
 
@@ -84,9 +87,9 @@ public class InscriptionController implements Initializable {
 
     @FXML
     private void creerCompteAction(ActionEvent event) {
-        /*if (!validateData()) {
+        if (!validateData()) {
             return;
-        }*/
+        }
         Utilisateur user = new Utilisateur(nom.getText(), prenom.getText(), email.getText(), cin.getText(), passeport.getText(), login.getText(), mdp.getText(), pathPhoto);
         utilisateurService.ajouter(user);
 
@@ -99,7 +102,7 @@ public class InscriptionController implements Initializable {
         login.clear();
         mdp.clear();
         pathPhoto = null;
-        circle.setFill(null);
+        circle.setFill(new ImagePattern(new Image("/images/defaultUser.png")));
 
     }
 
@@ -129,27 +132,43 @@ public class InscriptionController implements Initializable {
     }
 
     private boolean isValidEmail(String s) {
-        Pattern p = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+        Pattern p = Pattern.compile("^[a-zA-Z-]+@[a-zA-Z-]+\\.[a-zA-Z]{2,6}$");
         Matcher m = p.matcher(s);
         return m.find() && m.group().equals(s);
     }
 
     private boolean isValidTextField(String s) {
-        Pattern p = Pattern.compile("^[a-zA-Z]*$");
+        Pattern p = Pattern.compile("[a-zA-Z]+");
         Matcher m = p.matcher(s);
         return m.find() && m.group().equals(s);
     }
 
     private boolean isValidNumber(String s) {
-        Pattern p = Pattern.compile("\\\\d+");
+        Pattern p = Pattern.compile("[0-9]+");
         Matcher m = p.matcher(s);
         return m.find() && m.group().equals(s);
     }
 
     private boolean isValidAlphaNumeric(String s) {
-        Pattern p = Pattern.compile("[A-Za-z0-9]");
+        Pattern p = Pattern.compile("[A-Za-z0-9]+");
         Matcher m = p.matcher(s);
         return m.find() && m.group().equals(s);
+    }
+
+    private boolean isValidLogin(String s) {
+        Pattern p = Pattern.compile("^[a-zA-Z][A-Za-z0-9]+");
+        Matcher m = p.matcher(s);
+        return m.find() && m.group().equals(s);
+    }
+
+    private boolean isUniqueLogin(String s) {
+        return utilisateurService.getUserByLogin(login.getText()) == null;
+
+    }
+
+    private boolean isUniqueEmail(String s) {
+        return utilisateurService.consulterParEmail(email.getText()) == null;
+
     }
 
     private boolean validateData() {
@@ -173,6 +192,8 @@ public class InscriptionController implements Initializable {
             sb.append("Votre email est vide " + "\n");
         } else if (!isValidEmail(email.getText())) {
             sb.append("Votre email n'est pas valide " + "\n");
+        } else if (!isUniqueEmail(email.getText())) {
+            sb.append("Vous avez déjà un compte avec cet email " + "\n");
         }
 
         if (cin.getText().isEmpty()) {
@@ -183,20 +204,23 @@ public class InscriptionController implements Initializable {
 
         if (passeport.getText().isEmpty()) {
             sb.append("Votre passeport est vide " + "\n");
-        } else if (!isValidAlphaNumeric(passeport.getText()) || cin.getText().length() != 6) {
+        } else if (!isValidAlphaNumeric(passeport.getText()) || passeport.getText().length() != 6) {
             sb.append("Votre passeport n'est pas valide " + "\n");
         }
 
         if (login.getText().isEmpty()) {
             sb.append("Votre login est vide " + "\n");
-        } else if (!isValidAlphaNumeric(login.getText()) || login.getText().length() < 4) {
-            sb.append("Votre login doit contenir des chiffres et des lettres et doit être supérieur à 4 " + "\n");
+        } else if (!isValidLogin(login.getText()) || login.getText().length() < 4) {
+            sb.append("Votre login doit contenir des chiffres et/ou des lettres et doit être supérieur à 4 " + "\n");
+        } else if (!isUniqueLogin(login.getText())) {
+            sb.append("Votre login existe déjà " + "\n");
+
         }
 
         if (mdp.getText().isEmpty()) {
             sb.append("Votre mot de passe est vide " + "\n");
-        } else if (!isValidAlphaNumeric(mdp.getText()) || mdp.getText().length() < 8) {
-            sb.append("Votre mot de passe doit contenir des chiffres et des lettres et doit être supérieur à 8 " + "\n");
+        } else if (!isValidAlphaNumeric(mdp.getText()) || mdp.getText().length() < 4) {
+            sb.append("Votre mot de passe doit contenir des chiffres et des lettres et doit être supérieur à 4 " + "\n");
         }
 
         if (pathPhoto == null) {
@@ -210,6 +234,20 @@ public class InscriptionController implements Initializable {
         }
 
         return true;
+
+    }
+
+    @FXML
+    private void hidePassword(MouseEvent event) {
+        mdp.setVisible(true);
+        passwordText.setVisible(false);
+    }
+
+    @FXML
+    private void showPassword(MouseEvent event) {
+        passwordText.setText(mdp.getText());
+        mdp.setVisible(false);
+        passwordText.setVisible(true);
 
     }
 }
