@@ -254,7 +254,7 @@ public class UtilisateursController implements Initializable {
         } else if (!isValidEmail(email.getText())) {
             sb.append("Votre email n'est pas valide " + "\n");
         } else if (!isUniqueEmail(email.getText())) {
-            sb.append("Vous avez déjà un compte avec cet email " + "\n");
+            sb.append("Il existe déjà un compte avec cet email " + "\n");
         }
 
         if (cin.getText().isEmpty()) {
