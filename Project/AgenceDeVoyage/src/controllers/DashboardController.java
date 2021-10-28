@@ -85,7 +85,6 @@ public class DashboardController implements Initializable {
 
     }
 
-    //Set selected node to a content holder
     private void setNode(Node node) {
         holderPane.getChildren().clear();
         holderPane.getChildren().add((Node) node);
