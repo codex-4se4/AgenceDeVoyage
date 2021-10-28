@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -209,7 +209,7 @@ public class InscriptionController implements Initializable {
         if (login.getText().isEmpty()) {
             sb.append("Votre login est vide " + "\n");
         } else if (!isValidLogin(login.getText()) || login.getText().length() < 4) {
-            sb.append("Votre login doit contenir des chiffres et/ou des lettres et doit être supérieur à 4 " + "\n");
+            sb.append("Votre login doit contenir des chiffres et des lettres et doit être supérieur à 4 " + "\n");
         } else if (!isUniqueLogin(login.getText())) {
             sb.append("Votre login existe déjà " + "\n");
 
