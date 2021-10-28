@@ -25,10 +25,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.apache.commons.codec.digest.DigestUtils;
+import services.UtilisateurService;
 
 /**
  *
@@ -55,17 +57,16 @@ public class LoginController implements Initializable {
     @FXML
     private JFXButton motDePasseOublie;
 
+    private UtilisateurService utilisateurService;
+
+    private Utilisateur currenUtilisateur;
+
     @FXML
     private void connexionAction(ActionEvent e) throws SQLException, IOException {
-        progress.setVisible(true);
-        String SQL = "SELECT * FROM `utilisateur` WHERE login= " + "'" + username.getText() + "' AND mdp='" + DigestUtils.shaHex(password.getText()) + "'";
-        ResultSet rs;
-
-        rs = loginQuery(SQL);
-        if (rs == null || !rs.next()) {
-            echec.setVisible(true);
+        if (!validateData()) {
             return;
         }
+        progress.setVisible(true);
         if (remember.isSelected()) {
             preferences.put("username", username.getText());
             preferences.put("password", password.getText());
@@ -76,17 +77,16 @@ public class LoginController implements Initializable {
         }
         login.getScene().getWindow().hide();
         Stage dashboard = new Stage();
-        FXMLLoader loader = new FXMLLoader(rs.getInt("id_role") == 1
+        Integer idRole = utilisateurService.getRole(currenUtilisateur.getId());
+        FXMLLoader loader = new FXMLLoader(idRole == 1
                 ? getClass().getResource("/gui/Dashboard.fxml")
                 : getClass().getResource("/gui/UserDashboard.fxml"));
         Parent root = (Parent) loader.load();
-        Utilisateur user = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
-                rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"), rs.getString("photo"));
 
-        if (rs.getInt("id_role") == 1) {
-            ((DashboardController) loader.getController()).setCurrentUser(user);
+        if (idRole == 1) {
+            ((DashboardController) loader.getController()).setCurrentUser(currenUtilisateur);
         } else {
-            ((UserDashboardController) loader.getController()).setCurrentUser(user);
+            ((UserDashboardController) loader.getController()).setCurrentUser(currenUtilisateur);
         }
 
         Scene scene = new Scene(root);
@@ -99,6 +99,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        utilisateurService = new UtilisateurService();
         progress.setVisible(false);
         echec.setVisible(false);
         username.setStyle("-fx-text-inner-color : #a0a2ab;" + "-fx-prompt-text-fill : #a0a2ab;");
@@ -119,20 +120,6 @@ public class LoginController implements Initializable {
         signUp.setResizable(false);
     }
 
-    private ResultSet loginQuery(String query) {
-        Connection conn = DBConnection.getInstance().getConnection();
-        Statement st;
-        ResultSet rs;
-        try {
-            st = conn.createStatement();
-            rs = st.executeQuery(query);
-        } catch (SQLException ex) {
-            System.out.println("Error: " + ex.getMessage());
-            return null;
-        }
-        return rs;
-    }
-
     @FXML
     private void motDePasseOublieAction(ActionEvent event) throws IOException {
         login.getScene().getWindow().hide();
@@ -142,6 +129,36 @@ public class LoginController implements Initializable {
         motDePasseOublie.setScene(scene);
         motDePasseOublie.show();
         motDePasseOublie.setResizable(false);
+    }
+
+    private boolean validateData() {
+        StringBuilder sb = new StringBuilder();
+
+        if (username.getText().isEmpty()) {
+            sb.append("Votre login est vide " + "\n");
+        }
+
+        if (password.getText().isEmpty()) {
+            sb.append("Votre password est vide " + "\n");
+        }
+
+        if (sb.length() != 0) {
+            echec.setVisible(true);
+            echec.setText(sb.toString());
+            return false;
+        } else {
+            currenUtilisateur = utilisateurService.getUserByLoginAndPassword(username.getText(), password.getText());
+            if (currenUtilisateur == null) {
+                echec.setVisible(true);
+                echec.setText("Login et/ou mot de passe erroné(s)");
+                return false;
+
+            }
+
+            return true;
+
+        }
+
     }
 
 }
