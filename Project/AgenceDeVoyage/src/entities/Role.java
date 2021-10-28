@@ -10,6 +10,7 @@ package entities;
  * @author bourg
  */
 public class Role {
+
     private int id;
     private String nom;
 
@@ -35,5 +36,5 @@ public class Role {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
+
 }
