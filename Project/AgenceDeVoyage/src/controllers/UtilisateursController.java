@@ -93,6 +93,8 @@ public class UtilisateursController implements Initializable {
     private String pathPhoto;
 
     private int currentUserId;
+    @FXML
+    private TextField visibleMdp;
 
     /**
      * Initializes the controller class.
@@ -381,6 +383,20 @@ public class UtilisateursController implements Initializable {
         }
 
         return true;
+
+    }
+
+    @FXML
+    private void hidePassword(MouseEvent event) {
+        mdp.setVisible(true);
+        visibleMdp.setVisible(false);
+    }
+
+    @FXML
+    private void showPassword(MouseEvent event) {
+        visibleMdp.setText(mdp.getText());
+        mdp.setVisible(false);
+        visibleMdp.setVisible(true);
 
     }
 
