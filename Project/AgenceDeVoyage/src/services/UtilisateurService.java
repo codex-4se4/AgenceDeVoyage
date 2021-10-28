@@ -41,7 +41,7 @@ public class UtilisateurService implements IService<Utilisateur> {
         u.setPhoto(u.getPhoto().replace("\\", " "));
         String SQL = "UPDATE `utilisateur` SET nom ='" + u.getNom() + "', prenom ='" + u.getPrenom()
                 + "',email ='" + u.getEmail() + "',cin ='" + u.getCin() + "',passeport='" + u.getPasseport()
-                + "',login='" + u.getLogin() + "',mdp='" + u.getMdp() + "',photo='" + u.getPhoto() +"' WHERE id =" + u.getId();
+                + "',login='" + u.getLogin() + "',mdp='" + u.getMdp() + "',photo='" + u.getPhoto() + "' WHERE id =" + u.getId();
         executeQuery(SQL);
         return true;
     }
