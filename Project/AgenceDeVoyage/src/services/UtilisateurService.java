@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -89,6 +90,73 @@ public class UtilisateurService implements IService<Utilisateur> {
         }
 
         return utilisateur;
+
+    }
+
+    public Utilisateur getUserByLogin(String login) {
+        Connection conn = DBConnection.getInstance().getConnection();
+        String query = "SELECT * FROM `utilisateur` where login = '" + login + "'";
+        Statement st;
+        ResultSet rs;
+        Utilisateur utilisateur = null;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            if (!rs.next()) {
+                return null;
+            }
+            utilisateur = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
+                    rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"), rs.getString("photo"));
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return utilisateur;
+
+    }
+
+    public Utilisateur getUserByLoginAndPassword(String login, String password) {
+        Connection conn = DBConnection.getInstance().getConnection();
+        String query = "SELECT * FROM `utilisateur` where login = '" + login + "' and mdp='" + DigestUtils.shaHex(password) + "'";
+        Statement st;
+        ResultSet rs;
+        Utilisateur utilisateur = null;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            if (!rs.next()) {
+                return null;
+            }
+            utilisateur = new Utilisateur(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"),
+                    rs.getString("cin"), rs.getString("passeport"), rs.getString("login"), rs.getString("mdp"), rs.getString("photo"));
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return utilisateur;
+
+    }
+
+    public Integer getRole(int id) {
+        Connection conn = DBConnection.getInstance().getConnection();
+        String query = "SELECT id_role FROM `utilisateur` where id = " + id;
+        Statement st;
+        ResultSet rs;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            if (!rs.next()) {
+                return null;
+            }
+            return rs.getInt("id_role");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
 
     }
 
