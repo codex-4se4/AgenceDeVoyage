@@ -48,7 +48,7 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXButton btnDeconnect;
 
-    private String apiWeather = "http://api.weatherapi.com/v1/current.json?key=553947b7b72f4193b9b134507212610%20&q=Tunisia&aqi=no";
+    private final String apiWeather = "http://api.weatherapi.com/v1/current.json?key=553947b7b72f4193b9b134507212610%20&q=Tunisia&aqi=no";
     @FXML
     private ImageView image;
     @FXML
@@ -107,7 +107,7 @@ public class DashboardController implements Initializable {
     public void setCurrentUser(Utilisateur u) throws FileNotFoundException {
         ProfilController profilController = profilLoader.getController();
         profilController.setUserInformation(u);
-        UtilisateursController utilisateursController =utilisateursLoader.getController();
+        UtilisateursController utilisateursController = utilisateursLoader.getController();
         utilisateursController.setUserInformation(u);
     }
 
