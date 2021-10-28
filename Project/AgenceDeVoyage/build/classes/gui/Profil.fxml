@@ -31,7 +31,7 @@
             <children>
                 <AnchorPane layoutY="4.0" prefHeight="153.0" prefWidth="1205.0" style="-fx-background-color: #0c1326;">
                     <children>
-                        <Circle fx:id="circle" fill="#d7dadd" layoutX="83.0" layoutY="77.0" radius="57.0" stroke="#a49f9f" strokeType="INSIDE" />
+                        <Circle fx:id="circle" fill="#d7dadd" layoutX="83.0" layoutY="77.0" onMouseClicked="#browseAction" radius="57.0" stroke="#a49f9f" strokeType="INSIDE" />
                         <Label fx:id="nomComplet" layoutX="140.0" layoutY="65.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #ffffff; -fx-font-size: 16; -fx-font-weight: bold; -fx-alignment: center;" text="Dan Mlayah" />
                         <Separator layoutX="173.0" layoutY="96.0" prefHeight="4.0" prefWidth="244.0" />
                         <Separator layoutX="173.0" layoutY="137.0" prefHeight="4.0" prefWidth="244.0" />
@@ -67,6 +67,12 @@
                 <TextField fx:id="login" editable="false" layoutX="265.0" layoutY="473.0" prefHeight="25.0" prefWidth="197.0" />
                 <Label fx:id="mdpLabel" layoutX="150.0" layoutY="534.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe" textFill="#918dbc" visible="false" />
                 <PasswordField fx:id="mdp" layoutX="265.0" layoutY="534.0" prefHeight="25.0" prefWidth="197.0" visible="false" />
+                <ImageView fx:id="showPasswordIcon" fitHeight="31.0" fitWidth="28.0" layoutX="477.0" layoutY="536.0" onMousePressed="#showPassword" onMouseReleased="#hidePassword" pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../images/showPassword.png" />
+                    </image>
+                </ImageView>
+                <TextField fx:id="passwordText" layoutX="265.0" layoutY="534.0" visible="false" />
                 <JFXButton fx:id="sauvegarder" layoutX="221.0" layoutY="584.0" onAction="#sauvegarderAction" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: #3C8DBC;" text="Sauvegarder" textFill="WHITE" visible="false">
                     <font>
                         <Font name="Roboto Medium" size="15.0" />
