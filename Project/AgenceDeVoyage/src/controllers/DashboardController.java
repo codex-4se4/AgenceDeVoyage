@@ -36,24 +36,24 @@ import org.json.simple.JSONObject;
  * @author danml
  */
 public class DashboardController implements Initializable {
-    
+
     @FXML
     private AnchorPane holderPane;
-    
+
     AnchorPane utilisateurs, profiles;
-    
-    private FXMLLoader profilLoader;
+
+    private FXMLLoader profilLoader, utilisateursLoader;
     @FXML
     private JFXButton btnUtilisateurs;
     @FXML
     private JFXButton btnDeconnect;
-    
+
     private String apiWeather = "http://api.weatherapi.com/v1/current.json?key=553947b7b72f4193b9b134507212610%20&q=Tunisia&aqi=no";
     @FXML
     private ImageView image;
     @FXML
     private Text weatherText;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -74,21 +74,22 @@ public class DashboardController implements Initializable {
         image.setImage(img);
         //Load all fxmls in a cache
         try {
-            utilisateurs = FXMLLoader.load(getClass().getResource("/gui/Utilisateurs.fxml"));
+            utilisateursLoader = new FXMLLoader(getClass().getResource("/gui/Utilisateurs.fxml"));
+            utilisateurs = utilisateursLoader.load();
             profilLoader = new FXMLLoader(getClass().getResource("/gui/Profil.fxml"));
             profiles = profilLoader.load();
             setNode(profiles);
         } catch (IOException ex) {
             Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     //Set selected node to a content holder
     private void setNode(Node node) {
         holderPane.getChildren().clear();
         holderPane.getChildren().add((Node) node);
-        
+
         FadeTransition ft = new FadeTransition(Duration.millis(1500));
         ft.setNode(node);
         ft.setFromValue(0.1);
@@ -97,17 +98,19 @@ public class DashboardController implements Initializable {
         ft.setAutoReverse(false);
         ft.play();
     }
-    
+
     @FXML
     private void switchUtilisateurs(ActionEvent event) {
         setNode(utilisateurs);
     }
-    
+
     public void setCurrentUser(Utilisateur u) throws FileNotFoundException {
         ProfilController profilController = profilLoader.getController();
         profilController.setUserInformation(u);
+        UtilisateursController utilisateursController =utilisateursLoader.getController();
+        utilisateursController.setUserInformation(u);
     }
-    
+
     @FXML
     private void deconnectAction(ActionEvent event) throws IOException {
         holderPane.getScene().getWindow().hide();
@@ -117,28 +120,28 @@ public class DashboardController implements Initializable {
         login.setScene(scene);
         login.show();
         login.setResizable(false);
-        
+
     }
-    
+
     public JSONObject getLocation() throws MalformedURLException {
         WeatherAPI apiConnectorWeather = new WeatherAPI(apiWeather);
-        
+
         return (JSONObject) apiConnectorWeather.getJSONObject().get("location");
-        
+
     }
-    
+
     public JSONObject getWeatherInformation() throws MalformedURLException {
         WeatherAPI apiConnectorWeather = new WeatherAPI(apiWeather);
-        
+
         return (JSONObject) apiConnectorWeather.getJSONObject().get("current");
-        
+
     }
-    
+
     public JSONObject getImage() throws MalformedURLException {
         JSONObject weatherInfo = getWeatherInformation();
         return (JSONObject) weatherInfo.get("condition");
     }
-    
+
     @FXML
     private void switchProfile(ActionEvent event) {
         setNode(profiles);
