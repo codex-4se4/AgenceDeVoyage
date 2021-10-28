@@ -7,8 +7,6 @@ package controllers;
 
 import entities.Utilisateur;
 import services.UtilisateurService;
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
