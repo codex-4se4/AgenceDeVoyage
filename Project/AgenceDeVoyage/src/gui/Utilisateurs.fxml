@@ -87,7 +87,7 @@
                         <Font name="Roboto Medium" size="15.0" />
                     </font>
                 </JFXButton>
-            <Circle fx:id="circleUser" fill="#d7dadd" layoutX="256.0" layoutY="274.0" onMouseClicked="#browseAction" radius="57.0" stroke="#a49f9f" strokeType="INSIDE" />
+                <Circle fx:id="circleUser" fill="#d7dadd" layoutX="256.0" layoutY="274.0" onMouseClicked="#browseAction" radius="57.0" stroke="#a49f9f" strokeType="INSIDE" />
             </children>
         </AnchorPane>
         <Separator layoutX="13.0" layoutY="268.0" prefHeight="4.0" prefWidth="1769.0" />
