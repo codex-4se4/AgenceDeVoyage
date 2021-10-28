@@ -65,9 +65,9 @@
                 <TextField fx:id="passeport" layoutX="142.0" layoutY="424.0" prefHeight="25.0" prefWidth="197.0" />
                 <Label layoutX="27.0" layoutY="478.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Login" textFill="#918dbc" />
                 <TextField fx:id="login" layoutX="142.0" layoutY="478.0" prefHeight="25.0" prefWidth="197.0" />
-                <Label fx:id="mdpLabel" layoutX="23.0" layoutY="522.0" prefHeight="25.0" prefWidth="189.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe" textFill="#918dbc" />
-                <PasswordField fx:id="mdp" layoutX="142.0" layoutY="522.0" prefHeight="25.0" prefWidth="197.0" />
-                <JFXButton fx:id="ajouterButton" layoutX="14.0" layoutY="569.0" onAction="#ajouterAction" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #3C8DBC;" text="Ajouter" textFill="WHITE">
+                <Label fx:id="mdpLabel" layoutX="23.0" layoutY="538.0" prefHeight="25.0" prefWidth="107.0" style="-fx-text-fill: #918dbc; -fx-font-size: 16; -fx-font-weight: bold;" text="Mot de passe" textFill="#918dbc" />
+                <PasswordField fx:id="mdp" layoutX="142.0" layoutY="535.0" prefHeight="25.0" prefWidth="197.0" />
+                <JFXButton fx:id="ajouterButton" layoutX="14.0" layoutY="597.0" onAction="#ajouterAction" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #3C8DBC;" text="Ajouter" textFill="WHITE">
                     <font>
                         <Font name="Roboto Medium" size="15.0" />
                     </font>
@@ -82,12 +82,12 @@
                         <TableColumn fx:id="colLogin" minWidth="0.0" prefWidth="161.0" text="Login" />
                     </columns>
                 </TableView>
-                <JFXButton fx:id="modifierButton" layoutX="199.0" layoutY="569.0" onAction="#modifierAction" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #3C8DBC;" text="Modifier" textFill="WHITE">
+                <JFXButton fx:id="modifierButton" layoutX="199.0" layoutY="597.0" onAction="#modifierAction" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #3C8DBC;" text="Modifier" textFill="WHITE">
                     <font>
                         <Font name="Roboto Medium" size="15.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="supprimerButton" layoutX="14.0" layoutY="611.0" onAction="#suprrimerAction" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #3C8DBC;" text="Supprimer" textFill="WHITE">
+                <JFXButton fx:id="supprimerButton" layoutX="14.0" layoutY="639.0" onAction="#supprimerAction" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #3C8DBC;" text="Supprimer" textFill="WHITE">
                     <font>
                         <Font name="Roboto Medium" size="15.0" />
                     </font>
