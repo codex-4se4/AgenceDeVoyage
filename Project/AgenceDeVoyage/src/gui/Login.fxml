@@ -72,7 +72,7 @@
                 <Image url="@../images/loader.gif" />
             </image>
         </ImageView>
-        <Label fx:id="echec" layoutX="21.0" layoutY="373.0" prefHeight="17.0" prefWidth="204.0" text="Login et/ou mot de passe erroné" textFill="#ed1111">
+        <Label fx:id="echec" layoutX="10.0" layoutY="321.0" prefHeight="72.0" prefWidth="223.0" text="Login et/ou mot de passe erroné" textFill="#ed1111">
             <font>
                 <Font size="14.0" />
             </font>
