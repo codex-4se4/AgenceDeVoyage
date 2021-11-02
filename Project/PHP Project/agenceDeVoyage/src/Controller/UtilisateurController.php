@@ -62,7 +62,7 @@ class UtilisateurController extends AbstractController
         $utilisateur = $this->getDoctrine()->getRepository(Utilisateur::class)->find($id);
 
         return $this->render("utilisateur/utilisateur.html.twig", [
-            "utilisateur" => $$utilisateur,
+            "utilisateur" => $utilisateur,
         ]);
     }
 
@@ -73,7 +73,7 @@ class UtilisateurController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
 
-        $utilisateur = $entityManager->getRepository(Product::class)->find($id);
+        $utilisateur = $entityManager->getRepository(Utilisateur::class)->find($id);
         $form = $this->createForm(UtilisateurFormType::class, $utilisateur);
         $form->handleRequest($request);
 
@@ -84,7 +84,7 @@ class UtilisateurController extends AbstractController
 
         return $this->render("utilisateur/utilisateur-form.html.twig", [
             "form_title" => "Modifier un utilisateur",
-            "form_product" => $form->createView(),
+            "form_utilisateur" => $form->createView(),
         ]);
     }
 
