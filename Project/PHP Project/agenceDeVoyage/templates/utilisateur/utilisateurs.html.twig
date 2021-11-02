@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UtilisateurController!{% endblock %}
+
+{% block body %}
+    <h1>Liste des utilisateurs</h1>
+    <p><a href="{{ path('ajouter_utilisateur') }}">Ajouter un utilisateur</a></p>
+    {% for utilisateur in utilisateurs %}
+        <table>
+            <thead>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+            <th>CIN</th>
+            <th>Passeport</th>
+            <th>Login</th>
+            <th>Mot de passe</th>
+            <th>Photo</th>
+            <th>Role</th>
+            </thead>
+            <tbody>
+            <td>{{ utilisateur.id }}</td>
+            <td>{{ utilisateur.nom }}</td>
+            <td>{{ utilisateur.prenom }}</td>
+            <td>{{ utilisateur.email }}</td>
+            <td>{{ utilisateur.cin }}</td>
+            <td>{{ utilisateur.passeport }}</td>
+            <td>{{ utilisateur.login }}</td>
+            <td>{{ utilisateur.mdp }}</td>
+            <td>{{ utilisateur.photo }}</td>
+            <td>{{ utilisateur.role }}</td>
+            </tbody>
+        </table>
+    {% endfor %}
+{% endblock %}
