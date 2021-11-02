@@ -65,4 +65,40 @@ class UtilisateurController extends AbstractController
             "utilisateur" => $$utilisateur,
         ]);
     }
+
+    /**
+     * @Route("/modifier-utilisateur/{id}", name="modifier_utilisateur")
+     */
+    public function modifierUtilisateur(Request $request, int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $utilisateur = $entityManager->getRepository(Product::class)->find($id);
+        $form = $this->createForm(UtilisateurFormType::class, $utilisateur);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $entityManager->flush();
+        }
+
+        return $this->render("utilisateur/utilisateur-form.html.twig", [
+            "form_title" => "Modifier un utilisateur",
+            "form_product" => $form->createView(),
+        ]);
+    }
+
+
+    /**
+     * @Route("/supprimer-utilisateur/{id}", name="supprimer_utilisateur")
+     */
+    public function supprimerUtilisateur(int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $utilisateur = $entityManager->getRepository(Utilisateur::class)->find($id);
+        $entityManager->remove($utilisateur);
+        $entityManager->flush();
+
+        return $this->redirectToRoute("utilisateurs");
+    }
 }
