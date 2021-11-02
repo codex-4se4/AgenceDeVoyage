@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Utilisateur;
 use App\Form\UtilisateurFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,11 +26,31 @@ class UtilisateurController extends AbstractController
      */
     public function ajouterUtilisateur(Request $request): Response
     {
-        $form = $this->createForm(UtilisateurFormType::class);
+        $utilisateur = new Utilisateur();
+        $form = $this->createForm(UtilisateurFormType::class,$utilisateur);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($utilisateur);
+            $entityManager->flush();
+        }
 
         return $this->render("utilisateur/utilisateur-form.html.twig",[
             "form_title" => "Ajouter utilisateur",
             "form_utilisateur" => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/utilisateurs", name="utilisateurs")
+     */
+    public function utilisateurs()
+    {
+        $utilisateurs = $this->getDoctrine()->getRepository(Utilisateur::class)->findAll();
+
+        return $this->render('utilisateur/utilisateurs.html.twig', [
+            "utilisateurs" => $utilisateurs,
         ]);
     }
 }
