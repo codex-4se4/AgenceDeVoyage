@@ -30,6 +30,7 @@
             <td>{{ utilisateur.mdp }}</td>
             <td>{{ utilisateur.photo }}</td>
             <td>{{ utilisateur.role }}</td>
+            <td><a href="{{ path('utilisateur', {'id': utilisateur.id}) }}">{{ utilisateur.nom }}</a></td>
             </tbody>
         </table>
     {% endfor %}
