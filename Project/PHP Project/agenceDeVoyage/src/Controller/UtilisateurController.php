@@ -53,4 +53,16 @@ class UtilisateurController extends AbstractController
             "utilisateurs" => $utilisateurs,
         ]);
     }
+
+    /**
+     * @Route("/utilisateur/{id}", name="utilisateur")
+     */
+    public function utilisateur(int $id): Response
+    {
+        $utilisateur = $this->getDoctrine()->getRepository(Utilisateur::class)->find($id);
+
+        return $this->render("utilisateur/utilisateur.html.twig", [
+            "utilisateur" => $$utilisateur,
+        ]);
+    }
 }
