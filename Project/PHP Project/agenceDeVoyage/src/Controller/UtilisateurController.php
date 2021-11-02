@@ -20,6 +20,9 @@ class UtilisateurController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/ajouter-utilisateur", name="ajouter_utilisateur")
+     */
     public function ajouterUtilisateur(Request $request): Response
     {
         $form = $this->createForm(UtilisateurFormType::class);
