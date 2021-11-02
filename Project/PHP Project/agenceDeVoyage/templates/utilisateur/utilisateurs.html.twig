@@ -18,6 +18,9 @@
             <th>Mot de passe</th>
             <th>Photo</th>
             <th>Role</th>
+            <th>Accéder par ID</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
             </thead>
             <tbody>
             <td>{{ utilisateur.id }}</td>
@@ -31,6 +34,8 @@
             <td>{{ utilisateur.photo }}</td>
             <td>{{ utilisateur.role }}</td>
             <td><a href="{{ path('utilisateur', {'id': utilisateur.id}) }}">{{ utilisateur.nom }}</a></td>
+            <td><a href="{{ path('modifier_utilisateur', {'id': utilisateur.id}) }}">Modifier</a></td>
+            <td><a href="{{ path('supprimer_utilisateur', {'id': utilisateur.id}) }}">Supprimer</a></td>
             </tbody>
         </table>
     {% endfor %}
