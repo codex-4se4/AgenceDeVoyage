@@ -9,7 +9,7 @@
 
 {% block body %}
     <div class="container center">
-        <h1>Connexion</h1>
+        <h1><img src="@images/van.png" alt="Logo"></a>Connexion</h1>
         <form method="post" class="row">
             {% if error %}
                 <div class="col s12 m6 l6 offset-m3 offset-l3">
@@ -47,4 +47,12 @@
             </div>
         </form>
     </div>
+    {% block scripts %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script type="text/javascript">
+            $('select').formSelect();
+        </script>
+    {% endblock %}
 {% endblock %}
