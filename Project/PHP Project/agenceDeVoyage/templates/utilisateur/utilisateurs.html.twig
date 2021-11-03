@@ -7,14 +7,12 @@
     <p><a href="{{ path('ajouter_utilisateur') }}">Ajouter un utilisateur</a></p>
     <table border="">
     <thead>
-    <th>ID</th>
     <th>Nom</th>
     <th>Prenom</th>
     <th>Email</th>
     <th>CIN</th>
     <th>Passeport</th>
     <th>Login</th>
-    <th>Mot de passe</th>
     <th>Photo</th>
     <th>Role</th>
     <th></th>
@@ -23,14 +21,12 @@
     </thead>
     {% for utilisateur in utilisateurs %}
             <tbody>
-            <td>{{ utilisateur.id }}</td>
             <td>{{ utilisateur.nom }}</td>
             <td>{{ utilisateur.prenom }}</td>
             <td>{{ utilisateur.email }}</td>
             <td>{{ utilisateur.cin }}</td>
             <td>{{ utilisateur.passeport }}</td>
             <td>{{ utilisateur.login }}</td>
-            <td>{{ utilisateur.mdp }}</td>
             <td>{{ utilisateur.photo }}</td>
             <td>{{ utilisateur.role }}</td>
             <td><a href="{{ path('utilisateur', {'id': utilisateur.id}) }}">Accéder</a></td>
