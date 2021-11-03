@@ -4,11 +4,14 @@ namespace App\Entity;
 
 use App\Repository\UtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateurRepository::class)
+ * @UniqueEntity(fields={"login"}, message="There is already an account with this login")
  */
-class Utilisateur
+class Utilisateur implements UserInterface
 {
     /**
      * @ORM\Id
@@ -28,7 +31,7 @@ class Utilisateur
     private $prenom;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, unique=true)
      */
     private $email;
 
@@ -43,12 +46,13 @@ class Utilisateur
     private $passeport;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=180, unique=true)
      */
     private $login;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @var string The hashed password
+     * @ORM\Column(type="string", length=200)
      */
     private $mdp;
 
@@ -128,6 +132,7 @@ class Utilisateur
         return $this;
     }
 
+
     public function getLogin(): ?string
     {
         return $this->login;
@@ -150,6 +155,25 @@ class Utilisateur
         $this->mdp = $mdp;
 
         return $this;
+    }
+
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->login;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
+    {
+        return $this->mdp;
     }
 
     public function getPhoto(): ?string
@@ -175,4 +199,30 @@ class Utilisateur
 
         return $this;
     }
+
+    /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
+     */
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+
+    public function getRoles()
+    {
+        return array((String)$this->getRole());
+    }
+
 }
