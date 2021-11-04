@@ -9,7 +9,7 @@
 
 {% block body %}
     <div class="container center">
-        <h1><img src="@images/van.png" alt="Logo"></a>Connexion</h1>
+        <h1><img src="{{ asset('build/images/van.png') }}" alt="Logo" width="150" height="150"><br/>Tunisia Trip</h1>
         <form method="post" class="row">
             {% if error %}
                 <div class="col s12 m6 l6 offset-m3 offset-l3">
