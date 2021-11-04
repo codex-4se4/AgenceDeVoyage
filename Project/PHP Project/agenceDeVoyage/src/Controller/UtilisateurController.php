@@ -49,7 +49,7 @@ class UtilisateurController extends AbstractController
     {
         $utilisateurs = $this->getDoctrine()->getRepository(Utilisateur::class)->findAll();
 
-        return $this->render('utilisateur/utilisateurs.html.twig', [
+        return $this->render('dashboard.html.twig', [
             "utilisateurs" => $utilisateurs,
         ]);
     }
