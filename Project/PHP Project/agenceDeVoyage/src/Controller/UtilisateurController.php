@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class UtilisateurController extends AbstractController
 {
     /**
-     * @Route("/utilisateur", name="utilisateur")
+     * @Route("/", name="")
      */
     public function index(): Response
     {
@@ -20,36 +20,26 @@ class UtilisateurController extends AbstractController
             'controller_name' => 'UtilisateurController',
         ]);
     }
-
     /**
-     * @Route("/ajouter-utilisateur", name="ajouter_utilisateur")
+     * @Route("/dashboardAdmin", name="dashboard_admin")
      */
-    public function ajouterUtilisateur(Request $request): Response
+    public function dashboardAdmin()
     {
-        $utilisateur = new Utilisateur();
-        $form = $this->createForm(UtilisateurFormType::class,$utilisateur);
-        $form->handleRequest($request);
+        $utilisateurs = $this->getDoctrine()->getRepository(Utilisateur::class)->findAll();
 
-        if($form->isSubmitted() && $form->isValid()){
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($utilisateur);
-            $entityManager->flush();
-        }
-
-        return $this->render("utilisateur/utilisateur-form.html.twig",[
-            "form_title" => "Ajouter utilisateur",
-            "form_utilisateur" => $form->createView(),
+        return $this->render('dashboardAdmin.html.twig', [
+            "utilisateurs" => $utilisateurs,
         ]);
     }
 
     /**
-     * @Route("/utilisateurs", name="utilisateurs")
+     * @Route("/dashboardUser", name="dashboard_user")
      */
-    public function utilisateurs()
+    public function dashboardUser()
     {
         $utilisateurs = $this->getDoctrine()->getRepository(Utilisateur::class)->findAll();
 
-        return $this->render('dashboard.html.twig', [
+        return $this->render('dashboardUser.html.twig', [
             "utilisateurs" => $utilisateurs,
         ]);
     }
