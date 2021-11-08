@@ -18,17 +18,16 @@ class UtilisateurFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom',TextType::class)
-            ->add('prenom',TextType::class)
-            ->add('email',EmailType::class)
+            ->add('nom', TextType::class)
+            ->add('prenom', TextType::class)
+            ->add('email', EmailType::class)
             ->add('cin')
             ->add('passeport')
             ->add('login')
-            ->add('mdp',PasswordType::class)
+            ->add('mdp', PasswordType::class)
             ->add('photo')
             ->add('role')
-            ->add('submit', SubmitType::class)
-        ;
+            ->add('submit', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

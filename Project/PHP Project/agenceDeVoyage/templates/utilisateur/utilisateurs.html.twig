@@ -2,62 +2,53 @@
 
 {% block title %}Admin. | {{ parent() }}{% endblock %}
 
- {% block stylesheets %}
-     <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css') }}">
-     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/app.css') }}">
-     <link href="{{ asset('https://fonts.googleapis.com/icon?family=Material+Icons') }}"
-           rel="stylesheet">
- {% endblock %}
-
 {% block body %}
-    <div class="admin-page">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m-t-30">
-                    <h5>Utilisateurs</h5>
-                    <table>
-                        <tr>
-                            <th>#</th>
-                            <th>Nom</th>
-                            <th>Prenom</th>
-                            <th>Email</th>
-                            <th>CIN</th>
-                            <th>Passeport</th>
-                            <th>Login</th>
-                            <th>Photo</th>
-                            <th>Role</th>
-                            <th>Actions</th>
-                        </tr>
-                        {% set i = 1 %}
-                        {% for utilisateur in utilisateurs %}
-                            <tr>
-                                <td>{{ i }}</td>
-                                <td>{{ utilisateur.nom }}</td>
-                                <td>{{ utilisateur.prenom }}</td>
-                                <td>{{ utilisateur.email }}</td>
-                                <td>{{ utilisateur.cin }}</td>
-                                <td>{{ utilisateur.passeport }}</td>
-                                <td>{{ utilisateur.login }}</td>
-                                <td>{{ utilisateur.photo }}</td>
-                                <td>{{ utilisateur.role }}</td>
-                                <td>
-                                    <a href="{{ path('modifier_utilisateur', {'id': utilisateur.id}) }}"><i class="material-icons blue-text">edit</i></a>
-                                    <a href="{{ path('supprimer_utilisateur', {'id': utilisateur.id}) }}"><i class="material-icons red-text">delete</i></a>
-                                </td>
-                            </tr>
-                            {% set i = i+1 %}
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
+
+    <div class="table_section padding_infor_info">
+        <div class="table-responsive-sm">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Email</th>
+                    <th>CIN</th>
+                    <th>Passeport</th>
+                    <th>Login</th>
+                    <th>Photo</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% set i = 1 %}
+                {% for utilisateur in utilisateurs %}
+                    <tr>
+                        <td>{{ i }}</td>
+                        <td>{{ utilisateur.nom }}</td>
+                        <td>{{ utilisateur.prenom }}</td>
+                        <td>{{ utilisateur.email }}</td>
+                        <td>{{ utilisateur.cin }}</td>
+                        <td>{{ utilisateur.passeport }}</td>
+                        <td>{{ utilisateur.login }}</td>
+                        <td>{{ utilisateur.photo }}</td>
+                        <td>{{ utilisateur.role }}</td>
+                        <td>
+                            <a href="{{ path('modifier_utilisateur', {'id': utilisateur.id}) }}"><i
+                                        class="fa fa-pencil blue2_color"></i></a>
+                            <i href="{{ path('supprimer_utilisateur', {'id': utilisateur.id}) }}"><i
+                                        class="fa fa-trash red_color"/></i></a>
+                        </td>
+                    </tr>
+                    {% set i = i+1 %}
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
-    {% block scripts %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-        <script type="text/javascript">
-            $('select').formSelect();
-        </script>
-    {% endblock %}
 {% endblock %}
+
+
+

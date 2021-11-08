@@ -20,6 +20,7 @@ class UtilisateurController extends AbstractController
             'controller_name' => 'UtilisateurController',
         ]);
     }
+
     /**
      * @Route("/dashboardAdmin", name="dashboard_admin")
      */
@@ -67,8 +68,7 @@ class UtilisateurController extends AbstractController
         $form = $this->createForm(UtilisateurFormType::class, $utilisateur);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
         }
 
@@ -90,5 +90,17 @@ class UtilisateurController extends AbstractController
         $entityManager->flush();
 
         return $this->redirectToRoute("utilisateurs");
+    }
+
+    /**
+     * @Route("/utilisateurs", name="utilisateurs")
+     */
+    public function utilisateurs()
+    {
+        $utilisateurs = $this->getDoctrine()->getRepository(Utilisateur::class)->findAll();
+
+        return $this->render('utilisateur/utilisateurs.html.twig', [
+            "utilisateurs" => $utilisateurs,
+        ]);
     }
 }

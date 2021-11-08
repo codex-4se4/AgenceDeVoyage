@@ -19,14 +19,17 @@
 
             {% if app.user %}
                 <div class="col s12 m6 l6 offset-m3 offset-l3">
-                    Tu es actuellement connect&#xE9; en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">D&#xE9;connecte-toi</a>
+                    Tu es actuellement connect&#xE9; en tant que {{ app.user.username }}, <a
+                            href="{{ path('app_logout') }}">D&#xE9;connecte-toi</a>
                 </div>
             {% endif %}
             <div class="input-field col s12 m6 l6 offset-m3 offset-l3">
-                <input type="text" value="{{ last_username }}" name="login" id="inputLogin" class="form-control" autocomplete="username" required autofocus>
+                <input type="text" value="{{ last_username }}" name="login" id="inputLogin" class="form-control"
+                       autocomplete="username" required autofocus>
             </div>
             <div class="input-field col s12 m6 l6 offset-m3 offset-l3">
-                <input type="password" name="password" id="inputPassword" class="form-control" required placeholder="Mot de passe">
+                <input type="password" name="password" id="inputPassword" class="form-control" required
+                       placeholder="Mot de passe">
             </div>
 
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">

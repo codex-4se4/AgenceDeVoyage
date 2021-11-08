@@ -26,7 +26,7 @@ class RegistrationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->setMdp(
-            $userPasswordEncoderInterface->encodePassword(
+                $userPasswordEncoderInterface->encodePassword(
                     $user,
                     $form->get('mdp')->getData()
                 )

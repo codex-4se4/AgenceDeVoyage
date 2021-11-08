@@ -165,7 +165,7 @@ class Utilisateur implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->login;
+        return (string)$this->login;
     }
 
     /**
@@ -222,7 +222,7 @@ class Utilisateur implements UserInterface
 
     public function getRoles()
     {
-        return array((String)$this->getRole());
+        return array((string)$this->getRole());
     }
 
 }
