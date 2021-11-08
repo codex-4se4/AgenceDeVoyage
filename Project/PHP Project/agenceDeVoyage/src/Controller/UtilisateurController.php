@@ -27,9 +27,9 @@ class UtilisateurController extends AbstractController
     public function dashboardAdmin()
     {
         $utilisateurs = $this->getDoctrine()->getRepository(Utilisateur::class)->findAll();
-
+        $currentUser = $this->getDoctrine()->getRepository(Utilisateur::class)->findOneBy(array('login' => $this->getUser()->getUsername()));
         return $this->render('dashboardAdmin.html.twig', [
-            "utilisateurs" => $utilisateurs,
+            "utilisateurs" => $utilisateurs,"current_user" => $currentUser
         ]);
     }
 
